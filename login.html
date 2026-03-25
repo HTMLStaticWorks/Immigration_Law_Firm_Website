@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            const dir = localStorage.getItem('dir') || 'ltr';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('dir', dir);
+            if (theme === 'dark') document.documentElement.classList.add('dark');
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Login | Global Link Client Portal</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A237E',
+                        secondary: '#C0A151',
+                        surface: {
+                            light: '#FFFFFF',
+                            dark: '#111827'
+                        },
+                        background: {
+                            light: '#F8F9FA',
+                            dark: '#0A0A0A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 dark:bg-background-dark min-h-screen flex items-center justify-center p-4">
+
+    <!-- Theme & RTL Toggles (Floating for auth etc.) -->
+    <div class="fixed top-8 right-8 flex gap-4 z-50">
+        <button onclick="toggleDirection()" class="p-3 bg-white dark:bg-slate-800 rounded-full shadow-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all"><i class="fas fa-right-left"></i></button>
+        <button onclick="toggleTheme()" class="p-3 bg-white dark:bg-slate-800 rounded-full shadow-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline"></i></button>
+    </div>
+
+    <!-- Login Container -->
+    <main class="w-full max-w-md bg-white dark:bg-surface-dark rounded-3xl overflow-hidden shadow-2xl p-8 lg:p-12 relative">
+        <div class="mb-10 text-center">
+            <a href="index.html" class="inline-flex items-center gap-3 mb-8">
+                <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg shadow-sm">
+                <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight">GLOBAL LINK</span>
+            </a>
+            <h2 class="text-3xl font-bold mb-2 text-slate-800 dark:text-white">Secure Login</h2>
+            <p class="text-slate-500">Enter your credentials to access the portal</p>
+
+        </div>
+
+        <form id="login-form" class="space-y-6">
+            <div>
+                <label class="block text-sm font-bold text-slate-800 dark:text-white mb-2">Email Address</label>
+                <div class="relative">
+                    <input type="email" required placeholder="name@example.com" class="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-xl focus:border-secondary outline-none transition-all">
+                    <i class="fas fa-envelope absolute left-4 top-4 text-slate-400"></i>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-2">
+                    <label class="text-sm font-bold text-slate-800 dark:text-white">Password</label>
+                    <a href="#" class="text-xs text-secondary font-bold hover:underline">Forgot?</a>
+                </div>
+                <div class="relative">
+                    <input type="password" required placeholder="••••••••" class="w-full pl-12 pr-4 py-3 bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-xl focus:border-secondary outline-none transition-all">
+                    <i class="fas fa-lock absolute left-4 top-4 text-slate-400"></i>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <input type="checkbox" id="remember" class="w-4 h-4 accent-secondary bg-slate-100 rounded">
+                <label for="remember" class="text-sm text-slate-500">Keep me logged in for 30 days</label>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-primary hover:bg-opacity-90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20">SIGN IN TO PORTAL</button>
+        </form>
+
+        <div class="mt-10 text-center text-sm text-slate-500">
+            Don't have an account? <a href="signup.html" class="text-secondary font-bold hover:underline">Request Access</a>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('login-form').onsubmit = (e) => {
+            e.preventDefault();
+            window.location.href = 'dashboard.html';
+        };
+    </script>
+</body>
+</html>

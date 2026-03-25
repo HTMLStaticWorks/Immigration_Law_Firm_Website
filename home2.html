@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            const dir = localStorage.getItem('dir') || 'ltr';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('dir', dir);
+            if (theme === 'dark') document.documentElement.classList.add('dark');
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Link | Home v2 | Premium Immigration Hub</title>
+    <meta name="description" content="An alternate expert immigration assistance hub. Professional, efficient, and modern.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A237E',
+                        secondary: '#C0A151',
+                        accent: 'rgba(26, 35, 126, 0.05)',
+                        surface: {
+                            light: '#FFFFFF',
+                            dark: '#1A1A1A'
+                        },
+                        background: {
+                            light: '#F8F9FA',
+                            dark: '#0A0A0A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <nav class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between gap-6 sm:gap-8">
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="logo.png" alt="Global Link Logo" class="w-10 h-10 rounded-lg shadow-sm">
+                <span class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+                <a href="index.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Home 1</a>
+                <a href="home2.html" class="text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary">Home 2</a>
+                <a href="about.html" class="hover:text-primary dark:hover:text-secondary transition-colors">About</a>
+                <a href="blog.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Contact</a>
+                <a href="dashboard.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Dashboard</a>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse flex-shrink-0">
+                <button onclick="toggleDirection()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-right-left"></i>
+                </button>
+                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+                <a href="login.html" class="hidden md:block hover:text-primary dark:hover:text-secondary text-sm font-bold transition-colors">Login</a>
+                <a href="signup.html" class="hidden md:block btn-primary px-6 py-2 text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Sign Up</a>
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-4 px-4 py-6 bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800">
+            <a href="index.html">Home 1</a>
+            <a href="home2.html" class="text-primary dark:text-secondary font-semibold">Home 2</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+            <div class="flex flex-col gap-2 pt-4">
+                <a href="login.html" class="w-full py-3 text-center border border-slate-200 dark:border-slate-800 rounded-xl font-bold">Login</a>
+                <a href="signup.html" class="w-full py-3 text-center bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="hero_home2.png" alt="Hero background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent dark:from-black/90 dark:via-black/70 rtl:bg-gradient-to-l"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="max-w-2xl text-white">
+                <span class="inline-block py-1 px-4 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 font-semibold tracking-wider text-sm">EXPERIENCE • TRUST • SUCCESS</span>
+                <h1 class="text-5xl lg:text-7xl font-serif font-bold mb-6 leading-tight">Simplify Your Path to Citizenship.</h1>
+                <p class="text-lg lg:text-xl text-slate-200 mb-8 max-w-lg">Let us handle the complexity while you focus on your new life. Our expert team ensures every document is perfect and every dream is secured.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="contact.html" class="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-lg font-bold transition-all transform hover:-translate-y-1">Get Started Now</a>
+                    <a href="#" class="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold transition-all">Success Stories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Success Stories & In-Depth Case Studies -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4">Milestones of Legal Victory</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- Case 1 -->
+                <div class="flex flex-col lg:flex-row bg-slate-50 dark:bg-surface-dark rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl group">
+                    <div class="lg:w-1/3 relative h-64 lg:h-auto overflow-hidden">
+                        <img src="hero_contact.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="lg:w-2/3 p-10 lg:p-16">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="px-4 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full uppercase">Corporate Relocation</span>
+                            <span class="text-slate-400 text-xs">Project Completed: Dec 2025</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-6">Securing 24 Employee Visas for a Global FinTech</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed text-lg italic">"Global Link took the entire burden off our HR department. Their precision in handling complex intra-company transfers was flawless. We managed to set up our entire Toronto office 2 months ahead of schedule."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="font-bold border-l-4 border-secondary pl-4">David Hasselhoff<br><span class="text-sm font-normal text-slate-500">COO, FinTech Dynamics</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Core Values & Philosophy -->
+    <section class="py-16 bg-primary text-white overflow-hidden relative">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="space-y-4">
+                    <div class="text-secondary text-4xl mb-6"><i class="fas fa-fingerprint"></i></div>
+                    <h3 class="text-2xl font-bold">Radical Transparency</h3>
+                    <p class="text-slate-300">We provide real-time access to your legal file. You see exactly what we see, when we see it.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-secondary text-4xl mb-6"><i class="fas fa-bolt"></i></div>
+                    <h3 class="text-2xl font-bold">Unmatched Velocity</h3>
+                    <p class="text-slate-300">Our automated filing systems ensure your documents are submitted the moment the government portal opens.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-secondary text-4xl mb-6"><i class="fas fa-heart"></i></div>
+                    <h3 class="text-2xl font-bold">Empathetic Defense</h3>
+                    <p class="text-slate-300">Beyond just paperwork, we advocate for your human right to pursue a better life with dignity.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-secondary text-4xl mb-6"><i class="fas fa-microchip"></i></div>
+                    <h3 class="text-2xl font-bold">Legal Sovereignty</h3>
+                    <p class="text-slate-300">We leverage AI and advanced legal databases to find precedents that others miss entirely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services Grid -->
+    <section class="py-16 bg-slate-50 dark:bg-black/50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4">Our Premium Expertise</h2>
+                <div class="w-24 h-1 bg-secondary"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Cards -->
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-lg">
+                    <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-colors z-10"></div>
+                    <img src="hero.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Family Visa">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Family Visa</h3>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity mb-4">Unite with your loved ones through streamlined sponsorship processes.</p>
+                        <a href="#" class="inline-block py-2 px-6 bg-white text-primary rounded-lg font-bold text-sm">Explore</a>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-lg">
+                    <div class="absolute inset-0 bg-secondary/40 group-hover:bg-secondary/20 transition-colors z-10"></div>
+                    <img src="hero.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Work Permit">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Work Permit</h3>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity mb-4">Unlock global opportunities with our expedited employment visa services.</p>
+                        <a href="#" class="inline-block py-2 px-6 bg-white text-primary rounded-lg font-bold text-sm">Explore</a>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-lg">
+                    <div class="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors z-10"></div>
+                    <img src="hero_about.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Student Visa">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Student Visa</h3>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity mb-4">Secure your academic future with our comprehensive visa support services.</p>
+                        <a href="#" class="inline-block py-2 px-6 bg-white text-primary rounded-lg font-bold text-sm">Explore</a>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-lg">
+                    <div class="absolute inset-0 bg-slate-800/60 group-hover:bg-slate-800/30 transition-colors z-10"></div>
+                    <img src="pr_expert.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Permanent Residency">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Permanent Residency</h3>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity mb-4">Achieve long-term stability with our expert pathways to global residency.</p>
+                        <a href="#" class="inline-block py-2 px-6 bg-white text-primary rounded-lg font-bold text-sm">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visa Category Comparison Table -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4">Compare Popular Visa Pathways</h2>
+                <p class="text-slate-500">Find the route that best aligns with your qualifications and timelines.</p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[800px]">
+                    <thead>
+                        <tr class="bg-slate-50 dark:bg-surface-dark border-b border-slate-200 dark:border-slate-800">
+                            <th class="p-6 font-bold text-slate-500 uppercase text-xs tracking-widest">Feature</th>
+                            <th class="p-6 font-bold text-slate-500 uppercase text-xs tracking-widest">Skilled Worker</th>
+                            <th class="p-6 font-bold text-slate-500 uppercase text-xs tracking-widest text-secondary">Business Golden</th>
+                            <th class="p-6 font-bold text-slate-500 uppercase text-xs tracking-widest">Family Sponsorship</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                        <tr>
+                            <td class="p-6 font-bold">Processing Time</td>
+                            <td class="p-6">3 - 6 Months</td>
+                            <td class="p-6 text-secondary">1 - 2 Months</td>
+                            <td class="p-6">9 - 14 Months</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold">Path to Citizenship</td>
+                            <td class="p-6">After 5 Years</td>
+                            <td class="p-6 text-secondary">Accelerated (3 Years)</td>
+                            <td class="p-6">After 3 Years</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold">Job Offer Required</td>
+                            <td class="p-6"><span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-full">YES</span></td>
+                            <td class="p-6 text-secondary">NO</td>
+                            <td class="p-6">NO</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold">Min. Assets</td>
+                            <td class="p-6">$15k USD</td>
+                            <td class="p-6 text-secondary">$250k USD</td>
+                            <td class="p-6">N/A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Global Presence Network -->
+    <section class="py-16 bg-slate-50 dark:bg-black/20">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-serif font-bold mb-6">Our Borderless Network</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-10 leading-relaxed">Unlike "agent-only" firms, Global Link owns and operates physical law offices in every major immigration hub, ensuring seamless handling of localized paperwork.</p>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <span class="w-10 h-10 bg-secondary/10 text-secondary rounded-full flex items-center justify-center font-bold">TO</span>
+                                <div class="text-sm font-bold uppercase tracking-wider">Toronto HQ</div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="w-10 h-10 bg-secondary/10 text-secondary rounded-full flex items-center justify-center font-bold">LN</span>
+                                <div class="text-sm font-bold uppercase tracking-wider">London Office</div>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <span class="w-10 h-10 bg-secondary/10 text-secondary rounded-full flex items-center justify-center font-bold">DX</span>
+                                <div class="text-sm font-bold uppercase tracking-wider">Dubai Hub</div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="w-10 h-10 bg-secondary/10 text-secondary rounded-full flex items-center justify-center font-bold">SG</span>
+                                <div class="text-sm font-bold uppercase tracking-wider">Singapore City</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="glass-card p-1 text-slate-900 rounded-3xl overflow-hidden shadow-2xl skew-y-2 border-slate-200">
+                        <div class="bg-slate-200 h-96 flex items-center justify-center italic text-slate-400">
+                            [Interactive Global Map Interface]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Onboarding Lifecycle -->
+    <section class="py-16 bg-slate-50 dark:bg-black/40 overflow-hidden">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-secondary font-bold tracking-widest text-xs uppercase">B2B Solutions</span>
+                <h2 class="text-4xl font-serif font-bold mt-4">Corporate Talent Mobility Lifecycle</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-6"></div>
+            </div>
+            
+            <div class="relative flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-0">
+                <!-- Connector Line -->
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-px bg-slate-200 dark:bg-slate-800 -z-10"></div>
+                
+                <!-- Stage 1 -->
+                <div class="flex flex-col items-center bg-white dark:bg-surface-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-xl group">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mb-6 group-hover:bg-secondary transition-colors">01</div>
+                    <h4 class="text-xl font-bold">Needs Audit</h4>
+                    <p class="text-xs text-slate-500 mt-2 text-center">Talent gap & visa analysis</p>
+                </div>
+                <!-- Stage 2 -->
+                <div class="flex flex-col items-center bg-white dark:bg-surface-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-xl group">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mb-6 group-hover:bg-secondary transition-colors">02</div>
+                    <h4 class="text-xl font-bold">Liaison Setup</h4>
+                    <p class="text-xs text-slate-500 mt-2 text-center">Dedicated case manager assigned</p>
+                </div>
+                <!-- Stage 3 -->
+                <div class="flex flex-col items-center bg-white dark:bg-surface-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-xl group">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mb-6 group-hover:bg-secondary transition-colors">03</div>
+                    <h4 class="text-xl font-bold">Mass Filing</h4>
+                    <p class="text-xs text-slate-500 mt-2 text-center">Batch processing employee apps</p>
+                </div>
+                <!-- Stage 4 -->
+                <div class="flex flex-col items-center bg-white dark:bg-surface-dark p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-xl group">
+                    <div class="w-20 h-20 bg-primary text-white rounded-full flex items-center justify-center text-3xl font-bold mb-6 group-hover:bg-secondary transition-colors">04</div>
+                    <h4 class="text-xl font-bold">Onboarding</h4>
+                    <p class="text-xs text-slate-500 mt-2 text-center">Relocation support & settlement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Pricing Strategy -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="text-4xl font-serif font-bold text-center mb-16">Transparent Legal Partnership Tiers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tier 1 -->
+                <div class="p-10 bg-slate-50 dark:bg-surface-dark rounded-3xl border border-slate-100 dark:border-slate-800 flex flex-col items-stretch hover:-translate-y-2 transition-transform">
+                    <div class="mb-8">
+                       <h3 class="text-2xl font-bold">Standard</h3>
+                       <p class="text-slate-500 text-sm mt-2">Perfect for individual applicants</p>
+                    </div>
+                    <div class="text-5xl font-bold mb-8">$299<span class="text-sm font-normal text-slate-400">/case audit</span></div>
+                    <ul class="space-y-4 mb-10 text-slate-600 dark:text-slate-400">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Document Checklist</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> 1-on-1 Strategy Session</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Portal Access (Basic)</li>
+                    </ul>
+                    <a href="#" class="mt-auto py-4 text-center border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all">Start Now</a>
+                </div>
+                <!-- Tier 2 (Featured) -->
+                <div class="p-10 bg-white dark:bg-black rounded-3xl border-2 border-secondary flex flex-col items-stretch relative overflow-hidden shadow-2xl scale-105 z-10">
+                    <div class="absolute top-0 right-0 bg-secondary text-primary font-bold px-6 py-2 rounded-bl-2xl text-xs">MOST POPULAR</div>
+                    <div class="mb-8">
+                       <h3 class="text-2xl font-bold">Priority Plus</h3>
+                       <p class="text-slate-500 text-sm mt-2">Comprehensive visa processing</p>
+                    </div>
+                    <div class="text-5xl font-bold mb-8">$899<span class="text-sm font-normal text-slate-400">/application</span></div>
+                    <ul class="space-y-4 mb-10 text-slate-600 dark:text-slate-400 text-lg">
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Full Legal Representation</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Ministerial Level Liaison</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Premium Portal Features</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i> Refund Protection</li>
+                    </ul>
+                    <a href="#" class="mt-auto py-4 text-center bg-secondary text-white font-bold rounded-xl hover:brightness-110 transition-all shadow-lg shadow-secondary/20">Claim Advantage</a>
+                </div>
+                <!-- Tier 3 -->
+                <div class="p-10 bg-slate-50 dark:bg-surface-dark rounded-3xl border border-slate-100 dark:border-slate-800 flex flex-col items-stretch hover:-translate-y-2 transition-transform">
+                    <div class="mb-8">
+                       <h3 class="text-2xl font-bold">Enterprise</h3>
+                       <p class="text-slate-500 text-sm mt-2">For high-growth scaleups</p>
+                    </div>
+                    <div class="text-5xl font-bold mb-8">$2.5k<span class="text-sm font-normal text-slate-400">/monthly</span></div>
+                    <ul class="space-y-4 mb-10 text-slate-600 dark:text-slate-400">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Unlimited Employee Visas</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Global Tax Advisory</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 24/7 Hotline Support</li>
+                    </ul>
+                    <a href="#" class="mt-auto py-4 text-center border-2 border-slate-200 text-slate-400 font-bold rounded-xl hover:border-primary hover:text-primary transition-all">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Expert Webinars -->
+    <section class="py-16 bg-primary text-white relative overflow-hidden">
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="flex flex-col md:row items-center justify-between mb-16 gap-8">
+                <div>
+                   <h2 class="text-4xl font-serif font-bold">Global Link Academy</h2>
+                   <p class="text-slate-300 mt-2">Join our free masterclasses on international mobility.</p>
+                </div>
+                <a href="#" class="px-8 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-all font-bold">Browse All Events</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Event 1 -->
+                <div class="flex gap-8 p-1 bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-colors">
+                    <div class="w-32 bg-secondary text-primary p-6 flex flex-col items-center justify-center text-center rounded-2xl">
+                        <span class="text-xs font-bold uppercase tracking-widest">April</span>
+                        <span class="text-4xl font-bold">12</span>
+                    </div>
+                    <div class="py-6 pr-8">
+                        <h4 class="text-xl font-bold mb-2">The 2026 Point System Changes</h4>
+                        <p class="text-sm text-slate-400 mb-4">A breakdown of India-to-Canada PR pathway updates.</p>
+                        <div class="text-xs font-bold flex items-center gap-4">
+                            <span class="flex items-center gap-1"><i class="far fa-clock"></i> 6:00 PM GMT</span>
+                            <span class="text-secondary"><i class="fas fa-video"></i> LIVE ON ZOOM</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 2 -->
+                <div class="flex gap-8 p-1 bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-colors">
+                    <div class="w-32 bg-white text-primary p-6 flex flex-col items-center justify-center text-center rounded-2xl">
+                        <span class="text-xs font-bold uppercase tracking-widest">April</span>
+                        <span class="text-4xl font-bold">25</span>
+                    </div>
+                    <div class="py-6 pr-8">
+                        <h4 class="text-xl font-bold mb-2">Digital Nomad Visa Deep Dive</h4>
+                        <p class="text-sm text-slate-400 mb-4">Exploring the new EU remote work protocols for techies.</p>
+                        <div class="text-xs font-bold flex items-center gap-4">
+                            <span class="flex items-center gap-1"><i class="far fa-clock"></i> 10:00 AM EST</span>
+                            <span class="text-secondary"><i class="fas fa-video"></i> LIVE ON ZOOM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Portal Digital Advantages -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="bg-gradient-to-br from-slate-900 to-primary rounded-[3rem] p-12 lg:p-20 text-white relative overflow-hidden shadow-2xl">
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+                <div class="relative z-10 flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2">
+                        <img src="hero_blog.png" class="rounded-3xl shadow-2xl border border-white/10 filter brightness-75">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <span class="px-4 py-1 bg-secondary text-white text-xs font-bold rounded-full mb-6 inline-block">THE GLOBAL LINK SUITE</span>
+                        <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-8">Manage Your Future From Your Pocket.</h2>
+                        <div class="space-y-10">
+                            <div class="flex gap-6">
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl"><i class="fas fa-lock text-secondary"></i></div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2 text-white">Encrypted Document Vault</h4>
+                                    <p class="text-slate-400">Military-grade protection for your passports and tax history. Zero-knowledge encryption.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-2xl"><i class="fas fa-satellite-dish text-secondary"></i></div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-2 text-white">Live Government Tracking</h4>
+                                    <p class="text-slate-400">Real-time status updates directly synced with USCIS, IRCC, and Home Office portals.</p>
+                                </div>
+                            </div>
+                            <button class="w-full lg:w-auto btn-primary bg-white text-primary hover:bg-secondary hover:text-white transition-all py-4 px-12">Register for the Portal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Footer (Same as index) -->
+    <footer class="bg-slate-900 text-slate-100 pt-20">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Global Link Branding -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg border border-white/10 shadow-sm">
+                        <h3 class="text-2xl font-bold">GLOBAL LINK</h3>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6">Your trusted partner in every step of your immigration journey.</p>
+                    <div class="flex gap-4 items-center">
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="about.html" class="hover:text-secondary transition-colors">Our Story</a></li>
+                        <li><a href="blog.html" class="hover:text-secondary transition-colors">Latest News</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition-colors">Free Consultation</a></li>
+                        <li><a href="dashboard.html" class="hover:text-secondary transition-colors">Case Tracking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Legal Services</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Student Visas</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Skilled Worker PR</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Family Sponsorship</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Business Immigration</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-slate-400 mb-6 text-sm">Subscribe to receive the latest worldwide immigration policy updates.</p>
+                    <form class="flex flex-col space-y-3">
+                        <div class="relative">
+                            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl outline-none focus:border-secondary transition-colors text-sm">
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-secondary hover:bg-opacity-90 text-white font-bold rounded-xl transition-all shadow-lg shadow-secondary/10">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Full-width CC Section to match Header -->
+        <div class="pt-8 border-t border-slate-800/50 mt-16 bg-slate-900/50">
+            <div class="container mx-auto px-4 lg:px-8 text-center pb-8">
+                <p class="text-slate-500 text-sm">© 2026 Global Link Immigration Law Firm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scroll-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all z-40 transform hover:scale-110">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>

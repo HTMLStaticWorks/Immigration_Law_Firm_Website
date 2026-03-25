@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 26 35 126; /* Navy #1a237e */
+    --secondary: 192 161 81; /* Gold #c0a151 */
+    --bg-light: 248 249 250; /* #f8f9fa */
+    --bg-dark: 10 10 10; /* #0a0a0a */
+    --text-primary: 33 37 41;
+    --text-on-primary: 255 255 255;
+  }
+
+  [data-theme='dark'] {
+    --bg-light: 10 10 10;
+    --text-primary: 248 249 250;
+  }
+
+  body {
+    @apply transition-colors duration-300 font-sans;
+    background-color: rgb(var(--bg-light));
+    color: rgb(var(--text-primary));
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-md font-semibold transition-all hover:bg-opacity-90 active:scale-95;
+    background-color: rgb(var(--primary));
+  }
+  .btn-secondary {
+    @apply border-2 border-[rgb(var(--primary))] text-[rgb(var(--primary))] px-6 py-3 rounded-md font-semibold transition-all hover:bg-[rgb(var(--primary))] hover:text-white active:scale-95;
+  }
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6;
+  }
+}
+
+/* RTL Specifics */
+[dir='rtl'] .ml-auto { margin-left: 0; margin-right: auto; }
+[dir='rtl'] .mr-auto { margin-right: 0; margin-left: auto; }
+[dir='rtl'] .text-left { text-align: right; }
+[dir='rtl'] .text-right { text-align: left; }
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.nav-link {
+    @apply transition-all duration-300 ease-out;
+}
+
+.nav-link:hover {
+    box-shadow: 0 0 20px rgba(192, 161, 81, 0.1);
+}
+
+.card-dynamic-hover {
+    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
+}

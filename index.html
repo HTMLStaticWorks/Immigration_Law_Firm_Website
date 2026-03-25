@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            const dir = localStorage.getItem('dir') || 'ltr';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('dir', dir);
+            if (theme === 'dark') document.documentElement.classList.add('dark');
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Link Immigration | Immigration Law Firm</title>
+    <meta name="description" content="Expert immigration law firm helping with Visas, PR, and Citizenship. Professional, compassionate legal representation.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A237E',
+                        secondary: '#C0A151',
+                        accent: 'rgba(26, 35, 126, 0.05)',
+                        surface: {
+                            light: '#FFFFFF',
+                            dark: '#1A1A1A'
+                        },
+                        background: {
+                            light: '#F8F9FA',
+                            dark: '#0A0A0A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <nav class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between gap-6 sm:gap-8">
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="logo.png" alt="Global Link Logo" class="w-10 h-10 rounded-lg shadow-sm">
+                <span class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+                <a href="index.html" class="text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary">Home 1</a>
+                <a href="home2.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Home 2</a>
+                <a href="about.html" class="hover:text-primary dark:hover:text-secondary transition-colors">About</a>
+                <a href="blog.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Contact</a>
+                <a href="dashboard.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Dashboard</a>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse flex-shrink-0">
+                <!-- RTL Toggle -->
+                <button onclick="toggleDirection()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle RTL/LTR">
+                    <i class="fas fa-right-left"></i>
+                </button>
+                <!-- Theme Toggle -->
+                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Theme">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+                <a href="login.html" class="hidden md:block hover:text-primary dark:hover:text-secondary text-sm font-bold transition-colors">Login</a>
+                <a href="signup.html" class="hidden md:block btn-primary px-6 py-2 text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Sign Up</a>
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-4 px-4 py-6 bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800 animate-fade-in">
+            <a href="index.html" class="text-primary dark:text-secondary font-semibold">Home 1</a>
+            <a href="home2.html">Home 2</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+            <div class="flex flex-col gap-2 pt-4">
+                <a href="login.html" class="w-full py-3 text-center border border-slate-200 dark:border-slate-800 rounded-xl font-bold">Login</a>
+                <a href="signup.html" class="w-full py-3 text-center bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="hero_home1.png" alt="Hero background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent dark:from-black/90 dark:via-black/70 rtl:bg-gradient-to-l"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="max-w-2xl text-white">
+                <span class="inline-block py-1 px-4 rounded-full bg-secondary/20 text-secondary border border-secondary/30 mb-6 font-semibold tracking-wider text-sm">EXPERIENCE • TRUST • SUCCESS</span>
+                <h1 class="text-5xl lg:text-7xl font-serif font-bold mb-6 leading-tight">Your New Life Starts with Expert Legal Guidance.</h1>
+                <p class="text-lg lg:text-xl text-slate-200 mb-8 max-w-lg">Over 20 years of expertise in navigating complex immigration laws. We make your journey to a new home smooth and certain.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="contact.html" class="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-lg font-bold transition-all transform hover:-translate-y-1">Book Free Consultation</a>
+                    <a href="dashboard.html" class="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold transition-all">Track Your Case</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4">Comprehensive Solutions for All Your Immigration Needs</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-2xl bg-background-light dark:bg-surface-dark border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+                    <div class="w-16 h-16 bg-primary text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-passport text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Visa Applications</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6">Navigating study, work, and tourist visas with a 98% success rate in high-complexity cases.</p>
+                    <a href="#" class="text-primary dark:text-secondary font-semibold hover:underline">Learn More →</a>
+                </div>
+                <!-- Service 2 -->
+                <div class="p-8 rounded-2xl bg-background-light dark:bg-surface-dark border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+                    <div class="w-16 h-16 bg-secondary text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-id-card text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Permanent Residency</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6">Strategic pathfinding for PR pathways across Express Entry, Provincial Nominees, and more.</p>
+                    <a href="#" class="text-primary dark:text-secondary font-semibold hover:underline">Learn More →</a>
+                </div>
+                <!-- Service 3 -->
+                <div class="p-8 rounded-2xl bg-background-light dark:bg-surface-dark border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+                    <div class="w-16 h-16 bg-primary text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-landmark text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Citizenship Services</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6">From eligibility assessment to oath ceremonies, we handle every detail of your final step.</p>
+                    <a href="#" class="text-primary dark:text-secondary font-semibold hover:underline">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Latest Immigration News -->
+    <section class="py-16 bg-slate-50 dark:bg-black/20 border-y border-slate-100 dark:border-slate-800">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4">Live Immigration Policy Updates</h2>
+                <p class="text-slate-500 mb-8">Stay ahead of the curve with real-time news on shifting global regulations.</p>
+                <a href="blog.html" class="text-secondary font-bold inline-flex items-center gap-2 hover:gap-3 transition-all underline decoration-2 underline-offset-8 decoration-secondary/30">View All News <i class="fas fa-arrow-right text-xs"></i></a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- News item 1 -->
+                <div class="p-6 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-xs font-bold text-blue-500 uppercase tracking-widest mb-3">Canada PR Update</div>
+                    <h4 class="text-lg font-bold mb-3 leading-tight">Express Entry Draw #324: Scores Continue to Drop</h4>
+                    <p class="text-sm text-slate-500 mb-4">The latest draw saw a significant decrease in the cutoff score, opening doors for 4,500 new applicants.</p>
+                    <span class="text-[10px] text-slate-400">Published 2 hours ago</span>
+                </div>
+                <!-- News item 2 -->
+                <div class="p-6 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-xs font-bold text-green-500 uppercase tracking-widest mb-3">UK Vista Policy</div>
+                    <h4 class="text-lg font-bold mb-3 leading-tight">Graduate Route Migration: Important Deadline Extension</h4>
+                    <p class="text-sm text-slate-500 mb-4">Post-study work visa holders now have an additional 3-month window for employer sponsorship.</p>
+                    <span class="text-[10px] text-slate-400">Published 5 hours ago</span>
+                </div>
+                <!-- News item 3 -->
+                <div class="p-6 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-xs font-bold text-red-500 uppercase tracking-widest mb-3">USA H-1B News</div>
+                    <h4 class="text-lg font-bold mb-3 leading-tight">Filing Season 2026: New Online Submission Protcols</h4>
+                    <p class="text-sm text-slate-500 mb-4">USCIS has introduced a mandatory two-step verification for all employment-based petitions starting next month.</p>
+                    <span class="text-[10px] text-slate-400">Published yesterday</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    
+    <!-- Quick Eligibility Assessment -->
+    <section class="py-16 bg-white dark:bg-background-dark overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform translate-x-1/2"></div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="bg-primary dark:bg-surface-dark rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-12 lg:p-20 text-white flex flex-col lg:flex-row items-center gap-12 lg:gap-16 shadow-2xl">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl lg:text-5xl font-serif font-bold mb-6">Are You Eligible to Relocate?</h2>
+                    <p class="text-primary-foreground/70 dark:text-slate-400 text-lg mb-10 leading-relaxed">Our proprietary algorithm analyzes your profile against current legal requirements to give you a preliminary success probability in under 60 seconds.</p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary"></i> Instant Point Calculation</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary"></i> Personalized Pathway Recommendation</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-secondary"></i> Direct Expert Matching</li>
+                    </ul>
+                    <a href="#" class="inline-block w-full sm:w-auto btn-primary bg-secondary hover:bg-white hover:text-primary transition-all px-8 py-4 sm:px-10 sm:py-5 text-base sm:text-lg text-center">Check My Score Now</a>
+                </div>
+                <div class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="aspect-auto sm:aspect-square bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-center text-center">
+                        <div class="text-4xl font-bold text-secondary mb-2">94%</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 font-bold">Accuracy rate</div>
+                    </div>
+                    <div class="aspect-auto sm:aspect-square bg-secondary/20 backdrop-blur-md border border-secondary/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-center text-center">
+                        <div class="text-4xl font-bold text-white mb-2">60s</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 font-bold">Fast Results</div>
+                    </div>
+                    <div class="aspect-auto sm:aspect-square bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-center text-center">
+                        <div class="text-4xl font-bold text-white mb-2">12M+</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 font-bold">Profiles scanned</div>
+                    </div>
+                    <div class="aspect-auto sm:aspect-square bg-primary/40 backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-center text-center">
+                        <div class="text-4xl font-bold text-secondary mb-2">24/7</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-300 font-bold">Live updates</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    
+    <!-- Frequently Asked Questions -->
+    <section class="py-16 bg-slate-50 dark:bg-black/50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4">Clear Answers for Complex Questions</h2>
+                <p class="text-slate-500">We address your most pressing concerns with honesty and legal clarity.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between font-bold group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span>How long does the average PR application take?</span>
+                        <i class="fas fa-chevron-down text-slate-400 group-hover:text-secondary transition-colors"></i>
+                    </button>
+                    <div class="px-8 pb-6 text-slate-600 dark:text-slate-400 border-t border-slate-50 dark:border-slate-800/50 pt-4 hidden">
+                        Processing times vary strictly by country. For Canada, it's typically 6-12 months, while UK Skilled Worker visas can take as little as 3 weeks. We provide a custom timeline forecast after your first consultation.
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between font-bold group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span>Can I include my family members in my application?</span>
+                        <i class="fas fa-chevron-down text-slate-400 group-hover:text-secondary transition-colors"></i>
+                    </button>
+                    <div class="px-8 pb-6 text-slate-600 dark:text-slate-400 border-t border-slate-50 dark:border-slate-800/50 pt-4 hidden">
+                        Yes, most permanent and business visa categories allow dependants (spouses and children under 18 or 21 depending on the jurisdiction) to migrate with you simultaneously.
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between font-bold group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span>What happens if my visa is rejected?</span>
+                        <i class="fas fa-chevron-down text-slate-400 group-hover:text-secondary transition-colors"></i>
+                    </button>
+                    <div class="px-8 pb-6 text-slate-600 dark:text-slate-400 border-t border-slate-50 dark:border-slate-800/50 pt-4 hidden">
+                        We specialize in appeals and ministerial interventions. If your rejection was due to technical errors, we often secure a reversal through administrative review.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Global Destinations Grid -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="text-4xl font-serif font-bold text-center mb-16">Global Destinations We Master</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Country 1 -->
+                <div class="text-center group cursor-pointer">
+                    <div class="w-24 h-24 mx-auto bg-slate-100 dark:bg-surface-dark rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all text-slate-400 transform group-hover:rotate-12">
+                        <i class="fas fa-map-marked-alt text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold">Canada</h4>
+                </div>
+                <!-- Country 2 -->
+                <div class="text-center group cursor-pointer">
+                    <div class="w-24 h-24 mx-auto bg-slate-100 dark:bg-surface-dark rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all text-slate-400 transform group-hover:rotate-12">
+                        <i class="fas fa-city text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold">United Kingdom</h4>
+                </div>
+                <!-- Country 3 -->
+                <div class="text-center group cursor-pointer">
+                    <div class="w-24 h-24 mx-auto bg-slate-100 dark:bg-surface-dark rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all text-slate-400 transform group-hover:rotate-12">
+                        <i class="fas fa-monument text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold">United States</h4>
+                </div>
+                <!-- Country 4 -->
+                <div class="text-center group cursor-pointer">
+                    <div class="w-24 h-24 mx-auto bg-slate-100 dark:bg-surface-dark rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all text-slate-400 transform group-hover:rotate-12">
+                        <i class="fas fa-tree text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold">Australia</h4>
+                </div>
+                <!-- Country 5 -->
+                <div class="text-center group cursor-pointer">
+                    <div class="w-24 h-24 mx-auto bg-slate-100 dark:bg-surface-dark rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all text-slate-400 transform group-hover:rotate-12">
+                        <i class="fas fa-landmark text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold">European Union</h4>
+                </div>
+                <!-- Country 6 -->
+                <div class="text-center group cursor-pointer">
+                    <div class="w-24 h-24 mx-auto bg-slate-100 dark:bg-surface-dark rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all text-slate-400 transform group-hover:rotate-12">
+                        <i class="fas fa-globe-asia text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold">Singapore</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us section placeholder if needed -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 lg:px-8 text-center">
+            <h2 class="text-4xl font-serif font-bold mb-12">The Global Link Advantage</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-5xl font-bold text-secondary mb-2">98%</div>
+                    <div class="text-slate-300">Success Rate</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-secondary mb-2">20k+</div>
+                    <div class="text-slate-300">Clients Served</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-secondary mb-2">50+</div>
+                    <div class="text-slate-300">Licensed Experts</div>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold text-secondary mb-2">24/7</div>
+                    <div class="text-slate-300">Support Access</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Certifications & Partners -->
+    <section class="py-16 bg-slate-50 dark:bg-black/80 border-t border-slate-100 dark:border-slate-800">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all">
+                <div class="flex items-center gap-3"><i class="fas fa-award text-3xl"></i> <span class="text-lg font-bold">ICC Member</span></div>
+                <div class="flex items-center gap-3"><i class="fas fa-balance-scale text-3xl"></i> <span class="text-lg font-bold">IBA Corporate</span></div>
+                <div class="flex items-center gap-3"><i class="fas fa-handshake text-3xl"></i> <span class="text-lg font-bold">ISO Certified 9001</span></div>
+                <div class="flex items-center gap-3"><i class="fas fa-shield-alt text-3xl"></i> <span class="text-lg font-bold">GDPR Secure</span></div>
+            </div>
+        </div>
+    <!-- Voice of Success (Testimonials) -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold">Voice of Success</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="h-full flex flex-col p-8 bg-slate-50 dark:bg-surface-dark rounded-3xl relative">
+                    <i class="fas fa-quote-left text-4xl text-secondary/20 absolute top-6 left-6"></i>
+                    <div class="relative z-10 flex flex-col h-full justify-between">
+                        <p class="text-slate-600 dark:text-slate-400 italic mb-8 leading-relaxed">"Global Link made my transition to Toronto seamless. Their legal team was with me at every hearing, providing clarity when I felt lost. Truly life-changing service."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="lawyer1.png" class="w-12 h-12 rounded-full object-cover grayscale">
+                            <div>
+                                <h4 class="font-bold">Aarav Sharma</h4>
+                                <span class="text-xs text-slate-400 uppercase tracking-widest">IT Professional, Canada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="h-full flex flex-col p-8 bg-slate-50 dark:bg-surface-dark rounded-3xl relative">
+                    <i class="fas fa-quote-left text-4xl text-secondary/20 absolute top-6 left-6"></i>
+                    <div class="relative z-10 flex flex-col h-full justify-between">
+                        <p class="text-slate-600 dark:text-slate-400 italic mb-8 leading-relaxed">"The level of professionalism stayed consistent from the first call to the final PR approval. They aren't just lawyers; they are partners in your dream."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="lawyer2.png" class="w-12 h-12 rounded-full object-cover grayscale">
+                            <div>
+                                <h4 class="font-bold">Elena Petrov</h4>
+                                <span class="text-xs text-slate-400 uppercase tracking-widest">Entrepreneur, UK</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="h-full flex flex-col p-8 bg-slate-50 dark:bg-surface-dark rounded-3xl relative">
+                    <i class="fas fa-quote-left text-4xl text-secondary/20 absolute top-6 left-6"></i>
+                    <div class="relative z-10 flex flex-col h-full justify-between">
+                        <p class="text-slate-600 dark:text-slate-400 italic mb-8 leading-relaxed">"Document handling was what worried me most, but their encrypted portal and automated checklists made it foolproof. Highly recommend Global Link."</p>
+                        <div class="flex items-center gap-4">
+                            <img src="lawyer3.png" class="w-12 h-12 rounded-full object-cover grayscale">
+                            <div>
+                                <h4 class="font-bold">James Wilson</h4>
+                                <span class="text-xs text-slate-400 uppercase tracking-widest">Researcher, Australia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Languages Support -->
+    <section class="py-16 bg-primary overflow-hidden relative">
+        <div class="absolute inset-0 opacity-10">
+            <div class="flex rotate-12 gap-8 text-8xl font-bold whitespace-nowrap">
+                <span>HELLO • NAMASTE • HOLA • Ciao • BONJOUR • PRIVYET • SASSRIAKAL</span>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10 flex flex-col md:row items-center justify-between gap-8 text-white">
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl font-serif font-bold">Your Language, Our Expertise.</h2>
+                <p class="text-slate-300 mt-2">We offer legal consultations in over 15+ global languages.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-6 py-2 border border-white/20 rounded-lg text-sm bg-white/5 hover:bg-white/20 hover:scale-110 hover:border-white transition-all cursor-default duration-300">Hindi</span>
+                <span class="px-6 py-2 border border-white/20 rounded-lg text-sm bg-white/5 hover:bg-white/20 hover:scale-110 hover:border-white transition-all cursor-default duration-300">Spanish</span>
+                <span class="px-6 py-2 border border-white/20 rounded-lg text-sm bg-white/5 hover:bg-white/20 hover:scale-110 hover:border-white transition-all cursor-default duration-300">French</span>
+                <span class="px-6 py-2 border border-white/20 rounded-lg text-sm bg-white/5 hover:bg-white/20 hover:scale-110 hover:border-white transition-all cursor-default duration-300">Punjabi</span>
+                <span class="px-6 py-2 border border-white/20 rounded-lg text-sm bg-white/5 hover:bg-white/20 hover:scale-110 hover:border-white transition-all cursor-default duration-300">Arabic</span>
+                <span class="px-6 py-2 border border-white/20 rounded-lg text-sm bg-white/5 hover:bg-white/20 hover:scale-110 hover:border-white transition-all cursor-default duration-300">+10 More</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-100 pt-20">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Global Link Branding -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg border border-white/10 shadow-sm">
+                        <h3 class="text-2xl font-bold">GLOBAL LINK</h3>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6">Simplifying the complex world of immigration laws since 2005. Trustworthy, Professional, Passionate.</p>
+                    <div class="flex gap-4 items-center">
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="about.html" class="hover:text-secondary transition-colors">Our Story</a></li>
+                        <li><a href="blog.html" class="hover:text-secondary transition-colors">Latest News</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition-colors">Free Consultation</a></li>
+                        <li><a href="dashboard.html" class="hover:text-secondary transition-colors">Case Tracking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Legal Services</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Student Visas</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Skilled Worker PR</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Family Sponsorship</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Business Immigration</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-slate-400 mb-6 text-sm">Subscribe to receive the latest worldwide immigration policy updates.</p>
+                    <form class="flex flex-col space-y-3">
+                        <div class="relative">
+                            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl outline-none focus:border-secondary transition-colors text-sm">
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-secondary hover:bg-white hover:text-secondary font-bold rounded-xl transition-all shadow-lg shadow-secondary/10 active:scale-95">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Full-width CC Section to match Header -->
+        <div class="pt-8 border-t border-slate-800/50 mt-16 bg-slate-900/50">
+            <div class="container mx-auto px-4 lg:px-8 text-center pb-8">
+                <p class="text-slate-500 text-sm">© 2026 Global Link Immigration Law Firm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scroll-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all z-40 transform hover:scale-110">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>

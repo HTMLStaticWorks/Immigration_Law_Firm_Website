@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+<head>
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme') || 'light';
+            const dir = localStorage.getItem('dir') || 'ltr';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('dir', dir);
+            if (theme === 'dark') document.documentElement.classList.add('dark');
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Global Link Immigration | Free Consultation</title>
+    <meta name="description"
+        content="Reach out to Global Link for a free initial consultation. Expert lawyers ready to hear your case.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A237E',
+                        secondary: '#C0A151',
+                        surface: {
+                            light: '#FFFFFF',
+                            dark: '#1A1A1A'
+                        },
+                        background: {
+                            light: '#F8F9FA',
+                            dark: '#0A0A0A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Header (Consistent) -->
+    <header
+        class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <nav class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between gap-6 sm:gap-8">
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="logo.png" alt="Global Link Logo" class="w-10 h-10 rounded-lg shadow-sm">
+                <span
+                    class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL
+                    LINK</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+                <a href="index.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Home 1</a>
+                <a href="home2.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Home 2</a>
+                <a href="about.html" class="hover:text-primary dark:hover:text-secondary transition-colors">About</a>
+                <a href="blog.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Blog</a>
+                <a href="contact.html"
+                    class="text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary">Contact</a>
+                <a href="dashboard.html"
+                    class="hover:text-primary dark:hover:text-secondary transition-colors">Dashboard</a>
+            </div>
+            <div class="flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse flex-shrink-0">
+                <button onclick="toggleDirection()"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-right-left"></i>
+                </button>
+                <button onclick="toggleTheme()"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+                <a href="login.html"
+                    class="hidden md:block hover:text-primary dark:hover:text-secondary text-sm font-bold transition-colors">Login</a>
+                <a href="signup.html"
+                    class="hidden md:block btn-primary px-6 py-2 text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Sign
+                    Up</a>
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu"
+            class="hidden lg:hidden flex-col space-y-4 px-4 py-6 bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800">
+            <a href="index.html">Home 1</a>
+            <a href="home2.html">Home 2</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html" class="text-primary dark:text-secondary font-semibold">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+            <div class="flex flex-col gap-2 pt-4">
+                <a href="login.html"
+                    class="w-full py-3 text-center border border-slate-200 dark:border-slate-800 rounded-xl font-bold">Login</a>
+                <a href="signup.html"
+                    class="w-full py-3 text-center bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20">Sign
+                    Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="relative py-32 flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="hero_contact.png" alt="Hero background" class="w-full h-full object-cover">
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent dark:from-black/90 dark:via-black/70 rtl:bg-gradient-to-l">
+            </div>
+        </div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="max-w-3xl text-white">
+                <h1 class="text-5xl lg:text-7xl font-serif font-bold mb-6">Let's Discuss Your Case</h1>
+                <p class="text-xl text-slate-200 max-w-2xl">Wherever you are, we're here to guide you toward a successful relocation journey. Whether you are seeking a consultation or tracking an active case, our representatives are ready to provide immediate, expert assistance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Contact Form -->
+                <div class="lg:w-1/2">
+                    <div
+                        class="p-8 lg:p-12 bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 shadow-2xl rounded-3xl animate-fade-in">
+                        <h2 class="text-3xl font-serif font-bold mb-8 text-slate-900 dark:text-white">Consult with an Expert</h2>
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300">First Name</label>
+                                    <input type="text" required
+                                        class="w-full px-4 py-3 bg-background-light dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-lg focus:border-secondary outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300">Last Name</label>
+                                    <input type="text" required
+                                        class="w-full px-4 py-3 bg-background-light dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-lg focus:border-secondary outline-none">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300">Email Address</label>
+                                <input type="email" required
+                                    class="w-full px-4 py-3 bg-background-light dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-lg focus:border-secondary outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300">Service Type</label>
+                                <select required
+                                    class="w-full px-4 py-3 bg-background-light dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-lg focus:border-secondary outline-none">
+                                    <option value="">Select Service...</option>
+                                    <option value="visa">Visa Application</option>
+                                    <option value="pr">Permanent Residency</option>
+                                    <option value="citizenship">Citizenship</option>
+                                    <option value="legal">Legal Representation</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300">Case Summary</label>
+                                <textarea rows="5" placeholder="Briefly describe your situation..."
+                                    class="w-full px-4 py-3 bg-background-light dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-lg focus:border-secondary outline-none"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full py-4 bg-primary hover:bg-opacity-90 text-white font-bold rounded-lg transition-all shadow-lg shadow-primary/20">SEND
+                                CONSULTATION REQUEST</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="lg:w-1/2 space-y-12">
+                    <div>
+                        <h2 class="text-3xl font-serif font-bold mb-8 text-slate-900 dark:text-white">Our Global Offices</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <div
+                                    class="w-12 h-12 bg-secondary/10 flex items-center justify-center rounded-xl mb-4 text-secondary">
+                                    <i class="fas fa-map-location-dot"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">North America Hub</h4>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">123 Legal Way, Toronto, ON M4B 1V9, Canada</p>
+                            </div>
+                            <div>
+                                <div
+                                    class="w-12 h-12 bg-secondary/10 flex items-center justify-center rounded-xl mb-4 text-secondary">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h4 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Direct Phone</h4>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm">Local: +1 (555) 987-6543<br>Toll-Free: 1-800-LAW-LINK
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Integration (Mockup with real iframe) -->
+                    <div
+                        class="rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl h-96 relative">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.95033987593!2d-74.00594132338242!3d40.718272971392764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598a97815b5f%3A0x7d5226f6e8976226!2sManhattan%20Criminal%20Court!5e0!3m2!1sen!2sus!4v1711361234567!5m2!1sen!2sus"
+                            class="w-full h-full border-none" loading="lazy"></iframe>
+                        <div
+                            class="absolute bottom-4 left-4 p-4 bg-white dark:bg-black/80 rounded-xl shadow-lg border border-slate-100 dark:border-slate-800 text-xs">
+                            <span class="block font-bold mb-1">Office Hours</span>
+                            <span class="text-slate-500 italic block">Mon - Fri: 9:00 AM - 6:00 PM EST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-slate-50 dark:bg-black/20">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-6 text-slate-900 dark:text-white">Common Questions</h2>
+                <p class="text-slate-600 dark:text-slate-400">Everything you need to know about starting your consultation with our legal experts.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="p-8 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+                    <h4 class="text-lg font-bold mb-3 text-slate-900 dark:text-white">Is the first consultation free?</h4>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Yes, we provide a 15-minute initial assessment to understand your case and determine the basic eligibility pathways.</p>
+                </div>
+                <div class="p-8 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+                    <h4 class="text-lg font-bold mb-3 text-slate-900 dark:text-white">What documents should I prepare?</h4>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Please have your current passport, any previous visa rejection letters, and recent educational/employment certificates ready.</p>
+                </div>
+                <div class="p-8 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+                    <h4 class="text-lg font-bold mb-3 text-slate-900 dark:text-white">How long does the process take?</h4>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Processing times vary by country and visa type, but typically range from 3 to 18 months depending on local authority efficiency.</p>
+                </div>
+                <div class="p-8 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+                    <h4 class="text-lg font-bold mb-3 text-slate-900 dark:text-white">Can you help with emergency appeals?</h4>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Absolutely. Our emergency litigation team can file immediate stay-of-removal requests or appeal urgent visa rejections.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Network Section -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-end justify-between mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-serif font-bold mb-6 text-slate-900 dark:text-white">Global Presence</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Our network spans across major international hubs to provide local expertise in a global context.</p>
+                </div>
+                <div class="flex gap-4">
+                   <div class="px-6 py-2 bg-secondary/10 text-secondary rounded-full font-bold text-sm">4 Continents</div>
+                   <div class="px-6 py-2 bg-primary/10 text-primary rounded-full font-bold text-sm">24/7 Support</div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- London Office -->
+                <div class="group p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-secondary transition-all cursor-pointer">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-4xl">🇬🇧</span>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">London, UK</h4>
+                            <p class="text-xs text-slate-500">European Operations</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Canary Wharf, Level 24, One Canada Square, E14 5AB</p>
+                    <a href="mailto:london@globallink.com" class="text-secondary font-bold text-xs group-hover:underline">london@globallink.com</a>
+                </div>
+                <!-- Dubai Office -->
+                <div class="group p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-secondary transition-all cursor-pointer">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-4xl">🇦🇪</span>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">Dubai, UAE</h4>
+                            <p class="text-xs text-slate-500">Middle East Hub</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Burj Daman Tower, DIFC, Floor 15, Office 1201</p>
+                    <a href="mailto:uae@globallink.com" class="text-secondary font-bold text-xs group-hover:underline">uae@globallink.com</a>
+                </div>
+                <!-- Sydney Office -->
+                <div class="group p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-secondary transition-all cursor-pointer">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-4xl">🇦🇺</span>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">Sydney, AU</h4>
+                            <p class="text-xs text-slate-500">Oceania Division</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Barangaroo International Towers, Tower 3, NSW 2000</p>
+                    <a href="mailto:sydney@globallink.com" class="text-secondary font-bold text-xs group-hover:underline">sydney@globallink.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Consistent) -->
+    <footer class="bg-slate-900 text-slate-100 pt-20">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Global Link Branding -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg border border-white/10 shadow-sm">
+                        <h3 class="text-2xl font-bold">GLOBAL LINK</h3>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6">Available 24/7 for emergency legal assistance.
+                        Trusted worldwide.</p>
+                    <div class="flex gap-4 items-center">
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="about.html" class="hover:text-secondary transition-colors">Our Story</a></li>
+                        <li><a href="blog.html" class="hover:text-secondary transition-colors">Latest News</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition-colors">Free Consultation</a>
+                        </li>
+                        <li><a href="dashboard.html" class="hover:text-secondary transition-colors">Case Tracking</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Legal Services</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Student Visas</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Skilled Worker PR</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Family Sponsorship</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Business Immigration</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-slate-400 mb-6 text-sm">Subscribe to receive the latest worldwide immigration policy
+                        updates.</p>
+                    <form class="flex flex-col space-y-3">
+                        <div class="relative">
+                            <input type="email" placeholder="Email Address"
+                                class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl outline-none focus:border-secondary transition-colors text-sm">
+                        </div>
+                        <button type="submit"
+                            class="w-full py-3 bg-secondary hover:bg-opacity-90 text-white font-bold rounded-xl transition-all shadow-lg shadow-secondary/10">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Full-width CC Section to match Header -->
+        <div class="pt-8 border-t border-slate-800/50 mt-16 bg-slate-900/50">
+            <div class="container mx-auto px-4 lg:px-8 text-center pb-8">
+                <p class="text-slate-500 text-sm">© 2026 Global Link Immigration Law Firm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>    <!-- Scroll to Top -->
+    <button id="scroll-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all z-40 transform hover:scale-110">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="main.js"></script>
+    <script>
+        document.getElementById('contact-form').onsubmit = (e) => {
+            e.preventDefault();
+            alert('Consultation request sent! Our team will contact you within 24 hours.');
+            e.target.reset();
+        };
+    </script>
+</body>
+
+</html>

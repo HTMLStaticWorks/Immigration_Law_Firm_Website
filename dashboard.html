@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            const dir = localStorage.getItem('dir') || 'ltr';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('dir', dir);
+            if (theme === 'dark') document.documentElement.classList.add('dark');
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard | Global Link Immigration</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A237E',
+                        secondary: '#C0A151',
+                        surface: {
+                            light: '#FFFFFF',
+                            dark: '#111827'
+                        },
+                        background: {
+                            light: '#F8F9FA',
+                            dark: '#0A0A0A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col md:flex-row">
+
+    <!-- Sidebar (Desktop) / Header (Mobile) -->
+    <aside id="sidebar" class="hidden md:flex md:w-64 lg:w-72 bg-blue-50 dark:bg-slate-900 border-r border-blue-100 dark:border-slate-800 flex-col sticky top-0 h-screen transition-all z-50 overflow-y-auto">
+        <div class="p-8">
+            <a href="index.html" class="flex items-center gap-3 mb-10">
+                <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg shadow-sm border border-slate-200 dark:border-white/10">
+                <span class="text-2xl font-bold bg-gradient-to-r from-primary dark:from-white via-primary/50 dark:via-white to-secondary dark:to-secondary bg-clip-text text-transparent tracking-tight">GLOBAL LINK</span>
+            </a>
+            <div class="space-y-4">
+                <a href="javascript:void(0)" onclick="showSection('dashboard')" class="nav-link flex items-center gap-4 px-4 py-3 bg-blue-100 dark:bg-white/10 text-primary dark:text-white rounded-xl font-bold transition-all hover:bg-blue-200 dark:hover:bg-white/20 active:scale-95"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <a href="javascript:void(0)" onclick="showSection('documents')" class="nav-link flex items-center gap-4 px-4 py-3 text-slate-500 dark:text-slate-200 hover:bg-blue-100 dark:hover:bg-white/5 hover:text-primary dark:hover:text-white rounded-xl transition-all"><i class="fas fa-folder-open"></i> My Documents</a>
+                <a href="javascript:void(0)" onclick="showSection('messages')" class="nav-link flex items-center gap-4 px-4 py-3 text-slate-500 dark:text-slate-200 hover:bg-blue-100 dark:hover:bg-white/5 hover:text-primary dark:hover:text-white rounded-xl transition-all"><i class="fas fa-comments"></i> Messages <span class="ml-auto bg-secondary text-white px-2 rounded-full text-[10px]">3</span></a>
+                <a href="javascript:void(0)" onclick="showSection('notifications')" class="nav-link flex items-center gap-4 px-4 py-3 text-slate-500 dark:text-slate-200 hover:bg-blue-100 dark:hover:bg-white/5 hover:text-primary dark:hover:text-white rounded-xl transition-all"><i class="fas fa-bell"></i> Notifications</a>
+                <a href="javascript:void(0)" onclick="showSection('settings')" class="nav-link flex items-center gap-4 px-4 py-3 text-slate-500 dark:text-slate-200 hover:bg-blue-100 dark:hover:bg-white/5 hover:text-primary dark:hover:text-white rounded-xl transition-all"><i class="fas fa-cog"></i> Settings</a>
+            </div>
+        </div>
+        <div class="mt-auto p-8 border-t border-blue-100 dark:border-slate-800">
+            <div class="mb-8 flex items-center justify-between p-4 bg-white/50 dark:bg-white/5 rounded-2xl border border-blue-100 dark:border-white/10">
+                <span class="text-xs text-slate-500 dark:text-slate-400 font-bold tracking-widest uppercase">Alerts</span>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" value="" class="sr-only peer" checked>
+                    <div class="w-11 h-6 bg-slate-200 dark:bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+                </label>
+            </div>
+            <div class="flex items-center gap-4 mb-4 group cursor-pointer">
+                <img src="lawyer1.png" class="w-10 h-10 rounded-full border border-blue-200 dark:border-white/20 group-hover:border-secondary transition-colors">
+                <div class="text-slate-700 dark:text-white text-sm">
+                    <div class="font-bold">John Doe</div>
+                    <div class="text-slate-500 dark:text-slate-400 text-xs">Express Entry Case</div>
+                </div>
+            </div>
+            <a href="index.html" class="flex items-center gap-4 text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-white transition-opacity hover:underline font-bold"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="md:hidden flex items-center justify-between p-4 bg-primary text-white sticky top-0 z-50">
+        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">GLOBAL LINK</span>
+        <div class="flex items-center gap-4">
+            <button onclick="toggleTheme()" class="p-2"><i class="fas fa-sun dark:hidden"></i><i class="fas fa-moon hidden dark:inline"></i></button>
+            <button onclick="document.getElementById('sidebar').classList.toggle('hidden')" class="p-2"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-x-hidden">
+        <!-- Top Bar (Search + Actions) -->
+        <div class="bg-white dark:bg-surface-dark border-b border-slate-200 dark:border-slate-800 p-6 flex flex-col md:flex-row items-center justify-between gap-6 sticky top-0 z-40">
+            <!-- Left Corner: Upload -->
+            <div class="order-2 md:order-1">
+                <button class="btn-primary py-2 px-6 flex items-center gap-2 shadow-lg shadow-secondary/20 hover:scale-105 active:scale-95 transition-all"><i class="fas fa-plus"></i> Upload Document</button>
+            </div>
+
+            <!-- Center focal point: Dashboard Title -->
+            <div class="flex items-center gap-4 order-1 md:order-2">
+                <h1 class="text-2xl font-serif font-bold text-slate-800 dark:text-white">Client Dashboard</h1>
+                <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full uppercase">Case Active</span>
+            </div>
+            
+            <!-- Right Corner: Toggles -->
+            <div class="flex items-center gap-4 order-3">
+                <button onclick="toggleTheme()" class="p-3 bg-slate-50 dark:bg-black/20 rounded-xl hover:bg-secondary/10 transition-colors">
+                     <i class="fas fa-moon dark:hidden"></i>
+                     <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+                <button onclick="toggleDirection()" class="p-3 bg-slate-50 dark:bg-black/20 rounded-full hover:bg-secondary/10 transition-colors">
+                     <i class="fas fa-right-left"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dynamic Content Sections -->
+        <div id="content-sections" class="p-6 lg:p-10">
+            
+            <!-- Dashboard View -->
+            <div id="section-dashboard" class="space-y-10">
+                <!-- Case Progress Alert (Already added earlier) -->
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- ... existing stats ... -->
+                    <!-- Case Status -->
+                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover cursor-default">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-check"></i></div>
+                            <div class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase">Case Status</div>
+                        </div>
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white">In Review</div>
+                        <div class="mt-2 text-xs text-blue-500 dark:text-blue-400 font-bold">Next Update: 48h</div>
+                    </div>
+                    <!-- Docs Uploaded -->
+                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center"><i class="fas fa-file-invoice"></i></div>
+                            <div class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase">Docs Uploaded</div>
+                        </div>
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white">14 / 15</div>
+                        <div class="mt-2 w-full bg-slate-100 dark:bg-black/20 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-green-500 h-full" style="width: 93%"></div>
+                        </div>
+                    </div>
+                    <!-- Financials -->
+                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-xl flex items-center justify-center"><i class="fas fa-wallet"></i></div>
+                            <div class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase">Total Professional Fees</div>
+                        </div>
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white">$4,250</div>
+                        <div class="mt-2 text-xs text-green-500 dark:text-green-400 font-bold">Paid: 100% (Settled)</div>
+                    </div>
+                    <!-- Days in System -->
+                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center"><i class="fas fa-hourglass-half"></i></div>
+                            <div class="text-sm font-bold text-slate-700 dark:text-slate-200 uppercase">Time Elapsed</div>
+                        </div>
+                        <div class="text-3xl font-bold text-slate-900 dark:text-white">42 Days</div>
+                        <div class="mt-2 text-xs text-slate-400">Since Initial Filing</div>
+                    </div>
+                </div>
+
+                <!-- Case Progress Timeline -->
+                <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
+                    <h3 class="text-xl font-serif font-bold mb-10 text-slate-800 dark:text-white flex items-center gap-4"><i class="fas fa-stream text-secondary"></i> Case Milestones</h3>
+                    <div class="relative space-y-12 after:absolute after:left-7 after:top-0 after:h-full after:w-0.5 after:bg-slate-100 dark:after:bg-slate-800">
+                        <!-- Done -->
+                        <div class="relative z-10 flex items-start gap-6 hover:bg-slate-50/50 dark:hover:bg-black/10 p-4 -ml-4 rounded-2xl transition-colors">
+                            <div class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center ring-8 ring-green-100 dark:ring-green-900/20"><i class="fas fa-check"></i></div>
+                            <div>
+                                <div class="font-bold text-lg text-slate-800 dark:text-white">Initial Submission Complete</div>
+                                <p class="text-slate-700 dark:text-slate-400 text-sm">All base forms and identification documents received.</p>
+                                <span class="text-xs text-slate-400 italic">Jan 12, 2026</span>
+                            </div>
+                        </div>
+                        <!-- Active -->
+                        <div class="relative z-10 flex items-start gap-6 group">
+                            <div class="w-14 h-14 bg-secondary text-white rounded-full flex items-center justify-center ring-8 ring-secondary/10 group-hover:scale-110 transition-transform"><i class="fas fa-spinner animate-spin"></i></div>
+                            <div>
+                                <div class="font-bold text-lg text-slate-800 dark:text-white">Government Review Phase</div>
+                                <p class="text-slate-700 dark:text-slate-400 text-sm">Case is currently being adjudicated by regional authorities.</p>
+                                <span class="text-xs text-secondary font-bold">Estimated completion: April 15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents View (Hidden Initially) -->
+            <div id="section-documents" class="hidden space-y-10">
+                <div class="bg-primary p-12 rounded-[3rem] text-white flex flex-col md:row items-center justify-between gap-8">
+                    <div>
+                        <h2 class="text-4xl font-serif font-bold mb-4">Secure Document Vault</h2>
+                        <p class="text-slate-300">All your sensitive legal documents are protected by AES-256 military-grade encryption.</p>
+                    </div>
+                    <button class="bg-secondary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-white hover:text-secondary transition-all"><i class="fas fa-upload"></i> Upload new file</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Doc Item 1 -->
+                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl hover:border-secondary/30 transition-all group">
+                        <div class="w-full h-40 bg-slate-50 dark:bg-black/20 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
+                            <i class="fas fa-file-pdf text-6xl text-red-500/50 group-hover:scale-125 transition-transform"></i>
+                            <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors"></div>
+                        </div>
+                        <h4 class="font-bold text-lg mb-1">Passport_2026_Main.pdf</h4>
+                        <p class="text-xs text-slate-400 dark:text-slate-300 mb-6 uppercase tracking-wider">Identity Document • 4.2 MB</p>
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-full uppercase">Verified</span>
+                            <div class="flex gap-2">
+                                <button class="w-10 h-10 border border-slate-100 dark:border-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-50"><i class="fas fa-download"></i></button>
+                                <button class="w-10 h-10 border border-slate-100 dark:border-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-50 text-red-500"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Doc Item 2 -->
+                     <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl hover:border-secondary/30 transition-all group">
+                        <div class="w-full h-40 bg-slate-50 dark:bg-black/20 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
+                            <i class="fas fa-file-word text-6xl text-blue-500/50 group-hover:scale-125 transition-transform"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-1">Educational_Degrees_Cert.docx</h4>
+                        <p class="text-xs text-slate-400 mb-6 uppercase tracking-wider">Academic Evidence • 2.1 MB</p>
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-full uppercase">In Review</span>
+                            <div class="flex gap-2">
+                                <button class="w-10 h-10 border border-slate-100 dark:border-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-50"><i class="fas fa-download"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="section-notifications" class="hidden space-y-10">
+                <div class="bg-white dark:bg-surface-dark p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800">
+                    <h2 class="text-3xl font-serif font-bold mb-8 text-slate-900 dark:text-white">Communication Preferences</h2>
+                    <div class="space-y-8">
+                        <div class="flex items-center justify-between p-6 bg-slate-50 dark:bg-black/20 rounded-2xl hover:border-secondary transition-all border border-transparent">
+                            <div class="flex items-center gap-6">
+                                <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <div class="font-bold text-lg text-slate-800 dark:text-white">Email Notifications</div>
+                                    <p class="text-sm text-slate-500 dark:text-slate-400">Receive case updates and newsletters via email.</p>
+                                </div>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer scale-125">
+                                <input type="checkbox" value="" class="sr-only peer" checked>
+                                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-secondary"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between p-6 bg-slate-50 dark:bg-black/20 rounded-2xl border border-transparent hover:border-secondary transition-all">
+                            <div class="flex items-center gap-6">
+                                <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-sms"></i></div>
+                                <div>
+                                    <div class="font-bold text-lg text-slate-800 dark:text-white">SMS Alerts</div>
+                                    <p class="text-sm text-slate-500">Get critical time-sensitive alerts on your phone.</p>
+                                </div>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer scale-125">
+                                <input type="checkbox" value="" class="sr-only peer">
+                                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-secondary"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings View -->
+            <div id="section-settings" class="hidden space-y-10">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    <!-- Profile Management -->
+                    <div class="lg:col-span-2 bg-white dark:bg-surface-dark p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800">
+                        <h2 class="text-3xl font-serif font-bold mb-10 text-slate-900 dark:text-white">Account Settings</h2>
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-500 uppercase mb-2">Full Name</label>
+                                    <input type="text" value="John Doe" class="w-full px-6 py-4 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-slate-800 rounded-2xl focus:ring-2 focus:ring-secondary outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-slate-500 uppercase mb-2">Email Address</label>
+                                    <input type="email" value="john.doe@example.com" class="w-full px-6 py-4 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-slate-800 rounded-2xl focus:ring-2 focus:ring-secondary outline-none transition-all">
+                                </div>
+                            </div>
+                            <button class="btn-primary py-4 px-10 rounded-2xl mt-4">Save Profile Changes</button>
+                        </div>
+                    </div>
+
+                    <!-- App Appearance -->
+                    <div class="bg-white dark:bg-surface-dark p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <h2 class="text-2xl font-serif font-bold mb-8">Personalization</h2>
+                            <div class="space-y-8">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold text-slate-700 dark:text-slate-200">Dark Mode</span>
+                                    <button onclick="toggleTheme()" class="p-3 bg-slate-100 dark:bg-black/20 rounded-xl hover:bg-secondary/20 transition-all">
+                                        <i class="fas fa-moon dark:hidden"></i>
+                                        <i class="fas fa-sun hidden dark:inline"></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold text-slate-700 dark:text-slate-200">RTL Layout</span>
+                                    <button onclick="toggleDirection()" class="p-3 bg-slate-100 dark:bg-black/20 rounded-xl hover:bg-secondary/20 transition-all">
+                                        <i class="fas fa-right-left"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!-- Bottom Row: Messages & Files -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <!-- Legal Team (New) -->
+                <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col card-dynamic-hover">
+                    <h3 class="text-xl font-serif font-bold mb-8">Assigned Legal Team</h3>
+                    <div class="space-y-6 flex-1">
+                        <div class="flex items-center gap-4">
+                            <img src="lawyer1.png" class="w-14 h-14 rounded-full border-2 border-secondary/20">
+                            <div>
+                                <div class="font-bold text-slate-800 dark:text-white">Marcus Sterling</div>
+                                <div class="text-xs text-secondary font-bold uppercase tracking-wider">Senior Attorney</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="lawyer2.png" class="w-14 h-14 rounded-full border-2 border-secondary/20">
+                            <div>
+                                <div class="font-bold text-slate-800 dark:text-white">Elena Vance</div>
+                                <div class="text-xs text-secondary font-bold uppercase tracking-wider">Processing Agent</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="lawyer3.png" class="w-14 h-14 rounded-full border-2 border-secondary/20 grayscale">
+                            <div>
+                                <div class="font-bold text-slate-800 dark:text-white">Julian Thorne</div>
+                                <div class="text-xs text-secondary font-bold uppercase tracking-wider">Compliance Officer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-full py-4 mt-8 border border-slate-100 dark:border-slate-800 rounded-2xl text-primary font-bold hover:bg-slate-50 transition-colors">Request Call Back</button>
+                </div>
+
+                <!-- Messaging -->
+                <div class="lg:col-span-1 bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full card-dynamic-hover">
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="text-xl font-serif font-bold text-slate-800 dark:text-white">Secure Messages</h3>
+                        <a href="#" class="text-primary font-bold text-sm">Open Full Chat</a>
+                    </div>
+                    <div class="space-y-6 flex-1">
+                       <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
+                            <img src="lawyer1.png" class="w-12 h-12 rounded-full ring-2 ring-secondary">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-slate-800 dark:text-white">Marcus Sterling</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">2h ago</span>
+                                </div>
+                                <p class="text-sm text-slate-500 line-clamp-1">Hi John, I've reviewed your latest tax returns. Everything looks perfect.</p>
+                            </div>
+                       </div>
+                       <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
+                            <img src="lawyer2.png" class="w-12 h-12 rounded-full border border-slate-200">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-slate-800 dark:text-white">Elena Vance</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">Yesterday</span>
+                                </div>
+                                <p class="text-sm text-slate-500 line-clamp-1">The biometric appointment is scheduled for next Tuesday.</p>
+                            </div>
+                       </div>
+                       <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
+                            <img src="lawyer3.png" class="w-12 h-12 rounded-full border border-slate-200">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-slate-800 dark:text-white">Julian Thorne</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">2d ago</span>
+                                </div>
+                                <p class="text-sm text-slate-500 line-clamp-1">Compliance review on your company sponsors is underway.</p>
+                            </div>
+                       </div>
+                       <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
+                            <img src="lawyer4.png" class="w-12 h-12 rounded-full border border-slate-200">
+                            <div class="flex-1">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="font-bold text-slate-800 dark:text-white">Sarah Jenkins</span>
+                                    <span class="text-[10px] text-slate-400 uppercase">4d ago</span>
+                                </div>
+                                <p class="text-sm text-slate-500 line-clamp-1">I've attached the translated educational certificates for your review.</p>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+
+                <!-- Document Tracking -->
+                <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full">
+                    <h3 class="text-xl font-serif font-bold mb-8 text-slate-800 dark:text-white">Recent Documents</h3>
+                    <div class="space-y-4 flex-1">
+                        <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-file-pdf text-red-500 text-xl"></i>
+                                <div>
+                                    <div class="font-bold text-sm text-slate-800 dark:text-white">Passport_Scan.pdf</div>
+                                    <div class="text-[10px] text-slate-400">Uploaded Mar 20 • 2.4 MB</div>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] uppercase font-bold rounded">Verified</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-file-word text-blue-500 text-xl"></i>
+                                <div>
+                                    <div class="font-bold text-sm text-slate-800 dark:text-white">Emp_Letter.docx</div>
+                                    <div class="text-[10px] text-slate-400">Uploaded Mar 15 • 1.1 MB</div>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 bg-yellow-100 text-yellow-700 text-[10px] uppercase font-bold rounded">In Review</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-file-image text-purple-500 text-xl"></i>
+                                <div>
+                                    <div class="font-bold text-sm text-slate-800 dark:text-white">Digital_Photo_HQ.jpg</div>
+                                    <div class="text-[10px] text-slate-400">Uploaded Mar 10 • 0.8 MB</div>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] uppercase font-bold rounded">Verified</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-file-contract text-orange-500 text-xl"></i>
+                                <div>
+                                    <div class="font-bold text-sm text-slate-800 dark:text-white">Retainer_Agre.pdf</div>
+                                    <div class="text-[10px] text-slate-400">Uploaded Mar 05 • 3.2 MB</div>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] uppercase font-bold rounded">Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scroll to Top -->
+    <button id="scroll-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all z-40 transform hover:scale-110">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="main.js"></script>
+    <script>
+        // Tab Section Switcher
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = ['dashboard', 'documents', 'messages', 'notifications', 'settings'];
+            sections.forEach(s => {
+                const el = document.getElementById('section-' + s);
+                if (el) el.classList.add('hidden');
+            });
+            
+            // Show target section
+            const target = document.getElementById('section-' + sectionId);
+            if (target) target.classList.remove('hidden');
+
+            // Update Sidebar UI
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('bg-blue-100', 'text-primary', 'dark:bg-white/10', 'dark:text-white', 'font-bold');
+                link.classList.add('text-slate-500', 'dark:text-slate-200');
+            });
+            const activeLink = document.querySelector(`[onclick="showSection('${sectionId}')"]`);
+            if (activeLink) {
+                activeLink.classList.add('bg-blue-100', 'text-primary', 'dark:bg-white/10', 'dark:text-white', 'font-bold');
+                activeLink.classList.remove('text-slate-500', 'dark:text-slate-200');
+            }
+        }
+
+        // Initialize with Dashboard
+        showSection('dashboard');
+    </script>
+</body>
+</html>

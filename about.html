@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            const dir = localStorage.getItem('dir') || 'ltr';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('dir', dir);
+            if (theme === 'dark') document.documentElement.classList.add('dark');
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Global Link Immigration | Our Story & Team</title>
+    <meta name="description" content="Meet the expert lawyers at Global Link. Our mission is to provide compassionate and professional immigration legal assistance.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A237E',
+                        secondary: '#C0A151',
+                        surface: {
+                            light: '#FFFFFF',
+                            dark: '#111827'
+                        },
+                        background: {
+                            light: '#F8F9FA',
+                            dark: '#0A0A0A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 transition-colors duration-300">
+
+    <!-- Header (Consistent) -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <nav class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between gap-6 sm:gap-8">
+            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="logo.png" alt="Global Link Logo" class="w-10 h-10 rounded-lg shadow-sm">
+                <span class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</span>
+            </a>
+            <div class="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+                <a href="index.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Home 1</a>
+                <a href="home2.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Home 2</a>
+                <a href="about.html" class="text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary">About</a>
+                <a href="blog.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Blog</a>
+                <a href="contact.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Contact</a>
+                <a href="dashboard.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Dashboard</a>
+            </div>
+            <div class="flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse flex-shrink-0">
+                <button onclick="toggleDirection()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-right-left"></i>
+                </button>
+                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+                <a href="login.html" class="hidden md:block hover:text-primary dark:hover:text-secondary text-sm font-bold transition-colors">Login</a>
+                <a href="signup.html" class="hidden md:block btn-primary px-6 py-2 text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Sign Up</a>
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-4 px-4 py-6 bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800">
+            <a href="index.html">Home 1</a>
+            <a href="home2.html">Home 2</a>
+            <a href="about.html" class="text-primary dark:text-secondary font-semibold">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+            <div class="flex flex-col gap-2 pt-4">
+                <a href="login.html" class="w-full py-3 text-center border border-slate-200 dark:border-slate-800 rounded-xl font-bold">Login</a>
+                <a href="signup.html" class="w-full py-3 text-center bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Hero -->
+    <section class="relative py-32 flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="hero_about.png" alt="Hero background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent dark:from-black/90 dark:via-black/70 rtl:bg-gradient-to-l"></div>
+        </div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="max-w-3xl text-white">
+                <h1 class="text-5xl lg:text-7xl font-serif font-bold mb-6">Our Story & Mission</h1>
+                <p class="text-xl text-slate-200 max-w-2xl">Building global bridges between aspirations and legal
+                    certainty since 2005. Our dedicated team of experts works tirelessly to transform complex regulations into clear, actionable pathways for your family and career.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-serif font-bold mb-8 text-slate-900 dark:text-white">Two Decades of Legal Excellence in Immigration</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Founded in 2005, Global Link started with a simple belief: everyone deserves a fair chance at a better life. We've spent the last 20 years refining our expertise to navigate the complex world of immigration laws with unmatched clarity and success.</p>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Our firm is built on three core pillars: Integrity, Precision, and Persistence. We don't just process applications; we advocate for your future with the same passion we would for our own families.</p>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <div class="text-4xl font-bold text-primary mb-2">15,000+</div>
+                            <div class="text-slate-500 font-semibold p-1">Approved Cases</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-secondary mb-2">99%</div>
+                            <div class="text-slate-500 font-semibold p-1">Satisfied Clients</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="hero.png" alt="Office atmosphere" class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Methodology & History -->
+    <section class="py-16 bg-primary text-white overflow-hidden relative">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="relative">
+                    <h2 class="text-4xl font-serif font-bold mb-8">The Global Link Methodology</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <i class="fas fa-microscope text-3xl text-secondary"></i>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Phase 1: Forensic Document Audit</h4>
+                                <p class="text-slate-300">We don't just check documents; we perform a deep forensic audit to ensure zero discrepancies before submission, reducing rejection rates by 40%.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <i class="fas fa-gavel text-3xl text-secondary"></i>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Phase 2: Aggressive Legal Advocacy</h4>
+                                <p class="text-slate-300">Our lawyers are trained in aggressive advocacy, ensuring that your case is presented with the highest level of legal authority to border agencies.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <i class="fas fa-globe text-3xl text-secondary"></i>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Phase 3: Post-Landing Integration</h4>
+                                <p class="text-slate-300">Our job isn't done at visa approval. We assist with tax ID setups, housing leads, and corporate integration to ensure your new life starts smoothly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/5 p-12 rounded-3xl border border-white/10 backdrop-blur-sm">
+                    <h3 class="text-2xl font-serif font-bold mb-6 text-secondary underline underline-offset-8">Our Legacy: Since 2005</h3>
+                    <p class="text-slate-300 mb-6 leading-relaxed">Global Link was established in a small office in Toronto with a team of only three lawyers. Today, we stand as a global powerhouse with a presence in four continents and a track record that includes some of the most complex high-profile corporate relocations in recent history.</p>
+                    <p class="text-slate-300 leading-relaxed">Our philosophy remains unchanged: <strong>Precision is the difference between a visa and a rejection.</strong> We invest heavily in proprietary AI document-sorting technology and maintain direct lines of communication with ministerial-level authorities across 15+ jurisdictions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-slate-50 dark:bg-black/50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4">Meet Our Lead Experts</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Our lawyers are recognized experts in regional and national immigration policies.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-center hover:-translate-y-2 transition-transform">
+                    <img src="lawyer1.png" alt="Marcus Sterling" class="w-32 h-32 mx-auto rounded-full mb-6 object-cover border-4 border-secondary/20">
+                    <h3 class="text-xl font-bold mb-2">Marcus Sterling</h3>
+                    <div class="text-secondary font-semibold mb-4 text-sm uppercase">Senior Partner</div>
+                    <p class="text-slate-500 text-sm mb-6">Expert in business and skilled worker immigration with 20+ years of experience.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-center hover:-translate-y-2 transition-transform">
+                    <img src="lawyer2.png" alt="Elena Vance" class="w-32 h-32 mx-auto rounded-full mb-6 object-cover border-4 border-secondary/20">
+                    <h3 class="text-xl font-bold mb-2">Elena Vance</h3>
+                    <div class="text-secondary font-semibold mb-4 text-sm uppercase">Lead Counsel</div>
+                    <p class="text-slate-500 text-sm mb-6">Specializes in family reunification and asylum representation. Passionate advocate.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-center hover:-translate-y-2 transition-transform">
+                    <img src="lawyer3.png" alt="Julian Thorne" class="w-32 h-32 mx-auto rounded-full mb-6 object-cover border-4 border-secondary/20">
+                    <h3 class="text-xl font-bold mb-2">Julian Thorne</h3>
+                    <div class="text-secondary font-semibold mb-4 text-sm uppercase">Compliance Officer</div>
+                    <p class="text-slate-500 text-sm mb-6">Ensures every filing adheres to the latest global regulatory shifts. Precision-driven.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-center hover:-translate-y-2 transition-transform">
+                    <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg" alt="Sarah Jenkins" class="w-32 h-32 mx-auto rounded-full mb-6 object-cover border-4 border-secondary/20">
+                    <h3 class="text-xl font-bold mb-2">Sarah Jenkins</h3>
+                    <div class="text-secondary font-semibold mb-4 text-sm uppercase">Visa Specialist</div>
+                    <p class="text-slate-500 text-sm mb-6">Specializes in Tier-2 and Skilled Worker pathways for tech enterprises.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 5 -->
+                <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-center hover:-translate-y-2 transition-transform">
+                    <img src="https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg" alt="Ahmad Al-Farsi" class="w-32 h-32 mx-auto rounded-full mb-6 object-cover border-4 border-secondary/20">
+                    <h3 class="text-xl font-bold mb-2">Ahmad Al-Farsi</h3>
+                    <div class="text-secondary font-semibold mb-4 text-sm uppercase">Global Liaison</div>
+                    <p class="text-slate-500 text-sm mb-6">Bridges the gap for Middle Eastern investors and HNWI legal relocation.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 6 -->
+                <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-center hover:-translate-y-2 transition-transform">
+                    <img src="https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg" alt="Isabella Rossi" class="w-32 h-32 mx-auto rounded-full mb-6 object-cover border-4 border-secondary/20">
+                    <h3 class="text-xl font-bold mb-2">Isabella Rossi</h3>
+                    <div class="text-secondary font-semibold mb-4 text-sm uppercase">EU Policy Expert</div>
+                    <p class="text-slate-500 text-sm mb-6">An authority on Schengen zone mobility and European citizenship laws.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 7 -->
+                <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-center hover:-translate-y-2 transition-transform">
+                    <img src="https://images.pexels.com/photos/1181682/pexels-photo-1181682.jpeg" alt="Dr. Aris Thorne" class="w-32 h-32 mx-auto rounded-full mb-6 object-cover border-4 border-secondary/20">
+                    <h3 class="text-xl font-bold mb-2">Dr. Aris Thorne</h3>
+                    <div class="text-secondary font-semibold mb-4 text-sm uppercase">Constitutional Expert</div>
+                    <p class="text-slate-500 text-sm mb-6">Navigating high-level legal challenges in constitutional immigration law.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <!-- Team Member 8 -->
+                <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-800 text-center hover:-translate-y-2 transition-transform">
+                    <img src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg" alt="Li Jing" class="w-32 h-32 mx-auto rounded-full mb-6 object-cover border-4 border-secondary/20">
+                    <h3 class="text-xl font-bold mb-2">Li Jing</h3>
+                    <div class="text-secondary font-semibold mb-4 text-sm uppercase">APAC Strategist</div>
+                    <p class="text-slate-500 text-sm mb-6">Leading visa strategies for corporate expansions across the Asia-Pacific region.</p>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Responsibility & Ethics -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex flex-col md:row items-center justify-between mb-16 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-serif font-bold">Our Ethical Charter</h2>
+                    <p class="text-slate-500 mt-4 leading-relaxed text-lg">As a member of the International Bar Association, Global Link operates under a strict code of professional conduct and radical transparency.</p>
+                </div>
+                <div class="flex gap-4">
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Pillar 1 -->
+                <div class="group text-center">
+                    <div class="w-16 h-16 bg-slate-50 dark:bg-black/20 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-primary group-hover:text-white transition-all border border-slate-100 dark:border-slate-800">
+                        <i class="fas fa-user-shield text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Absolute Confidentiality</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Your data and case details are protected by attorney-client privilege and 256-bit military-grade hardware encryption.</p>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="group text-center">
+                    <div class="w-16 h-16 bg-slate-50 dark:bg-black/20 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-primary group-hover:text-white transition-all border border-slate-100 dark:border-slate-800">
+                        <i class="fas fa-balance-scale text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Conflict-Free Advice</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">We provide unbiased legal counsel. We do not accept referral fees from recruiters or overseas educational institutes.</p>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="group text-center">
+                    <div class="w-16 h-16 bg-slate-50 dark:bg-black/20 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-primary group-hover:text-white transition-all border border-slate-100 dark:border-slate-800">
+                        <i class="fas fa-hand-holding-heart text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Pro-Bono Commitment</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">10% of our monthly bandwidth is dedicated to assisting high-risk refugee families from conflict zones at zero cost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Impact Statistics -->
+    <section class="py-16 bg-slate-900 text-white relative overflow-hidden">
+        <div class="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2">
+                <h2 class="text-4xl font-serif font-bold mb-6">A Firm for a Responsible World</h2>
+                <p class="text-slate-400 mb-8 leading-relaxed">Global Link is committed to environmental and social sustainability. We are the first carbon-neutral immigration law firm in the region, operating on a 100% paperless digital-first protocol.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span>ISO 14001 Environmental Management Certified</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span>Active donor to the UNHCR Global Refugee Fund</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span>Diversity Inclusion Award 2024 Winner</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                <div class="p-8 bg-white/5 border border-white/10 rounded-3xl text-center">
+                    <div class="text-3xl font-bold text-secondary mb-2">$1.2M+</div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500">Pro-Bono Value</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-3xl text-center">
+                    <div class="text-3xl font-bold text-secondary mb-2">0</div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500">Carbon Footprint</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-3xl text-center">
+                    <div class="text-3xl font-bold text-secondary mb-2">45%</div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500">Female Leadership</p>
+                </div>
+                <div class="p-8 bg-white/5 border border-white/10 rounded-3xl text-center">
+                    <div class="text-3xl font-bold text-secondary mb-2">50+</div>
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500">Nationalities Served</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-slate-900 text-slate-100 pt-20">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Global Link Branding -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg border border-white/10 shadow-sm">
+                        <h3 class="text-2xl font-bold">GLOBAL LINK</h3>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6">Expert immigration guidance for a global world. Since 2005.</p>
+                    <div class="flex gap-4 items-center">
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-slate-800/50 border border-slate-700 rounded-xl flex items-center justify-center text-slate-400 hover:bg-secondary hover:text-white hover:border-secondary transition-all">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="about.html" class="hover:text-secondary transition-colors">Our Story</a></li>
+                        <li><a href="blog.html" class="hover:text-secondary transition-colors">Latest News</a></li>
+                        <li><a href="contact.html" class="hover:text-secondary transition-colors">Free Consultation</a></li>
+                        <li><a href="dashboard.html" class="hover:text-secondary transition-colors">Case Tracking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Legal Services</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Student Visas</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Skilled Worker PR</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Family Sponsorship</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Business Immigration</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-slate-400 mb-6 text-sm">Subscribe to receive the latest worldwide immigration policy updates.</p>
+                    <form class="flex flex-col space-y-3">
+                        <div class="relative">
+                            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-xl outline-none focus:border-secondary transition-colors text-sm">
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-secondary hover:bg-opacity-90 text-white font-bold rounded-xl transition-all shadow-lg shadow-secondary/10">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Full-width CC Section to match Header -->
+        <div class="pt-8 border-t border-slate-800/50 mt-16 bg-slate-900/50">
+            <div class="container mx-auto px-4 lg:px-8 text-center pb-8">
+                <p class="text-slate-500 text-sm">© 2026 Global Link Immigration Law Firm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scroll-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all z-40 transform hover:scale-110">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>
