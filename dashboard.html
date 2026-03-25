@@ -76,16 +76,24 @@
                     <div class="text-slate-500 dark:text-slate-400 text-xs">Express Entry Case</div>
                 </div>
             </div>
-            <a href="index.html" class="flex items-center gap-4 text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-white transition-opacity hover:underline font-bold"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <a href="index.html" class="flex items-center gap-4 text-secondary hover:text-primary transition-opacity hover:underline font-bold"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
     </aside>
 
     <!-- Mobile Header -->
     <header class="md:hidden flex items-center justify-between p-4 bg-primary text-white sticky top-0 z-50">
-        <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">GLOBAL LINK</span>
-        <div class="flex items-center gap-4">
-            <button onclick="toggleTheme()" class="p-2"><i class="fas fa-sun dark:hidden"></i><i class="fas fa-moon hidden dark:inline"></i></button>
-            <button onclick="document.getElementById('sidebar').classList.toggle('hidden')" class="p-2"><i class="fas fa-bars"></i></button>
+        <a href="index.html" class="flex items-center gap-3">
+            <img src="logo.png" alt="Logo" class="w-8 h-8 rounded-lg border border-white/20 shadow-sm">
+            <span class="text-lg font-bold bg-gradient-to-r from-white to-secondary bg-clip-text text-transparent tracking-tight">GLOBAL LINK</span>
+        </a>
+        <div class="flex items-center gap-2">
+            <button onclick="toggleTheme()" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                <i class="fas fa-moon dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:inline"></i>
+            </button>
+            <button onclick="document.getElementById('sidebar').classList.toggle('hidden')" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
@@ -101,7 +109,7 @@
             <!-- Center focal point: Dashboard Title -->
             <div class="flex items-center gap-4 order-1 md:order-2">
                 <h1 class="text-2xl font-serif font-bold text-slate-800 dark:text-white">Client Dashboard</h1>
-                <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full uppercase">Case Active</span>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full uppercase">Case Active</span>
             </div>
             
             <!-- Right Corner: Toggles -->
@@ -123,7 +131,7 @@
             <div id="section-dashboard" class="space-y-10">
                 <!-- Case Progress Alert (Already added earlier) -->
                 <!-- Quick Stats -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
                     <!-- ... existing stats ... -->
                     <!-- Case Status -->
                     <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover cursor-default">
@@ -137,27 +145,27 @@
                     <!-- Docs Uploaded -->
                     <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center"><i class="fas fa-file-invoice"></i></div>
+                            <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center"><i class="fas fa-file-invoice"></i></div>
                             <div class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase">Docs Uploaded</div>
                         </div>
                         <div class="text-3xl font-bold text-slate-900 dark:text-white">14 / 15</div>
                         <div class="mt-2 w-full bg-slate-100 dark:bg-black/20 h-1.5 rounded-full overflow-hidden">
-                            <div class="bg-green-500 h-full" style="width: 93%"></div>
+                            <div class="bg-secondary h-full" style="width: 93%"></div>
                         </div>
                     </div>
                     <!-- Financials -->
                     <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-xl flex items-center justify-center"><i class="fas fa-wallet"></i></div>
+                            <div class="w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center"><i class="fas fa-wallet"></i></div>
                             <div class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase">Total Professional Fees</div>
                         </div>
                         <div class="text-3xl font-bold text-slate-900 dark:text-white">$4,250</div>
-                        <div class="mt-2 text-xs text-green-500 dark:text-green-400 font-bold">Paid: 100% (Settled)</div>
+                        <div class="mt-2 text-xs text-secondary font-bold">Paid: 100% (Settled)</div>
                     </div>
                     <!-- Days in System -->
                     <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
                         <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center"><i class="fas fa-hourglass-half"></i></div>
+                            <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center"><i class="fas fa-hourglass-half"></i></div>
                             <div class="text-sm font-bold text-slate-700 dark:text-slate-200 uppercase">Time Elapsed</div>
                         </div>
                         <div class="text-3xl font-bold text-slate-900 dark:text-white">42 Days</div>
@@ -171,7 +179,7 @@
                     <div class="relative space-y-12 after:absolute after:left-7 after:top-0 after:h-full after:w-0.5 after:bg-slate-100 dark:after:bg-slate-800">
                         <!-- Done -->
                         <div class="relative z-10 flex items-start gap-6 hover:bg-slate-50/50 dark:hover:bg-black/10 p-4 -ml-4 rounded-2xl transition-colors">
-                            <div class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center ring-8 ring-green-100 dark:ring-green-900/20"><i class="fas fa-check"></i></div>
+                            <div class="w-14 h-14 bg-secondary text-white rounded-full flex items-center justify-center ring-8 ring-secondary/10"><i class="fas fa-check"></i></div>
                             <div>
                                 <div class="font-bold text-lg text-slate-800 dark:text-white">Initial Submission Complete</div>
                                 <p class="text-slate-700 dark:text-slate-400 text-sm">All base forms and identification documents received.</p>
@@ -201,32 +209,32 @@
                     <button class="bg-secondary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-white hover:text-secondary transition-all"><i class="fas fa-upload"></i> Upload new file</button>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                     <!-- Doc Item 1 -->
                     <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl hover:border-secondary/30 transition-all group">
                         <div class="w-full h-40 bg-slate-50 dark:bg-black/20 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
-                            <i class="fas fa-file-pdf text-6xl text-red-500/50 group-hover:scale-125 transition-transform"></i>
+                            <i class="fas fa-file-pdf text-6xl text-secondary/50 group-hover:scale-125 transition-transform"></i>
                             <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors"></div>
                         </div>
                         <h4 class="font-bold text-lg mb-1">Passport_2026_Main.pdf</h4>
                         <p class="text-xs text-slate-400 dark:text-slate-300 mb-6 uppercase tracking-wider">Identity Document • 4.2 MB</p>
                         <div class="flex items-center justify-between">
-                            <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-full uppercase">Verified</span>
+                            <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold rounded-full uppercase">Verified</span>
                             <div class="flex gap-2">
                                 <button class="w-10 h-10 border border-slate-100 dark:border-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-50"><i class="fas fa-download"></i></button>
-                                <button class="w-10 h-10 border border-slate-100 dark:border-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-50 text-red-500"><i class="fas fa-trash-alt"></i></button>
+                                <button class="w-10 h-10 border border-slate-100 dark:border-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-50 text-secondary"><i class="fas fa-trash-alt"></i></button>
                             </div>
                         </div>
                     </div>
                      <!-- Doc Item 2 -->
                      <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl hover:border-secondary/30 transition-all group">
                         <div class="w-full h-40 bg-slate-50 dark:bg-black/20 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
-                            <i class="fas fa-file-word text-6xl text-blue-500/50 group-hover:scale-125 transition-transform"></i>
+                            <i class="fas fa-file-word text-6xl text-primary/50 group-hover:scale-125 transition-transform"></i>
                         </div>
                         <h4 class="font-bold text-lg mb-1">Educational_Degrees_Cert.docx</h4>
                         <p class="text-xs text-slate-400 mb-6 uppercase tracking-wider">Academic Evidence • 2.1 MB</p>
                         <div class="flex items-center justify-between">
-                            <span class="px-3 py-1 bg-green-100 text-green-700 text-[10px] font-bold rounded-full uppercase">In Review</span>
+                            <span class="px-3 py-1 bg-blue-100 text-primary text-[10px] font-bold rounded-full uppercase">In Review</span>
                             <div class="flex gap-2">
                                 <button class="w-10 h-10 border border-slate-100 dark:border-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-50"><i class="fas fa-download"></i></button>
                             </div>
@@ -241,7 +249,7 @@
                     <div class="space-y-8">
                         <div class="flex items-center justify-between p-6 bg-slate-50 dark:bg-black/20 rounded-2xl hover:border-secondary transition-all border border-transparent">
                             <div class="flex items-center gap-6">
-                                <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-envelope"></i></div>
+                                <div class="w-14 h-14 bg-blue-100 text-primary rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-envelope"></i></div>
                                 <div>
                                     <div class="font-bold text-lg text-slate-800 dark:text-white">Email Notifications</div>
                                     <p class="text-sm text-slate-500 dark:text-slate-400">Receive case updates and newsletters via email.</p>
@@ -254,7 +262,7 @@
                         </div>
                         <div class="flex items-center justify-between p-6 bg-slate-50 dark:bg-black/20 rounded-2xl border border-transparent hover:border-secondary transition-all">
                             <div class="flex items-center gap-6">
-                                <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-sms"></i></div>
+                                <div class="w-14 h-14 bg-blue-100 text-primary rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-sms"></i></div>
                                 <div>
                                     <div class="font-bold text-lg text-slate-800 dark:text-white">SMS Alerts</div>
                                     <p class="text-sm text-slate-500">Get critical time-sensitive alerts on your phone.</p>
@@ -315,8 +323,7 @@
             </div>
         </div>
 
-            <!-- Bottom Row: Messages & Files -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
                 <!-- Legal Team (New) -->
                 <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col card-dynamic-hover">
                     <h3 class="text-xl font-serif font-bold mb-8">Assigned Legal Team</h3>
@@ -343,7 +350,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="w-full py-4 mt-8 border border-slate-100 dark:border-slate-800 rounded-2xl text-primary font-bold hover:bg-slate-50 transition-colors">Request Call Back</button>
+                    <button class="w-full py-4 mt-8 border border-slate-100 dark:border-slate-800 rounded-2xl text-primary font-bold hover:bg-secondary hover:text-white hover:border-secondary transition-all shadow-sm hover:shadow-lg hover:shadow-secondary/20 active:scale-95">Request Call Back</button>
                 </div>
 
                 <!-- Messaging -->
@@ -356,9 +363,9 @@
                        <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
                             <img src="lawyer1.png" class="w-12 h-12 rounded-full ring-2 ring-secondary">
                             <div class="flex-1">
-                                <div class="flex justify-between items-center mb-1">
-                                    <span class="font-bold text-slate-800 dark:text-white">Marcus Sterling</span>
-                                    <span class="text-[10px] text-slate-400 uppercase">2h ago</span>
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="font-bold text-slate-800 dark:text-white truncate">Marcus Sterling</span>
+                                    <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">2h ago</span>
                                 </div>
                                 <p class="text-sm text-slate-500 line-clamp-1">Hi John, I've reviewed your latest tax returns. Everything looks perfect.</p>
                             </div>
@@ -366,9 +373,9 @@
                        <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
                             <img src="lawyer2.png" class="w-12 h-12 rounded-full border border-slate-200">
                             <div class="flex-1">
-                                <div class="flex justify-between items-center mb-1">
-                                    <span class="font-bold text-slate-800 dark:text-white">Elena Vance</span>
-                                    <span class="text-[10px] text-slate-400 uppercase">Yesterday</span>
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="font-bold text-slate-800 dark:text-white truncate">Elena Vance</span>
+                                    <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">Yesterday</span>
                                 </div>
                                 <p class="text-sm text-slate-500 line-clamp-1">The biometric appointment is scheduled for next Tuesday.</p>
                             </div>
@@ -376,9 +383,9 @@
                        <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
                             <img src="lawyer3.png" class="w-12 h-12 rounded-full border border-slate-200">
                             <div class="flex-1">
-                                <div class="flex justify-between items-center mb-1">
-                                    <span class="font-bold text-slate-800 dark:text-white">Julian Thorne</span>
-                                    <span class="text-[10px] text-slate-400 uppercase">2d ago</span>
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="font-bold text-slate-800 dark:text-white truncate">Julian Thorne</span>
+                                    <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">2d ago</span>
                                 </div>
                                 <p class="text-sm text-slate-500 line-clamp-1">Compliance review on your company sponsors is underway.</p>
                             </div>
@@ -386,9 +393,9 @@
                        <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
                             <img src="lawyer4.png" class="w-12 h-12 rounded-full border border-slate-200">
                             <div class="flex-1">
-                                <div class="flex justify-between items-center mb-1">
-                                    <span class="font-bold text-slate-800 dark:text-white">Sarah Jenkins</span>
-                                    <span class="text-[10px] text-slate-400 uppercase">4d ago</span>
+                                <div class="flex items-center justify-between gap-2 mb-1">
+                                    <span class="font-bold text-slate-800 dark:text-white truncate">Sarah Jenkins</span>
+                                    <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">4d ago</span>
                                 </div>
                                 <p class="text-sm text-slate-500 line-clamp-1">I've attached the translated educational certificates for your review.</p>
                             </div>
@@ -401,44 +408,44 @@
                     <h3 class="text-xl font-serif font-bold mb-8 text-slate-800 dark:text-white">Recent Documents</h3>
                     <div class="space-y-4 flex-1">
                         <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
-                            <div class="flex items-center gap-4">
-                                <i class="fas fa-file-pdf text-red-500 text-xl"></i>
-                                <div>
-                                    <div class="font-bold text-sm text-slate-800 dark:text-white">Passport_Scan.pdf</div>
-                                    <div class="text-[10px] text-slate-400">Uploaded Mar 20 • 2.4 MB</div>
-                                </div>
-                            </div>
-                            <span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] uppercase font-bold rounded">Verified</span>
+                             <div class="flex items-center gap-4 truncate">
+                                 <i class="fas fa-file-pdf text-secondary text-xl flex-shrink-0"></i>
+                                 <div class="truncate">
+                                     <div class="font-bold text-sm text-slate-800 dark:text-white truncate">Passport_Scan.pdf</div>
+                                     <div class="text-[10px] text-slate-400">Uploaded Mar 20 • 2.4 MB</div>
+                                 </div>
+                             </div>
+                             <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded flex-shrink-0">Verified</span>
                         </div>
                         <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
                             <div class="flex items-center gap-4">
-                                <i class="fas fa-file-word text-blue-500 text-xl"></i>
+                                <i class="fas fa-file-word text-primary text-xl"></i>
                                 <div>
                                     <div class="font-bold text-sm text-slate-800 dark:text-white">Emp_Letter.docx</div>
                                     <div class="text-[10px] text-slate-400">Uploaded Mar 15 • 1.1 MB</div>
                                 </div>
                             </div>
-                            <span class="px-2 py-0.5 bg-yellow-100 text-yellow-700 text-[10px] uppercase font-bold rounded">In Review</span>
+                            <span class="px-2 py-0.5 bg-blue-100 text-primary text-[10px] uppercase font-bold rounded">In Review</span>
                         </div>
                         <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
                             <div class="flex items-center gap-4">
-                                <i class="fas fa-file-image text-purple-500 text-xl"></i>
+                                <i class="fas fa-file-image text-secondary text-xl"></i>
                                 <div>
                                     <div class="font-bold text-sm text-slate-800 dark:text-white">Digital_Photo_HQ.jpg</div>
                                     <div class="text-[10px] text-slate-400">Uploaded Mar 10 • 0.8 MB</div>
                                 </div>
                             </div>
-                            <span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] uppercase font-bold rounded">Verified</span>
+                            <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded">Verified</span>
                         </div>
                         <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
                             <div class="flex items-center gap-4">
-                                <i class="fas fa-file-contract text-orange-500 text-xl"></i>
+                                <i class="fas fa-file-contract text-primary text-xl"></i>
                                 <div>
                                     <div class="font-bold text-sm text-slate-800 dark:text-white">Retainer_Agre.pdf</div>
                                     <div class="text-[10px] text-slate-400">Uploaded Mar 05 • 3.2 MB</div>
                                 </div>
                             </div>
-                            <span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] uppercase font-bold rounded">Verified</span>
+                            <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded">Verified</span>
                         </div>
                     </div>
                 </div>

@@ -122,11 +122,21 @@
 }
 
 .footer-social-btn {
-    @apply w-10 h-10 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-secondary hover:text-white hover:border-secondary transition-all;
+    @apply w-10 h-10 flex items-center justify-center text-slate-600 transition-all duration-300;
 }
 
 [data-theme='dark'] .footer-social-btn {
-    @apply bg-slate-800/50 border-slate-700 text-slate-400;
+    @apply text-slate-400;
+}
+
+.footer-social-btn:hover {
+    @apply text-secondary scale-125;
+    text-shadow: 0 0 15px rgba(192, 161, 81, 0.6);
+}
+
+[data-theme='dark'] .footer-social-btn:hover {
+    @apply text-white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 .footer-input {
@@ -143,4 +153,39 @@
 
 [data-theme='dark'] .footer-bottom {
     @apply border-slate-800 bg-slate-900/50;
+}
+
+.footer-btn {
+    @apply w-full py-4 text-white font-bold tracking-[0.2em] transition-all duration-300 relative overflow-hidden flex items-center justify-center;
+    background: transparent;
+    border: none;
+    text-shadow: 2px 0 10px rgba(192, 161, 81, 0.3);
+}
+
+.footer-btn::after {
+    content: '';
+    @apply absolute bottom-2 left-1/2 w-0 h-[1px] bg-secondary transition-all duration-300 -translate-x-1/2;
+}
+
+.footer-btn:hover {
+    @apply text-secondary tracking-[0.4em] scale-105;
+    text-shadow: 0 0 20px rgba(192, 161, 81, 0.5), -2px 0 #1A237E, 2px 0 #C0A151;
+}
+
+.footer-btn:hover::after {
+    @apply w-1/2;
+}
+
+[data-theme='dark'] .footer-btn:hover {
+    @apply text-white;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), -2px 0 #C0A151, 2px 0 #1A237E;
+}
+
+/* Ensure visibility on white backgrounds in light mode */
+.site-footer:not([data-theme='dark']) .footer-btn {
+    @apply text-slate-900;
+}
+
+.site-footer:not([data-theme='dark']) .footer-btn:hover {
+    @apply text-secondary;
 }
