@@ -130,13 +130,27 @@
 }
 
 .footer-social-btn:hover {
-    @apply text-secondary scale-125;
-    text-shadow: 0 0 15px rgba(192, 161, 81, 0.6);
+    @apply bg-secondary text-white scale-125 shadow-lg shadow-secondary/30 rotate-[360deg];
+    border-radius: 50%;
 }
 
 [data-theme='dark'] .footer-social-btn:hover {
-    @apply text-white;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    @apply bg-white text-primary;
+    text-shadow: none;
+}
+
+/* Team Social Hover (Generic) */
+.team-social-link {
+    @apply transition-all duration-300;
+}
+
+.team-social-link:hover {
+    @apply text-secondary scale-125;
+}
+
+/* Social Icon Animation inside Parent */
+.social-auth-btn:hover i, .social-auth-btn:hover img {
+    @apply scale-125 transition-transform duration-300;
 }
 
 .footer-input {
@@ -156,36 +170,56 @@
 }
 
 .footer-btn {
-    @apply w-full py-4 text-white font-bold tracking-[0.2em] transition-all duration-300 relative overflow-hidden flex items-center justify-center;
-    background: transparent;
-    border: none;
-    text-shadow: 2px 0 10px rgba(192, 161, 81, 0.3);
+    @apply w-full py-3 bg-primary text-white font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-primary/10 flex items-center justify-center relative overflow-hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-btn::after {
+.footer-btn::before {
     content: '';
-    @apply absolute bottom-2 left-1/2 w-0 h-[1px] bg-secondary transition-all duration-300 -translate-x-1/2;
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full transition-transform duration-1000;
+}
+
+.footer-btn:hover::before {
+    @apply translate-x-full;
 }
 
 .footer-btn:hover {
-    @apply text-secondary tracking-[0.4em] scale-105;
-    text-shadow: 0 0 20px rgba(192, 161, 81, 0.5), -2px 0 #1A237E, 2px 0 #C0A151;
+    @apply bg-secondary scale-105 shadow-xl shadow-secondary/30 text-white;
 }
 
-.footer-btn:hover::after {
-    @apply w-1/2;
+[data-theme='dark'] .footer-btn {
+    @apply bg-slate-800 border-slate-700;
 }
 
 [data-theme='dark'] .footer-btn:hover {
-    @apply text-white;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), -2px 0 #C0A151, 2px 0 #1A237E;
+    @apply bg-secondary border-transparent;
 }
 
-/* Ensure visibility on white backgrounds in light mode */
+/* Ensure visibility on white backgrounds in light mode if needed */
 .site-footer:not([data-theme='dark']) .footer-btn {
-    @apply text-slate-900;
+    @apply bg-primary;
 }
 
 .site-footer:not([data-theme='dark']) .footer-btn:hover {
-    @apply text-secondary;
+    @apply bg-secondary;
+}
+
+/* Social Auth Buttons */
+.social-auth-btn {
+    @apply flex items-center justify-center gap-2 py-3 px-4 border border-slate-200 dark:border-slate-800 rounded-xl transition-all duration-300 font-bold text-sm relative overflow-hidden;
+    background: transparent;
+}
+
+.social-auth-btn:hover {
+    @apply border-secondary/50 shadow-lg shadow-secondary/5 -translate-y-0.5;
+    background: rgba(var(--secondary), 0.05);
+}
+
+.social-auth-btn::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-[100%] transition-transform duration-700;
+}
+
+.social-auth-btn:hover::before {
+    @apply translate-x-[100%];
 }
