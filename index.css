@@ -64,3 +64,42 @@
 .card-dynamic-hover {
     @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
 }
+
+/* Global Map Styles */
+#global-map {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    border-radius: 1.5rem;
+}
+
+.leaflet-container {
+    background: transparent !important;
+    font-family: 'Outfit', sans-serif;
+}
+
+.custom-marker {
+    background: #C0A151;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(192, 161, 81, 0.5);
+    transition: all 0.3s ease;
+}
+
+.custom-marker:hover {
+    transform: scale(1.5);
+    background: #1A237E;
+    box-shadow: 0 0 20px rgba(26, 35, 126, 0.8);
+}
+
+.leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+[data-theme='dark'] .leaflet-popup-content-wrapper {
+    background: rgba(26, 26, 26, 0.9);
+    color: white;
+}
