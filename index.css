@@ -103,3 +103,44 @@
     background: rgba(26, 26, 26, 0.9);
     color: white;
 }
+
+/* Theme-aware Footer Styles */
+.site-footer {
+    @apply bg-white text-slate-900 border-t border-slate-100 transition-colors duration-300;
+}
+
+[data-theme='dark'] .site-footer {
+    @apply bg-slate-900 text-slate-100 border-transparent;
+}
+
+.footer-link {
+    @apply text-slate-600 hover:text-secondary hover:translate-x-1 transition-all inline-block;
+}
+
+[data-theme='dark'] .footer-link {
+    @apply text-slate-400;
+}
+
+.footer-social-btn {
+    @apply w-10 h-10 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-secondary hover:text-white hover:border-secondary transition-all;
+}
+
+[data-theme='dark'] .footer-social-btn {
+    @apply bg-slate-800/50 border-slate-700 text-slate-400;
+}
+
+.footer-input {
+    @apply w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-secondary transition-colors text-sm text-slate-900;
+}
+
+[data-theme='dark'] .footer-input {
+    @apply bg-slate-800 border-slate-700 text-white;
+}
+
+.footer-bottom {
+    @apply pt-8 border-t border-slate-100 mt-16 bg-slate-50;
+}
+
+[data-theme='dark'] .footer-bottom {
+    @apply border-slate-800 bg-slate-900/50;
+}
