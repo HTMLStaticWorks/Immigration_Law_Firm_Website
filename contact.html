@@ -56,14 +56,12 @@
     <!-- Header (Consistent) -->
     <header
         class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-        <nav class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between gap-6 sm:gap-8">
-            <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="logo.png" alt="Global Link Logo" class="w-10 h-10 rounded-lg shadow-sm">
-                <span
-                    class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL
-                    LINK</span>
+        <nav class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse shrink-0">
+                <img src="logo.png" alt="Global Link Logo" class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg shadow-sm">
+                <span class="text-base sm:text-xl xl:text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</span>
             </a>
-            <div class="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+            <div class="hidden lg:flex items-center space-x-4 xl:space-x-8 rtl:space-x-reverse text-sm xl:text-base">
                 <a href="index.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Home 1</a>
                 <a href="home2.html" class="hover:text-primary dark:hover:text-secondary transition-colors">Home 2</a>
                 <a href="about.html" class="hover:text-primary dark:hover:text-secondary transition-colors">About</a>
@@ -78,10 +76,9 @@
                     class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     <i class="fas fa-right-left"></i>
                 </button>
-                <button onclick="toggleTheme()"
+                <button id="theme-toggle" onclick="toggleTheme()"
                     class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                    <i class="fas fa-moon dark:hidden"></i>
-                    <i class="fas fa-sun hidden dark:inline"></i>
+                    <i class="fas fa-moon theme-toggle-icon"></i>
                 </button>
                 <a href="login.html"
                     class="hidden md:block hover:text-primary dark:hover:text-secondary text-sm font-bold transition-colors">Login</a>
@@ -168,7 +165,7 @@
                             <div>
                                 <label class="block text-sm font-semibold mb-2 text-slate-700 dark:text-slate-300">Case Summary</label>
                                 <textarea rows="5" placeholder="Briefly describe your situation..."
-                                    class="w-full px-4 py-3 bg-background-light dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-lg focus:border-secondary outline-none"></textarea>
+                                    class="w-full px-4 py-3 bg-background-light dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-lg focus:border-secondary outline-none placeholder:font-bold placeholder:text-slate-400"></textarea>
                             </div>
                             <button type="submit"
                                 class="w-full py-4 bg-primary hover:bg-opacity-90 text-white font-bold rounded-lg transition-all shadow-lg shadow-primary/20">SEND
@@ -262,40 +259,40 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- London Office -->
-                <div class="group p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-secondary transition-all cursor-pointer">
-                    <div class="flex items-center gap-4 mb-6">
+                <div class="group p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-secondary transition-all cursor-pointer flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6 shrink-0">
                         <span class="text-4xl">🇬🇧</span>
                         <div>
                             <h4 class="font-bold text-slate-900 dark:text-white">London, UK</h4>
                             <p class="text-xs text-slate-500">European Operations</p>
                         </div>
                     </div>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Canary Wharf, Level 24, One Canada Square, E14 5AB</p>
-                    <a href="mailto:london@globallink.com" class="text-secondary font-bold text-xs group-hover:underline">london@globallink.com</a>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-grow">Canary Wharf, Level 24, One Canada Square, E14 5AB</p>
+                    <a href="mailto:london@globallink.com" class="text-secondary font-bold text-xs group-hover:underline mt-auto">london@globallink.com</a>
                 </div>
                 <!-- Dubai Office -->
-                <div class="group p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-secondary transition-all cursor-pointer">
-                    <div class="flex items-center gap-4 mb-6">
+                <div class="group p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-secondary transition-all cursor-pointer flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6 shrink-0">
                         <span class="text-4xl">🇦🇪</span>
                         <div>
                             <h4 class="font-bold text-slate-900 dark:text-white">Dubai, UAE</h4>
                             <p class="text-xs text-slate-500">Middle East Hub</p>
                         </div>
                     </div>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Burj Daman Tower, DIFC, Floor 15, Office 1201</p>
-                    <a href="mailto:uae@globallink.com" class="text-secondary font-bold text-xs group-hover:underline">uae@globallink.com</a>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-grow">Burj Daman Tower, DIFC, Floor 15, Office 1201</p>
+                    <a href="mailto:uae@globallink.com" class="text-secondary font-bold text-xs group-hover:underline mt-auto">uae@globallink.com</a>
                 </div>
                 <!-- Sydney Office -->
-                <div class="group p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-secondary transition-all cursor-pointer">
-                    <div class="flex items-center gap-4 mb-6">
+                <div class="group p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:border-secondary transition-all cursor-pointer flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-6 shrink-0">
                         <span class="text-4xl">🇦🇺</span>
                         <div>
                             <h4 class="font-bold text-slate-900 dark:text-white">Sydney, AU</h4>
-                            <p class="text-xs text-slate-500">Oceania Division</p>
+                            <p class="text-xs text-slate-500">APAC Operations</p>
                         </div>
                     </div>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Barangaroo International Towers, Tower 3, NSW 2000</p>
-                    <a href="mailto:sydney@globallink.com" class="text-secondary font-bold text-xs group-hover:underline">sydney@globallink.com</a>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-grow">Grosvenor Place, Level 32, 225 George Street, NSW 2000</p>
+                    <a href="mailto:sydney@globallink.com" class="text-secondary font-bold text-xs group-hover:underline mt-auto">sydney@globallink.com</a>
                 </div>
             </div>
         </div>
@@ -309,7 +306,7 @@
                 <div>
                     <div class="flex items-center gap-3 mb-6">
                         <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg border border-slate-200 dark:border-white/10 shadow-sm">
-                        <h3 class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</h3>
+                        <h3 class="text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</h3>
                     </div>
                     <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Available 24/7 for emergency legal assistance. Trusted worldwide.</p>
                     <div class="flex gap-4 items-center">

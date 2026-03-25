@@ -1,18 +1,25 @@
 // Themes and Layout Persistence
 const applySettings = () => {
-  const theme = localStorage.getItem('theme') || 'light';
-  const direction = localStorage.getItem('dir') || 'ltr';
-  
-  // Update data attributes for custom CSS selectors
-  document.documentElement.setAttribute('data-theme', theme);
-  document.documentElement.setAttribute('dir', direction);
-  
-  // Tailwind 'dark' class MUST be on the root (html) element for darkMode: 'class' to work
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
+    const theme = localStorage.getItem('theme') || 'light';
+    const direction = localStorage.getItem('dir') || 'ltr';
+
+    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute('dir', direction);
+
+    const themeIcons = document.querySelectorAll('.theme-toggle-icon');
+    if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        themeIcons.forEach(icon => {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        });
+    } else {
+        document.documentElement.classList.remove('dark');
+        themeIcons.forEach(icon => {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        });
+    }
 };
 
 // Toggle Theme

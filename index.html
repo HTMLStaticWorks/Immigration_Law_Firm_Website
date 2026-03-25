@@ -53,7 +53,7 @@
         <nav class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between gap-6 sm:gap-8">
             <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="logo.png" alt="Global Link Logo" class="w-10 h-10 rounded-lg shadow-sm">
-                <span class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</span>
+                <span class="text-lg sm:text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</span>
             </a>
 
             <!-- Desktop Nav -->
@@ -72,9 +72,8 @@
                     <i class="fas fa-right-left"></i>
                 </button>
                 <!-- Theme Toggle -->
-                <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Theme">
-                    <i class="fas fa-moon dark:hidden"></i>
-                    <i class="fas fa-sun hidden dark:inline"></i>
+                <button id="theme-toggle" onclick="toggleTheme()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Theme">
+                    <i class="fas fa-moon theme-toggle-icon"></i>
                 </button>
                 <a href="login.html" class="hidden md:block hover:text-primary dark:hover:text-secondary text-sm font-bold transition-colors">Login</a>
                 <a href="signup.html" class="hidden md:block btn-primary px-6 py-2 text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Sign Up</a>
@@ -456,7 +455,7 @@
                 <div>
                     <div class="flex items-center gap-3 mb-6">
                         <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg border border-slate-200 dark:border-white/10 shadow-sm">
-                        <h3 class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</h3>
+                        <h3 class="text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</h3>
                     </div>
                     <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Simplifying the complex world of immigration laws since 2005. Trustworthy, Professional, Passionate.</p>
                     <div class="flex gap-4 items-center">

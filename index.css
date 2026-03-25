@@ -129,12 +129,12 @@
     @apply text-slate-400;
 }
 
-.footer-social-btn:hover {
+.footer-social-btn:hover, .footer-social-btn:active {
     @apply bg-secondary text-white scale-125 shadow-lg shadow-secondary/30 rotate-[360deg];
     border-radius: 50%;
 }
 
-[data-theme='dark'] .footer-social-btn:hover {
+[data-theme='dark'] .footer-social-btn:hover, [data-theme='dark'] .footer-social-btn:active {
     @apply bg-white text-primary;
     text-shadow: none;
 }
@@ -144,7 +144,7 @@
     @apply transition-all duration-300;
 }
 
-.team-social-link:hover {
+.team-social-link:hover, .team-social-link:active {
     @apply text-secondary scale-125;
 }
 
@@ -184,7 +184,8 @@
 }
 
 .footer-btn:hover {
-    @apply bg-secondary scale-105 shadow-xl shadow-secondary/30 text-white;
+    @apply bg-secondary scale-105 shadow-xl shadow-secondary/30 text-white tracking-[0.2em];
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 [data-theme='dark'] .footer-btn {
@@ -220,6 +221,34 @@
     @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-[100%] transition-transform duration-700;
 }
 
+
 .social-auth-btn:hover::before {
     @apply translate-x-[100%];
+}
+
+/* Logo Text Styling (Standardized with Dashboard) */
+.logo-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent transition-all duration-300;
+}
+
+[data-theme='dark'] .logo-text {
+    @apply from-white via-white to-secondary;
+}
+
+.footer-link {
+    @apply text-slate-500 dark:text-slate-400 hover:text-secondary dark:hover:text-secondary transition-all duration-300 flex items-center gap-2 relative;
+    width: fit-content;
+}
+
+.footer-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 rounded-full;
+}
+
+.footer-link:hover {
+    @apply translate-x-2;
+}
+
+.footer-link:hover::after {
+    @apply w-full;
 }
