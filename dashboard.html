@@ -131,7 +131,7 @@
             <div id="section-dashboard" class="space-y-10">
                 <!-- Case Progress Alert (Already added earlier) -->
                 <!-- Quick Stats -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
                     <!-- ... existing stats ... -->
                     <!-- Case Status -->
                     <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover cursor-default">
@@ -201,7 +201,7 @@
 
             <!-- Documents View (Hidden Initially) -->
             <div id="section-documents" class="hidden space-y-10">
-                <div class="bg-primary p-12 rounded-[3rem] text-white flex flex-col md:row items-center justify-between gap-8">
+                <div class="bg-primary p-6 sm:p-12 rounded-2xl sm:rounded-[3rem] text-white flex flex-col lg:flex-row items-center justify-between gap-8">
                     <div>
                         <h2 class="text-4xl font-serif font-bold mb-4">Secure Document Vault</h2>
                         <p class="text-slate-300">All your sensitive legal documents are protected by AES-256 military-grade encryption.</p>
@@ -209,7 +209,7 @@
                     <button class="bg-secondary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-white hover:text-secondary transition-all"><i class="fas fa-upload"></i> Upload new file</button>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
                     <!-- Doc Item 1 -->
                     <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl border border-slate-100 dark:border-slate-800 hover:shadow-2xl hover:border-secondary/30 transition-all group">
                         <div class="w-full h-40 bg-slate-50 dark:bg-black/20 rounded-xl mb-6 flex items-center justify-center relative overflow-hidden">
@@ -281,10 +281,10 @@
             <div id="section-settings" class="hidden space-y-10">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
                     <!-- Profile Management -->
-                    <div class="lg:col-span-2 bg-white dark:bg-surface-dark p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800">
-                        <h2 class="text-3xl font-serif font-bold mb-10 text-slate-900 dark:text-white">Account Settings</h2>
+                    <div class="lg:col-span-2 bg-white dark:bg-surface-dark p-6 sm:p-10 rounded-2xl sm:rounded-[3rem] border border-slate-100 dark:border-slate-800">
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold mb-10 text-slate-900 dark:text-white">Account Settings</h2>
                         <div class="space-y-6">
-                            <div class="grid grid-cols-2 gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-sm font-bold text-slate-500 uppercase mb-2">Full Name</label>
                                     <input type="text" value="John Doe" class="w-full px-6 py-4 bg-slate-50 dark:bg-black/40 border border-slate-100 dark:border-slate-800 rounded-2xl focus:ring-2 focus:ring-secondary outline-none transition-all">
@@ -299,7 +299,7 @@
                     </div>
 
                     <!-- App Appearance -->
-                    <div class="bg-white dark:bg-surface-dark p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
+                    <div class="bg-white dark:bg-surface-dark p-6 sm:p-10 rounded-2xl sm:rounded-[3rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
                         <div>
                             <h2 class="text-2xl font-serif font-bold mb-8">Personalization</h2>
                             <div class="space-y-8">
@@ -323,29 +323,29 @@
             </div>
         </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-10">
                 <!-- Legal Team (New) -->
                 <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col card-dynamic-hover">
                     <h3 class="text-xl font-serif font-bold mb-8">Assigned Legal Team</h3>
                     <div class="space-y-6 flex-1">
-                        <div class="flex items-center gap-4">
-                            <img src="lawyer1.png" class="w-14 h-14 rounded-full border-2 border-secondary/20">
-                            <div>
-                                <div class="font-bold text-slate-800 dark:text-white">Marcus Sterling</div>
+                        <div class="flex items-center gap-4 min-w-0">
+                            <img src="lawyer1.png" class="w-14 h-14 rounded-full border-2 border-secondary/20 flex-shrink-0">
+                            <div class="min-w-0">
+                                <div class="font-bold text-slate-800 dark:text-white truncate">Marcus Sterling</div>
                                 <div class="text-xs text-secondary font-bold uppercase tracking-wider">Senior Attorney</div>
                             </div>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <img src="lawyer2.png" class="w-14 h-14 rounded-full border-2 border-secondary/20">
-                            <div>
-                                <div class="font-bold text-slate-800 dark:text-white">Elena Vance</div>
+                        <div class="flex items-center gap-4 min-w-0">
+                            <img src="lawyer2.png" class="w-14 h-14 rounded-full border-2 border-secondary/20 flex-shrink-0">
+                            <div class="min-w-0">
+                                <div class="font-bold text-slate-800 dark:text-white truncate">Elena Vance</div>
                                 <div class="text-xs text-secondary font-bold uppercase tracking-wider">Processing Agent</div>
                             </div>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <img src="lawyer3.png" class="w-14 h-14 rounded-full border-2 border-secondary/20 grayscale">
-                            <div>
-                                <div class="font-bold text-slate-800 dark:text-white">Julian Thorne</div>
+                        <div class="flex items-center gap-4 min-w-0">
+                            <img src="lawyer3.png" class="w-14 h-14 rounded-full border-2 border-secondary/20 grayscale flex-shrink-0">
+                            <div class="min-w-0">
+                                <div class="font-bold text-slate-800 dark:text-white truncate">Julian Thorne</div>
                                 <div class="text-xs text-secondary font-bold uppercase tracking-wider">Compliance Officer</div>
                             </div>
                         </div>
@@ -355,14 +355,14 @@
 
                 <!-- Messaging -->
                 <div class="lg:col-span-1 bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full card-dynamic-hover">
-                    <div class="flex items-center justify-between mb-8">
-                        <h3 class="text-xl font-serif font-bold text-slate-800 dark:text-white">Secure Messages</h3>
-                        <a href="#" class="text-primary font-bold text-sm">Open Full Chat</a>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8">
+                        <h3 class="text-lg sm:text-xl font-serif font-bold text-slate-800 dark:text-white">Secure Messages</h3>
+                        <a href="#" class="text-primary dark:text-secondary font-bold text-xs sm:text-sm whitespace-nowrap">Open Full Chat</a>
                     </div>
                     <div class="space-y-6 flex-1">
                        <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
                             <img src="lawyer1.png" class="w-12 h-12 rounded-full ring-2 ring-secondary">
-                            <div class="flex-1">
+                            <div class="flex-1 min-w-0">
                                 <div class="flex items-center justify-between gap-2 mb-1">
                                     <span class="font-bold text-slate-800 dark:text-white truncate">Marcus Sterling</span>
                                     <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">2h ago</span>
@@ -372,7 +372,7 @@
                        </div>
                        <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
                             <img src="lawyer2.png" class="w-12 h-12 rounded-full border border-slate-200">
-                            <div class="flex-1">
+                             <div class="flex-1 min-w-0">
                                 <div class="flex items-center justify-between gap-2 mb-1">
                                     <span class="font-bold text-slate-800 dark:text-white truncate">Elena Vance</span>
                                     <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">Yesterday</span>
@@ -382,7 +382,7 @@
                        </div>
                        <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
                             <img src="lawyer3.png" class="w-12 h-12 rounded-full border border-slate-200">
-                            <div class="flex-1">
+                             <div class="flex-1 min-w-0">
                                 <div class="flex items-center justify-between gap-2 mb-1">
                                     <span class="font-bold text-slate-800 dark:text-white truncate">Julian Thorne</span>
                                     <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">2d ago</span>
@@ -392,7 +392,7 @@
                        </div>
                        <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
                             <img src="lawyer4.png" class="w-12 h-12 rounded-full border border-slate-200">
-                            <div class="flex-1">
+                             <div class="flex-1 min-w-0">
                                 <div class="flex items-center justify-between gap-2 mb-1">
                                     <span class="font-bold text-slate-800 dark:text-white truncate">Sarah Jenkins</span>
                                     <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">4d ago</span>
