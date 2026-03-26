@@ -140,6 +140,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         observer.observe(document.documentElement, { attributes: true });
+
+        // Ensure map is sized correctly on orientation change / resize
+        window.addEventListener('resize', () => {
+            setTimeout(() => map.invalidateSize(), 250);
+        });
+
+        // Final trigger for late-rendering containers
+        setTimeout(() => map.invalidateSize(), 600);
     }
 
     // --- Mobile/Tab Hover Fix (Touch Support) ---
