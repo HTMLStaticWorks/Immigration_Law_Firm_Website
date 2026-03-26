@@ -46,9 +46,9 @@
 <body class="bg-slate-50 dark:bg-background-dark min-h-screen flex items-center justify-center p-4">
 
     <!-- Theme & RTL Toggles (Floating for auth etc.) -->
-    <div class="fixed top-8 right-8 flex gap-4 z-50">
-        <button onclick="toggleDirection()" class="p-3 bg-white dark:bg-slate-800 rounded-full shadow-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all"><i class="fas fa-right-left"></i></button>
-        <button onclick="toggleTheme()" class="p-3 bg-white dark:bg-slate-800 rounded-full shadow-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline"></i></button>
+    <div class="absolute top-4 right-4 md:top-8 md:right-8 flex gap-2 md:gap-4 z-50">
+        <button onclick="toggleDirection()" class="p-2 md:p-3 bg-white dark:bg-slate-800 rounded-full shadow-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all"><i class="fas fa-right-left text-sm md:text-base"></i></button>
+        <button onclick="toggleTheme()" class="p-2 md:p-3 bg-white dark:bg-slate-800 rounded-full shadow-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all"><i class="fas fa-moon dark:hidden text-sm md:text-base"></i><i class="fas fa-sun hidden dark:inline text-sm md:text-base"></i></button>
     </div>
 
     <!-- Login Container -->
@@ -56,7 +56,7 @@
         <div class="mb-10 text-center">
             <a href="index.html" class="inline-flex items-center gap-3 mb-8">
                 <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg shadow-sm">
-                <span class="text-xl font-bold logo-text">GLOBAL LINK</span>
+                <span class="text-xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</span>
             </a>
             <h2 class="text-3xl font-bold mb-2 text-slate-800 dark:text-white">Secure Login</h2>
             <p class="text-slate-500">Enter your credentials to access the portal</p>
