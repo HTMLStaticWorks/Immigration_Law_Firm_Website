@@ -88,8 +88,7 @@
         </a>
         <div class="flex items-center gap-2">
             <button onclick="toggleTheme()" class="p-2 hover:bg-white/10 rounded-full transition-colors">
-                <i class="fas fa-moon dark:hidden"></i>
-                <i class="fas fa-sun hidden dark:inline"></i>
+                <i class="fas fa-moon theme-toggle-icon"></i>
             </button>
             <button onclick="document.getElementById('sidebar').classList.toggle('hidden')" class="p-2 hover:bg-white/10 rounded-full transition-colors">
                 <i class="fas fa-bars"></i>
@@ -107,18 +106,17 @@
             </div>
 
             <!-- Center focal point: Dashboard Title -->
-            <div class="flex items-center gap-4 order-1 md:order-2">
-                <h1 class="text-2xl font-serif font-bold text-slate-800 dark:text-white">Client Dashboard</h1>
-                <span class="px-3 py-1 bg-secondary/10 text-secondary text-xs font-bold rounded-full uppercase">Case Active</span>
+            <div class="flex items-center gap-2 sm:gap-4 order-1 md:order-2 text-center md:text-left">
+                <h1 class="text-xl sm:text-2xl font-serif font-bold text-slate-800 dark:text-white whitespace-nowrap">Client Dashboard</h1>
+                <span class="px-3 py-1 bg-secondary/10 text-secondary text-[10px] sm:text-xs font-bold rounded-full uppercase whitespace-nowrap">Case Active</span>
             </div>
             
             <!-- Right Corner: Toggles -->
-            <div class="flex items-center gap-4 order-3">
-                <button onclick="toggleTheme()" class="p-3 bg-slate-50 dark:bg-black/20 rounded-xl hover:bg-secondary/10 transition-colors">
-                     <i class="fas fa-moon dark:hidden"></i>
-                     <i class="fas fa-sun hidden dark:inline"></i>
+            <div class="flex items-center gap-3 md:gap-4 order-3 flex-shrink-0">
+                <button onclick="toggleTheme()" class="p-2 sm:p-3 bg-slate-50 dark:bg-black/20 rounded-xl hover:bg-secondary/10 transition-all active:scale-95" title="Toggle Theme">
+                     <i class="fas fa-moon theme-toggle-icon"></i>
                 </button>
-                <button onclick="toggleDirection()" class="p-3 bg-slate-50 dark:bg-black/20 rounded-full hover:bg-secondary/10 transition-colors">
+                <button onclick="toggleDirection()" class="p-2 sm:p-3 bg-slate-50 dark:bg-black/20 rounded-xl hover:bg-secondary/10 transition-all active:scale-95" title="Toggle RTL/LTR">
                      <i class="fas fa-right-left"></i>
                 </button>
             </div>

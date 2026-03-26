@@ -1,48 +1,76 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
 
-@layer base {
-    :root {
-        --primary: 26 35 126;
-        /* Navy #1a237e */
-        --secondary: 192 161 81;
-        /* Gold #c0a151 */
-        --bg-light: 248 249 250;
-        /* #f8f9fa */
-        --bg-dark: 10 10 10;
-        /* #0a0a0a */
-        --text-primary: 26 35 126;
-        /* Navy #1a237e */
-        --text-on-primary: 255 255 255;
-    }
-
-    [data-theme='dark'] {
-        --bg-light: 10 10 10;
-        --text-primary: 255 255 255;
-        /* Full White */
-    }
-
-    body {
-        @apply transition-colors duration-300 font-sans;
-        background-color: rgb(var(--bg-light));
-        color: rgb(var(--text-primary));
-    }
+:root {
+    --primary: 26 35 126;
+    /* Navy #1a237e */
+    --secondary: 192 161 81;
+    /* Gold #c0a151 */
+    --bg-light: 248 249 250;
+    /* #f8f9fa */
+    --bg-dark: 10 10 10;
+    /* #0a0a0a */
+    --text-primary: 26 35 126;
+    /* Navy #1a237e */
+    --text-on-primary: 255 255 255;
 }
 
-@layer components {
-    .btn-primary {
-        @apply bg-primary text-white px-6 py-3 rounded-md font-semibold transition-all hover:bg-opacity-90 active:scale-95;
-        background-color: rgb(var(--primary));
-    }
+[data-theme='dark'] {
+    --bg-light: 10 10 10;
+    --text-primary: 255 255 255;
+    /* Full White */
+}
 
-    .btn-secondary {
-        @apply border-2 border-[rgb(var(--primary))] text-[rgb(var(--primary))] px-6 py-3 rounded-md font-semibold transition-all hover:bg-[rgb(var(--primary))] hover:text-white active:scale-95;
-    }
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    background-color: rgb(var(--bg-light));
+    color: rgb(var(--text-primary));
+}
 
-    .glass-card {
-        @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6;
-    }
+.btn-primary {
+    background-color: rgb(var(--primary));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    filter: brightness(0.9);
+}
+
+.btn-primary:active {
+    transform: scale(0.95);
+}
+
+.btn-secondary {
+    border: 2px solid rgb(var(--primary));
+    color: rgb(var(--primary));
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgb(var(--primary));
+    color: white;
+}
+
+.btn-secondary:active {
+    transform: scale(0.95);
+}
+
+.glass-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
 }
 
 /* RTL Specifics */
@@ -82,15 +110,22 @@
 }
 
 .nav-link {
-    @apply transition-all duration-300 ease-out;
+    transition: all 0.3s ease-out;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:active,
+.nav-link.active-touch {
     box-shadow: 0 0 20px rgba(192, 161, 81, 0.1);
 }
 
 .card-dynamic-hover {
-    @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
+    transition: all 0.5s ease;
+}
+
+.card-dynamic-hover:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 /* Global Map Styles */
@@ -132,155 +167,309 @@
     color: white;
 }
 
-/* Theme-aware Footer Styles */
 .site-footer {
-    @apply bg-white text-slate-900 border-t border-slate-100 transition-colors duration-300;
+    background-color: white;
+    color: #0f172a; /* slate-900 */
+    border-top: 1px solid #f1f5f9; /* slate-100 */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 [data-theme='dark'] .site-footer {
-    @apply bg-slate-900 text-slate-100 border-transparent;
+    background-color: #0f172a; /* slate-900 */
+    color: #f1f5f9; /* slate-100 */
+    border-color: transparent;
 }
 
 .footer-link {
-    @apply text-slate-600 hover:text-secondary hover:translate-x-1 transition-all inline-block;
+    color: #475569; /* slate-600 */
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.footer-link:hover,
+.footer-link:active,
+.footer-link:focus-visible,
+.footer-link.active-touch {
+    color: rgb(var(--secondary));
+    transform: translateX(4px);
 }
 
 [data-theme='dark'] .footer-link {
-    @apply text-slate-400;
+    color: #94a3b8; /* slate-400 */
 }
 
 .footer-social-btn {
-    @apply w-10 h-10 flex items-center justify-center text-slate-600 transition-all duration-300;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8fafc; /* slate-50 */
+    color: #1a237e; /* primary */
+    border: 1px solid #e2e8f0; /* slate-200 */
+    border-radius: 0.75rem; /* rounded-xl */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 [data-theme='dark'] .footer-social-btn {
-    @apply text-slate-400;
+    background-color: #1e293b; /* slate-800 */
+    color: #f1f5f9; /* slate-100 */
+    border-color: #334155; /* slate-700 */
 }
 
 .footer-social-btn:hover,
-.footer-social-btn:active {
-    @apply bg-secondary text-white scale-125 shadow-lg shadow-secondary/30 rotate-[360deg];
-    border-radius: 50%;
+.footer-social-btn:active,
+.footer-social-btn:focus-visible,
+.footer-social-btn.active-touch {
+    background-color: rgb(var(--secondary));
+    color: white;
+    transform: scale(1.15) translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(var(--secondary), 0.4);
+    border-color: transparent;
+    border-radius: 50%; /* Becomes circular on hover for a premium feel */
 }
 
 [data-theme='dark'] .footer-social-btn:hover,
 [data-theme='dark'] .footer-social-btn:active {
-    @apply bg-white text-primary;
-    text-shadow: none;
+    background-color: white;
+    color: rgb(var(--primary));
 }
 
 /* Team Social Hover (Generic) */
 .team-social-link {
-    @apply transition-all duration-300;
+    transition: all 0.3s ease;
 }
 
 .team-social-link:hover,
 .team-social-link:active {
-    @apply text-secondary scale-125;
+    color: #c0a151; /* secondary */
+    transform: scale(1.25);
 }
 
 /* Social Icon Animation inside Parent */
 .social-auth-btn:hover i,
 .social-auth-btn:hover img {
-    @apply scale-125 transition-transform duration-300;
+    transform: scale(1.25);
+    transition: transform 0.3s ease;
 }
 
 .footer-input {
-    @apply w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-secondary transition-colors text-sm text-slate-900;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #f8fafc; /* slate-50 */
+    border: 1px solid #e2e8f0; /* slate-200 */
+    border-radius: 0.75rem; /* rounded-xl */
+    outline: none;
+    transition: border-color 0.3s;
+    font-size: 0.875rem;
+    color: #0f172a; /* slate-900 */
+}
+
+.footer-input:focus {
+    border-color: rgb(var(--secondary));
 }
 
 [data-theme='dark'] .footer-input {
-    @apply bg-slate-800 border-slate-700 text-white;
+    background-color: #1e293b; /* slate-800 */
+    border-color: #334155; /* slate-700 */
+    color: white;
 }
 
 .footer-bottom {
-    @apply pt-8 border-t border-slate-100 mt-16 bg-slate-50;
+    padding-top: 2rem;
+    border-top: 1px solid #f1f5f9; /* slate-100 */
+    margin-top: 4rem;
+    background-color: #f8fafc; /* slate-50 */
 }
 
 [data-theme='dark'] .footer-bottom {
-    @apply border-slate-800 bg-slate-900/50;
+    border-color: #1e293b; /* slate-800 */
+    background-color: rgba(15, 23, 42, 0.5); /* slate-900/50 */
 }
 
 .footer-btn {
-    @apply w-full py-3 bg-primary text-white font-bold tracking-widest rounded-xl transition-all duration-300 shadow-lg shadow-primary/10 flex items-center justify-center relative overflow-hidden;
+    width: 100%;
+    padding: 0.75rem 0;
+    background-color: rgb(var(--primary));
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border-radius: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 15px -3px rgba(var(--primary), 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
 }
 
 .footer-btn::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full transition-transform duration-1000;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
 }
 
-.footer-btn:hover::before {
-    @apply translate-x-full;
+.footer-btn:hover::before,
+.footer-btn:active::before,
+.footer-btn.active-touch::before {
+    transform: translateX(100%);
 }
 
-.footer-btn:hover {
-    @apply bg-secondary scale-105 shadow-xl shadow-secondary/30 text-white tracking-[0.2em];
+.footer-btn:hover,
+.footer-btn:active,
+.footer-btn:focus-visible,
+.footer-btn.active-touch {
+    background-color: rgb(var(--secondary));
+    transform: scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(var(--secondary), 0.4);
+    color: white;
+    letter-spacing: 0.2em;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 [data-theme='dark'] .footer-btn {
-    @apply bg-slate-800 border-slate-700;
+    background-color: #1e293b; /* slate-800 */
+    border-color: #334155; /* slate-700 */
 }
 
-[data-theme='dark'] .footer-btn:hover {
-    @apply bg-secondary border-transparent;
+[data-theme='dark'] .footer-btn:hover,
+[data-theme='dark'] .footer-btn:active,
+[data-theme='dark'] .footer-btn:focus-visible,
+[data-theme='dark'] .footer-btn.active-touch {
+    background-color: rgb(var(--secondary));
+    border-color: transparent;
 }
 
-/* Ensure visibility on white backgrounds in light mode if needed */
 .site-footer:not([data-theme='dark']) .footer-btn {
-    @apply bg-primary;
+    background-color: rgb(var(--primary));
 }
 
-.site-footer:not([data-theme='dark']) .footer-btn:hover {
-    @apply bg-secondary;
+.site-footer:not([data-theme='dark']) .footer-btn:hover,
+.site-footer:not([data-theme='dark']) .footer-btn:active,
+.site-footer:not([data-theme='dark']) .footer-btn.active-touch {
+    background-color: rgb(var(--secondary));
 }
 
 /* Social Auth Buttons */
 .social-auth-btn {
-    @apply flex items-center justify-center gap-2 py-3 px-4 border border-slate-200 dark:border-slate-800 rounded-xl transition-all duration-300 font-bold text-sm relative overflow-hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0; /* slate-200 */
+    border-radius: 0.75rem; /* rounded-xl */
+    transition: all 0.3s ease;
+    font-weight: 700;
+    font-size: 0.875rem;
+    position: relative;
+    overflow: hidden;
     background: transparent;
 }
 
+[data-theme='dark'] .social-auth-btn {
+    border-color: #1e293b; /* slate-800 */
+}
+
 .social-auth-btn:hover {
-    @apply border-secondary/50 shadow-lg shadow-secondary/5 -translate-y-0.5;
-    background: rgba(var(--secondary), 0.05);
+    border-color: rgba(192, 161, 81, 0.5); /* secondary/50 */
+    box-shadow: 0 10px 15px -3px rgba(192, 161, 81, 0.05);
+    transform: translateY(-0.125rem);
+    background: rgba(192, 161, 81, 0.05);
 }
 
 .social-auth-btn::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-[100%] transition-transform duration-700;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.7s ease;
 }
 
-
 .social-auth-btn:hover::before {
-    @apply translate-x-[100%];
+    transform: translateX(100%);
 }
 
 /* Logo Text Styling (Standardized with Dashboard) */
 .logo-text {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent transition-all duration-300;
+    background: linear-gradient(to right, #1a237e, #c0a151);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease;
 }
 
 [data-theme='dark'] .logo-text {
-    @apply from-white via-white to-secondary;
+    background: linear-gradient(to right, #ffffff, #ffffff, #c0a151);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .footer-link {
-    @apply text-slate-500 dark:text-slate-400 hover:text-secondary dark:hover:text-secondary transition-all duration-300 flex items-center gap-2 relative;
+    color: #64748b; /* slate-500 */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
     width: fit-content;
+}
+
+[data-theme='dark'] .footer-link {
+    color: #94a3b8; /* slate-400 */
+}
+
+.footer-link:hover {
+    color: #c0a151; /* secondary */
+    transform: translateX(0.5rem);
 }
 
 .footer-link::after {
     content: '';
-    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 rounded-full;
-}
-
-.footer-link:hover {
-    @apply translate-x-2;
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #c0a151;
+    transition: all 0.3s ease;
+    border-radius: 9999px;
 }
 
 .footer-link:hover::after {
-    @apply w-full;
+    width: 100%;
+}
+
+/* --- Mobile/Tablet Interaction Optimization --- */
+/* Ensures hover-like feedback triggers on touch (tap) */
+@media (hover: none) {
+    a:active, 
+    button:active {
+        filter: brightness(0.9);
+        transition: filter 0.1s ease;
+    }
+}
+
+/* Header & Mobile Menu Nav Feedback */
+header a:active,
+header a.active-touch {
+    color: rgb(var(--secondary)) !important;
+    transform: scale(0.98);
+    transition: all 0.1s ease;
+}
+
+/* Ensure mobile menu links show active state */
+#mobile-menu a:active,
+#mobile-menu a.active-touch {
+    background-color: rgba(var(--secondary), 0.1);
+    color: rgb(var(--secondary));
+    padding-left: 0.5rem;
 }

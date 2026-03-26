@@ -141,4 +141,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(document.documentElement, { attributes: true });
     }
+
+    // --- Mobile/Tab Hover Fix (Touch Support) ---
+    // This replicates hover feedback on touch devices by adding an 'active-touch' class
+    const touchInteractives = document.querySelectorAll('a, button, .footer-social-btn, .nav-link');
+    
+    touchInteractives.forEach(el => {
+        el.addEventListener('touchstart', function() {
+            this.classList.add('active-touch');
+        }, { passive: true });
+
+        el.addEventListener('touchend', function() {
+            // Keep the effect briefly for visual feedback
+            setTimeout(() => {
+                this.classList.remove('active-touch');
+            }, 300);
+        }, { passive: true });
+
+        el.addEventListener('touchcancel', function() {
+            this.classList.remove('active-touch');
+        }, { passive: true });
+    });
 });
