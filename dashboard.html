@@ -200,6 +200,138 @@
                         </div>
                     </div>
                 </div>
+                <!-- Extra Widgets Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-10">
+                    <!-- Legal Team (New) -->
+                    <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center card-dynamic-hover h-full">
+                        <h3 class="text-xl font-serif font-bold mb-8 text-slate-800 dark:text-white">Assigned Legal Team</h3>
+                        <div class="space-y-8 flex-1 w-full flex flex-col items-center">
+                            <div class="flex flex-col items-center gap-3">
+                                <img src="lawyer1.png" class="w-16 h-16 rounded-full border-2 border-secondary reflection-effect flex-shrink-0">
+                                <div>
+                                    <div class="font-bold text-slate-800 dark:text-white text-lg">Marcus Sterling</div>
+                                    <div class="text-xs text-secondary font-bold uppercase tracking-widest">Senior Attorney</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <img src="lawyer2.png" class="w-16 h-16 rounded-full border-2 border-secondary/20 flex-shrink-0">
+                                <div>
+                                    <div class="font-bold text-slate-800 dark:text-white text-lg">Elena Vance</div>
+                                    <div class="text-xs text-secondary font-bold uppercase tracking-widest">Processing Agent</div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center gap-3">
+                                <img src="lawyer3.png" class="w-16 h-16 rounded-full border-2 border-secondary/20 grayscale flex-shrink-0">
+                                <div>
+                                    <div class="font-bold text-slate-800 dark:text-white text-lg">Julian Thorne</div>
+                                    <div class="text-xs text-secondary font-bold uppercase tracking-widest">Compliance Officer</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full pt-8 mt-auto border-t border-slate-100 dark:border-slate-800/50">
+                             <button class="w-full btn-secondary py-4 rounded-2xl font-bold hover:bg-secondary hover:text-white transition-all shadow-md active:scale-95">Request Call Back</button>
+                        </div>
+                    </div>
+
+                    <!-- Messaging -->
+                    <div class="lg:col-span-1 bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full card-dynamic-hover">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8">
+                            <h3 class="text-lg sm:text-xl font-serif font-bold text-slate-800 dark:text-white">Secure Messages</h3>
+                            <a href="#" class="text-primary dark:text-secondary font-bold text-xs sm:text-sm whitespace-nowrap hover:text-secondary dark:hover:text-white transition-all duration-300 flex items-center gap-2 group">
+                                Open Full Chat <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                        <div class="space-y-6 flex-1">
+                           <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
+                                <img src="lawyer1.png" class="w-12 h-12 rounded-full ring-2 ring-secondary">
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2 mb-1">
+                                        <span class="font-bold text-slate-800 dark:text-white truncate">Marcus Sterling</span>
+                                        <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">2h ago</span>
+                                    </div>
+                                    <p class="text-sm text-slate-500 line-clamp-1">Hi John, I've reviewed your latest tax returns. Everything looks perfect.</p>
+                                </div>
+                           </div>
+                           <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
+                                <img src="lawyer2.png" class="w-12 h-12 rounded-full border border-slate-200">
+                                 <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2 mb-1">
+                                        <span class="font-bold text-slate-800 dark:text-white truncate">Elena Vance</span>
+                                        <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">Yesterday</span>
+                                    </div>
+                                    <p class="text-sm text-slate-500 line-clamp-1">The biometric appointment is scheduled for next Tuesday.</p>
+                                </div>
+                           </div>
+                           <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
+                                <img src="lawyer3.png" class="w-12 h-12 rounded-full border border-slate-200">
+                                 <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2 mb-1">
+                                        <span class="font-bold text-slate-800 dark:text-white truncate">Julian Thorne</span>
+                                        <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">2d ago</span>
+                                    </div>
+                                    <p class="text-sm text-slate-500 line-clamp-1">Compliance review on your company sponsors is underway.</p>
+                                </div>
+                           </div>
+                           <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
+                                <img src="lawyer4.png" class="w-12 h-12 rounded-full border border-slate-200">
+                                 <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-2 mb-1">
+                                        <span class="font-bold text-slate-800 dark:text-white truncate">Sarah Jenkins</span>
+                                        <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">4d ago</span>
+                                    </div>
+                                    <p class="text-sm text-slate-500 line-clamp-1">I've attached the translated educational certificates for your review.</p>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+
+                    <!-- Document Tracking -->
+                    <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full text-left">
+                        <h3 class="text-xl font-serif font-bold mb-8 text-slate-800 dark:text-white">Recent Documents</h3>
+                        <div class="space-y-4 flex-1">
+                            <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                                 <div class="flex items-center gap-4 truncate">
+                                     <i class="fas fa-file-pdf text-secondary text-xl flex-shrink-0"></i>
+                                     <div class="truncate">
+                                         <div class="font-bold text-sm text-slate-800 dark:text-white truncate">Passport_Scan.pdf</div>
+                                         <div class="text-[10px] text-slate-400">Uploaded Mar 20 • 2.4 MB</div>
+                                     </div>
+                                 </div>
+                                 <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded flex-shrink-0">Verified</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-file-word text-primary text-xl"></i>
+                                    <div>
+                                        <div class="font-bold text-sm text-slate-800 dark:text-white">Emp_Letter.docx</div>
+                                        <div class="text-[10px] text-slate-400">Uploaded Mar 15 • 1.1 MB</div>
+                                    </div>
+                                </div>
+                                <span class="px-2 py-0.5 bg-blue-100 text-primary text-[10px] uppercase font-bold rounded">In Review</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-file-image text-secondary text-xl"></i>
+                                    <div>
+                                        <div class="font-bold text-sm text-slate-800 dark:text-white">Digital_Photo_HQ.jpg</div>
+                                        <div class="text-[10px] text-slate-400">Uploaded Mar 10 • 0.8 MB</div>
+                                    </div>
+                                </div>
+                                <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded">Verified</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                                <div class="flex items-center gap-4">
+                                    <i class="fas fa-file-contract text-primary text-xl"></i>
+                                    <div>
+                                        <div class="font-bold text-sm text-slate-800 dark:text-white">Retainer_Agre.pdf</div>
+                                        <div class="text-[10px] text-slate-400">Uploaded Mar 05 • 3.2 MB</div>
+                                    </div>
+                                </div>
+                                <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Documents View (Hidden Initially) -->
@@ -336,140 +468,6 @@
                         </div>
                 </div>
             </div>
-        </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-10">
-                <!-- Legal Team (New) -->
-                <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center card-dynamic-hover h-full">
-                    <h3 class="text-xl font-serif font-bold mb-8 text-slate-800 dark:text-white">Assigned Legal Team</h3>
-                    <div class="space-y-8 flex-1 w-full flex flex-col items-center">
-                        <div class="flex flex-col items-center gap-3">
-                            <img src="lawyer1.png" class="w-16 h-16 rounded-full border-2 border-secondary reflection-effect flex-shrink-0">
-                            <div>
-                                <div class="font-bold text-slate-800 dark:text-white text-lg">Marcus Sterling</div>
-                                <div class="text-xs text-secondary font-bold uppercase tracking-widest">Senior Attorney</div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-center gap-3">
-                            <img src="lawyer2.png" class="w-16 h-16 rounded-full border-2 border-secondary/20 flex-shrink-0">
-                            <div>
-                                <div class="font-bold text-slate-800 dark:text-white text-lg">Elena Vance</div>
-                                <div class="text-xs text-secondary font-bold uppercase tracking-widest">Processing Agent</div>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-center gap-3">
-                            <img src="lawyer3.png" class="w-16 h-16 rounded-full border-2 border-secondary/20 grayscale flex-shrink-0">
-                            <div>
-                                <div class="font-bold text-slate-800 dark:text-white text-lg">Julian Thorne</div>
-                                <div class="text-xs text-secondary font-bold uppercase tracking-widest">Compliance Officer</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full pt-8 mt-auto border-t border-slate-100 dark:border-slate-800/50">
-                         <button class="w-full btn-secondary py-4 rounded-2xl font-bold hover:bg-secondary hover:text-white transition-all shadow-md active:scale-95">Request Call Back</button>
-                    </div>
-                </div>
-
-                <!-- Messaging -->
-                <div class="lg:col-span-1 bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full card-dynamic-hover">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8">
-                        <h3 class="text-lg sm:text-xl font-serif font-bold text-slate-800 dark:text-white">Secure Messages</h3>
-                        <a href="#" class="text-primary dark:text-secondary font-bold text-xs sm:text-sm whitespace-nowrap hover:text-secondary dark:hover:text-white transition-all duration-300 flex items-center gap-2 group">
-                            Open Full Chat <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                    </div>
-                    <div class="space-y-6 flex-1">
-                       <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
-                            <img src="lawyer1.png" class="w-12 h-12 rounded-full ring-2 ring-secondary">
-                            <div class="flex-1 min-w-0">
-                                <div class="flex items-center justify-between gap-2 mb-1">
-                                    <span class="font-bold text-slate-800 dark:text-white truncate">Marcus Sterling</span>
-                                    <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">2h ago</span>
-                                </div>
-                                <p class="text-sm text-slate-500 line-clamp-1">Hi John, I've reviewed your latest tax returns. Everything looks perfect.</p>
-                            </div>
-                       </div>
-                       <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
-                            <img src="lawyer2.png" class="w-12 h-12 rounded-full border border-slate-200">
-                             <div class="flex-1 min-w-0">
-                                <div class="flex items-center justify-between gap-2 mb-1">
-                                    <span class="font-bold text-slate-800 dark:text-white truncate">Elena Vance</span>
-                                    <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">Yesterday</span>
-                                </div>
-                                <p class="text-sm text-slate-500 line-clamp-1">The biometric appointment is scheduled for next Tuesday.</p>
-                            </div>
-                       </div>
-                       <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
-                            <img src="lawyer3.png" class="w-12 h-12 rounded-full border border-slate-200">
-                             <div class="flex-1 min-w-0">
-                                <div class="flex items-center justify-between gap-2 mb-1">
-                                    <span class="font-bold text-slate-800 dark:text-white truncate">Julian Thorne</span>
-                                    <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">2d ago</span>
-                                </div>
-                                <p class="text-sm text-slate-500 line-clamp-1">Compliance review on your company sponsors is underway.</p>
-                            </div>
-                       </div>
-                       <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
-                            <img src="lawyer4.png" class="w-12 h-12 rounded-full border border-slate-200">
-                             <div class="flex-1 min-w-0">
-                                <div class="flex items-center justify-between gap-2 mb-1">
-                                    <span class="font-bold text-slate-800 dark:text-white truncate">Sarah Jenkins</span>
-                                    <span class="text-[10px] text-slate-400 uppercase flex-shrink-0">4d ago</span>
-                                </div>
-                                <p class="text-sm text-slate-500 line-clamp-1">I've attached the translated educational certificates for your review.</p>
-                            </div>
-                       </div>
-                    </div>
-                </div>
-
-                <!-- Document Tracking -->
-                <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full">
-                    <h3 class="text-xl font-serif font-bold mb-8 text-slate-800 dark:text-white">Recent Documents</h3>
-                    <div class="space-y-4 flex-1">
-                        <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
-                             <div class="flex items-center gap-4 truncate">
-                                 <i class="fas fa-file-pdf text-secondary text-xl flex-shrink-0"></i>
-                                 <div class="truncate">
-                                     <div class="font-bold text-sm text-slate-800 dark:text-white truncate">Passport_Scan.pdf</div>
-                                     <div class="text-[10px] text-slate-400">Uploaded Mar 20 • 2.4 MB</div>
-                                 </div>
-                             </div>
-                             <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded flex-shrink-0">Verified</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
-                            <div class="flex items-center gap-4">
-                                <i class="fas fa-file-word text-primary text-xl"></i>
-                                <div>
-                                    <div class="font-bold text-sm text-slate-800 dark:text-white">Emp_Letter.docx</div>
-                                    <div class="text-[10px] text-slate-400">Uploaded Mar 15 • 1.1 MB</div>
-                                </div>
-                            </div>
-                            <span class="px-2 py-0.5 bg-blue-100 text-primary text-[10px] uppercase font-bold rounded">In Review</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
-                            <div class="flex items-center gap-4">
-                                <i class="fas fa-file-image text-secondary text-xl"></i>
-                                <div>
-                                    <div class="font-bold text-sm text-slate-800 dark:text-white">Digital_Photo_HQ.jpg</div>
-                                    <div class="text-[10px] text-slate-400">Uploaded Mar 10 • 0.8 MB</div>
-                                </div>
-                            </div>
-                            <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded">Verified</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
-                            <div class="flex items-center gap-4">
-                                <i class="fas fa-file-contract text-primary text-xl"></i>
-                                <div>
-                                    <div class="font-bold text-sm text-slate-800 dark:text-white">Retainer_Agre.pdf</div>
-                                    <div class="text-[10px] text-slate-400">Uploaded Mar 05 • 3.2 MB</div>
-                                </div>
-                            </div>
-                            <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded">Verified</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </main>
 
