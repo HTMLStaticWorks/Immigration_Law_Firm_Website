@@ -22,6 +22,12 @@
     /* Full White */
 }
 
+/* Fix select option contrast in dark mode */
+[data-theme='dark'] select option {
+    background-color: #1a1a1a;
+    color: white;
+}
+
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: 'Outfit', 'Inter', sans-serif;
