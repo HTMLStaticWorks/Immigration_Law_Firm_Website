@@ -460,18 +460,42 @@ body {
 
 /* Header & Mobile Menu Nav Feedback */
 header a:active,
-header a.active-touch {
+header a.active-touch,
+header button:active,
+header button.active-touch {
     color: rgb(var(--secondary)) !important;
-    transform: scale(0.98);
+    transform: scale(0.95);
     transition: all 0.1s ease;
 }
 
-/* Ensure mobile menu links show active state */
-#mobile-menu a:active,
-#mobile-menu a.active-touch {
+/* Premium Header Button Hover (for devices with hover) */
+@media (hover: hover) {
+    header button:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        transform: translateY(-1px) scale(1.1);
+        color: rgb(var(--secondary));
+    }
+    
+    /* When header is dark (like on Dashboard or in dark mode) */
+    header.bg-primary button:hover,
+    [data-theme='dark'] header button:hover {
+        background-color: rgba(var(--secondary), 0.2);
+    }
+}
+
+/* Fix for Dashboard Sticky Top Bar Buttons */
+.top-bar-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.top-bar-btn:hover {
     background-color: rgba(var(--secondary), 0.1);
     color: rgb(var(--secondary));
-    padding-left: 0.5rem;
+    transform: translateY(-2px);
+}
+
+.top-bar-btn:active {
+    transform: scale(0.95);
 }
 
 /* Global Map Fixes */

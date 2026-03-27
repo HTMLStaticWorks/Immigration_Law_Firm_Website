@@ -47,11 +47,11 @@
 <body class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col lg:flex-row">
 
     <!-- Sidebar (Desktop) / Header (Mobile) -->
-    <aside id="sidebar" class="hidden lg:flex fixed lg:sticky top-0 left-0 w-64 sm:w-72 h-full bg-blue-50 dark:bg-slate-900 border-r border-blue-100 dark:border-slate-800 flex-col transition-all z-[60] overflow-y-auto shadow-2xl lg:shadow-none">
+    <aside id="sidebar" class="fixed lg:sticky top-0 left-0 w-64 sm:w-72 h-full bg-blue-50 dark:bg-slate-900 border-r border-blue-100 dark:border-slate-800 flex flex-col transition-all duration-300 ease-in-out z-[60] overflow-y-auto shadow-2xl lg:shadow-none -translate-x-full lg:translate-x-0">
         <div class="p-8">
-            <a href="index.html" class="flex items-center gap-3 mb-10">
+            <a href="index.html" class="hidden lg:flex items-center gap-3 mb-10">
                 <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg shadow-sm border border-slate-200 dark:border-white/10">
-                <span class="text-2xl font-bold bg-gradient-to-r from-primary dark:from-white via-primary/50 dark:via-white to-secondary dark:to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</span>
+                <span class="hidden lg:inline text-2xl font-bold bg-gradient-to-r from-primary dark:from-white via-primary/50 dark:via-white to-secondary dark:to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</span>
             </a>
             <div class="space-y-4">
                 <a href="javascript:void(0)" onclick="showSection('dashboard')" class="nav-link flex items-center gap-4 px-4 py-3 bg-blue-100 dark:bg-white/10 text-primary dark:text-white rounded-xl font-bold transition-all hover:bg-blue-200 dark:hover:bg-white/20 active:scale-95"><i class="fas fa-chart-line"></i> Dashboard</a>
@@ -87,13 +87,13 @@
             <span class="text-xs sm:text-base font-bold bg-gradient-to-r from-white to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</span>
         </a>
         <div class="flex items-center gap-2">
-            <button onclick="toggleDirection()" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+            <button onclick="toggleDirection()" class="p-2 rounded-full transition-all duration-300" title="Toggle RTL/LTR">
                 <i class="fas fa-right-left"></i>
             </button>
-            <button onclick="toggleTheme()" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+            <button onclick="toggleTheme()" class="p-2 rounded-full transition-all duration-300" title="Toggle Theme">
                 <i class="fas fa-moon theme-toggle-icon"></i>
             </button>
-            <button onclick="document.getElementById('sidebar').classList.toggle('hidden')" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+            <button onclick="toggleSidebar()" class="p-2 rounded-full transition-all duration-300">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -116,28 +116,28 @@
                 <span class="px-3 py-1 bg-secondary/10 text-secondary text-[9px] sm:text-xs font-bold rounded-full uppercase block">Active Case</span>
             </div>
             
-            <!-- Right Corner: Toggles (Desktop only, as mobile has them in header) -->
-            <div class="hidden lg:flex items-center gap-3 md:gap-4 order-3 flex-shrink-0">
-                <button onclick="toggleTheme()" class="p-2 sm:p-3 bg-slate-50 dark:bg-black/20 rounded-xl hover:bg-secondary/10 transition-all active:scale-95" title="Toggle Theme">
+            <!-- Right Corner: Toggles (Visible on md+ as mobile has them in header) -->
+            <div class="hidden md:flex items-center gap-3 md:gap-4 order-3 flex-shrink-0">
+                <button onclick="toggleTheme()" class="top-bar-btn p-2 sm:p-3 bg-slate-50 dark:bg-black/20 rounded-xl hover:bg-secondary/10 transition-all active:scale-95" title="Toggle Theme">
                      <i class="fas fa-moon theme-toggle-icon"></i>
                 </button>
-                <button onclick="toggleDirection()" class="p-2 sm:p-3 bg-slate-50 dark:bg-black/20 rounded-xl hover:bg-secondary/10 transition-all active:scale-95" title="Toggle RTL/LTR">
+                <button onclick="toggleDirection()" class="top-bar-btn p-2 sm:p-3 bg-slate-50 dark:bg-black/20 rounded-xl hover:bg-secondary/10 transition-all active:scale-95" title="Toggle RTL/LTR">
                      <i class="fas fa-right-left"></i>
                 </button>
             </div>
         </div>
 
         <!-- Dynamic Content Sections -->
-        <div id="content-sections" class="p-4 sm:p-6 lg:p-10">
+        <div id="content-sections" class="p-6 sm:p-8 lg:p-12 space-y-10 sm:space-y-16">
             
             <!-- Dashboard View -->
             <div id="section-dashboard" class="space-y-10">
                 <!-- Case Progress Alert (Already added earlier) -->
                 <!-- Quick Stats -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                     <!-- ... existing stats ... -->
                     <!-- Case Status -->
-                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover cursor-default">
+                    <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover cursor-default">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center"><i class="fas fa-calendar-check"></i></div>
                             <div class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase">Case Status</div>
@@ -146,7 +146,7 @@
                         <div class="mt-2 text-xs text-blue-500 dark:text-blue-400 font-bold">Next Update: 48h</div>
                     </div>
                     <!-- Docs Uploaded -->
-                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
+                    <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center"><i class="fas fa-file-invoice"></i></div>
                             <div class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase">Docs Uploaded</div>
@@ -157,23 +157,23 @@
                         </div>
                     </div>
                     <!-- Financials -->
-                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center"><i class="fas fa-wallet"></i></div>
-                            <div class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase">Total Professional Fees</div>
+                        <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center"><i class="fas fa-wallet"></i></div>
+                                <div class="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase">Total Professional Fees</div>
+                            </div>
+                            <div class="text-3xl font-bold text-slate-900 dark:text-white">$4,250</div>
+                            <div class="mt-2 text-xs text-secondary font-bold">Paid: 100% (Settled)</div>
                         </div>
-                        <div class="text-3xl font-bold text-slate-900 dark:text-white">$4,250</div>
-                        <div class="mt-2 text-xs text-secondary font-bold">Paid: 100% (Settled)</div>
-                    </div>
                     <!-- Days in System -->
-                    <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center"><i class="fas fa-hourglass-half"></i></div>
-                            <div class="text-sm font-bold text-slate-700 dark:text-slate-200 uppercase">Time Elapsed</div>
+                        <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center"><i class="fas fa-hourglass-half"></i></div>
+                                <div class="text-sm font-bold text-slate-700 dark:text-slate-200 uppercase">Time Elapsed</div>
+                            </div>
+                            <div class="text-3xl font-bold text-slate-900 dark:text-white">42 Days</div>
+                            <div class="mt-2 text-xs text-slate-400">Since Initial Filing</div>
                         </div>
-                        <div class="text-3xl font-bold text-slate-900 dark:text-white">42 Days</div>
-                        <div class="mt-2 text-xs text-slate-400">Since Initial Filing</div>
-                    </div>
                 </div>
 
                 <!-- Case Progress Timeline -->
@@ -246,35 +246,47 @@
                 </div>
             </div>
 
-            <div id="section-notifications" class="hidden space-y-10">
-                <div class="bg-white dark:bg-surface-dark p-10 rounded-[3rem] border border-slate-100 dark:border-slate-800">
-                    <h2 class="text-3xl font-serif font-bold mb-8 text-slate-900 dark:text-white">Communication Preferences</h2>
+            <div id="section-notifications" class="hidden space-y-6 sm:space-y-10">
+                <div class="bg-white dark:bg-surface-dark p-6 sm:p-10 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm">
+                    <h2 class="text-2xl sm:text-3xl font-serif font-bold mb-8 text-slate-900 dark:text-white">Communication Preferences</h2>
                     <div class="space-y-8">
-                        <div class="flex items-center justify-between p-6 bg-slate-50 dark:bg-black/20 rounded-2xl hover:border-secondary transition-all border border-transparent">
-                            <div class="flex items-center gap-6">
-                                <div class="w-14 h-14 bg-blue-100 text-primary rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-envelope"></i></div>
-                                <div>
-                                    <div class="font-bold text-lg text-slate-800 dark:text-white">Email Notifications</div>
-                                    <p class="text-sm text-slate-500 dark:text-slate-400">Receive case updates and newsletters via email.</p>
+                        <div class="p-4 sm:p-6 bg-slate-50 dark:bg-black/20 rounded-3xl border border-transparent hover:border-secondary/30 transition-all overflow-hidden group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 text-primary dark:text-blue-200 rounded-2xl flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-envelope"></i></div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                        <div class="min-w-0">
+                                            <h4 class="font-bold text-base sm:text-lg text-slate-800 dark:text-white truncate">Email Notifications</h4>
+                                            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0">Receive case updates via email.</p>
+                                        </div>
+                                        <div class="flex justify-end sm:block">
+                                            <label class="relative inline-flex items-center cursor-pointer">
+                                                <input type="checkbox" value="" class="sr-only peer" checked>
+                                                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-secondary"></div>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <label class="relative inline-flex items-center cursor-pointer scale-125">
-                                <input type="checkbox" value="" class="sr-only peer" checked>
-                                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-secondary"></div>
-                            </label>
                         </div>
-                        <div class="flex items-center justify-between p-6 bg-slate-50 dark:bg-black/20 rounded-2xl border border-transparent hover:border-secondary transition-all">
-                            <div class="flex items-center gap-6">
-                                <div class="w-14 h-14 bg-blue-100 text-primary rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-sms"></i></div>
-                                <div>
-                                    <div class="font-bold text-lg text-slate-800 dark:text-white">SMS Alerts</div>
-                                    <p class="text-sm text-slate-500">Get critical time-sensitive alerts on your phone.</p>
+                        <div class="p-4 sm:p-6 bg-slate-50 dark:bg-black/20 rounded-3xl border border-transparent hover:border-secondary/30 transition-all overflow-hidden group">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 text-primary dark:text-blue-200 rounded-2xl flex items-center justify-center text-xl flex-shrink-0"><i class="fas fa-sms"></i></div>
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                        <div class="min-w-0">
+                                            <h4 class="font-bold text-base sm:text-lg text-slate-800 dark:text-white truncate">SMS Alerts</h4>
+                                            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 sm:mt-0">Get critical alerts on your phone.</p>
+                                        </div>
+                                        <div class="flex justify-end sm:block">
+                                            <label class="relative inline-flex items-center cursor-pointer">
+                                                <input type="checkbox" value="" class="sr-only peer">
+                                                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-secondary"></div>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <label class="relative inline-flex items-center cursor-pointer scale-125">
-                                <input type="checkbox" value="" class="sr-only peer">
-                                <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-secondary"></div>
-                            </label>
                         </div>
                     </div>
                 </div>
@@ -302,65 +314,69 @@
                     </div>
 
                     <!-- App Appearance -->
-                    <div class="bg-white dark:bg-surface-dark p-6 sm:p-10 rounded-2xl sm:rounded-[3rem] border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
-                        <div>
-                            <h2 class="text-2xl font-serif font-bold mb-8">Personalization</h2>
-                            <div class="space-y-8">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-bold text-slate-700 dark:text-slate-200">Dark Mode</span>
-                                    <button onclick="toggleTheme()" class="p-3 bg-slate-100 dark:bg-black/20 rounded-xl hover:bg-secondary/20 transition-all">
-                                        <i class="fas fa-moon dark:hidden"></i>
-                                        <i class="fas fa-sun hidden dark:inline"></i>
-                                    </button>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <span class="font-bold text-slate-700 dark:text-slate-200">RTL Layout</span>
-                                    <button onclick="toggleDirection()" class="p-3 bg-slate-100 dark:bg-black/20 rounded-xl hover:bg-secondary/20 transition-all">
-                                        <i class="fas fa-right-left"></i>
-                                    </button>
+                        <div class="bg-white dark:bg-surface-dark p-8 sm:p-10 rounded-3xl border border-slate-100 dark:border-slate-800 flex flex-col justify-between shadow-sm">
+                            <div>
+                                <h2 class="text-2xl font-serif font-bold mb-8">Personalization</h2>
+                                <div class="space-y-8">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-bold text-slate-700 dark:text-slate-200">Dark Mode</span>
+                                        <button onclick="toggleTheme()" class="p-3 bg-slate-100 dark:bg-black/20 rounded-xl hover:bg-secondary/20 transition-all">
+                                            <i class="fas fa-moon dark:hidden"></i>
+                                            <i class="fas fa-sun hidden dark:inline"></i>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-bold text-slate-700 dark:text-slate-200">RTL Layout</span>
+                                        <button onclick="toggleDirection()" class="p-3 bg-slate-100 dark:bg-black/20 rounded-xl hover:bg-secondary/20 transition-all">
+                                            <i class="fas fa-right-left"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-10">
                 <!-- Legal Team (New) -->
-                <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col card-dynamic-hover">
-                    <h3 class="text-xl font-serif font-bold mb-8">Assigned Legal Team</h3>
-                    <div class="space-y-6 flex-1">
-                        <div class="flex items-center gap-4 min-w-0">
-                            <img src="lawyer1.png" class="w-14 h-14 rounded-full border-2 border-secondary/20 flex-shrink-0">
-                            <div class="min-w-0">
-                                <div class="font-bold text-slate-800 dark:text-white truncate">Marcus Sterling</div>
-                                <div class="text-xs text-secondary font-bold uppercase tracking-wider">Senior Attorney</div>
+                <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center card-dynamic-hover h-full">
+                    <h3 class="text-xl font-serif font-bold mb-8 text-slate-800 dark:text-white">Assigned Legal Team</h3>
+                    <div class="space-y-8 flex-1 w-full flex flex-col items-center">
+                        <div class="flex flex-col items-center gap-3">
+                            <img src="lawyer1.png" class="w-16 h-16 rounded-full border-2 border-secondary reflection-effect flex-shrink-0">
+                            <div>
+                                <div class="font-bold text-slate-800 dark:text-white text-lg">Marcus Sterling</div>
+                                <div class="text-xs text-secondary font-bold uppercase tracking-widest">Senior Attorney</div>
                             </div>
                         </div>
-                        <div class="flex items-center gap-4 min-w-0">
-                            <img src="lawyer2.png" class="w-14 h-14 rounded-full border-2 border-secondary/20 flex-shrink-0">
-                            <div class="min-w-0">
-                                <div class="font-bold text-slate-800 dark:text-white truncate">Elena Vance</div>
-                                <div class="text-xs text-secondary font-bold uppercase tracking-wider">Processing Agent</div>
+                        <div class="flex flex-col items-center gap-3">
+                            <img src="lawyer2.png" class="w-16 h-16 rounded-full border-2 border-secondary/20 flex-shrink-0">
+                            <div>
+                                <div class="font-bold text-slate-800 dark:text-white text-lg">Elena Vance</div>
+                                <div class="text-xs text-secondary font-bold uppercase tracking-widest">Processing Agent</div>
                             </div>
                         </div>
-                        <div class="flex items-center gap-4 min-w-0">
-                            <img src="lawyer3.png" class="w-14 h-14 rounded-full border-2 border-secondary/20 grayscale flex-shrink-0">
-                            <div class="min-w-0">
-                                <div class="font-bold text-slate-800 dark:text-white truncate">Julian Thorne</div>
-                                <div class="text-xs text-secondary font-bold uppercase tracking-wider">Compliance Officer</div>
+                        <div class="flex flex-col items-center gap-3">
+                            <img src="lawyer3.png" class="w-16 h-16 rounded-full border-2 border-secondary/20 grayscale flex-shrink-0">
+                            <div>
+                                <div class="font-bold text-slate-800 dark:text-white text-lg">Julian Thorne</div>
+                                <div class="text-xs text-secondary font-bold uppercase tracking-widest">Compliance Officer</div>
                             </div>
                         </div>
                     </div>
-                    <button class="w-full py-4 mt-8 border border-slate-100 dark:border-slate-800 rounded-2xl text-primary font-bold hover:bg-secondary hover:text-white hover:border-secondary transition-all shadow-sm hover:shadow-lg hover:shadow-secondary/20 active:scale-95">Request Call Back</button>
+                    <div class="w-full pt-8 mt-auto border-t border-slate-100 dark:border-slate-800/50">
+                         <button class="w-full btn-secondary py-4 rounded-2xl font-bold hover:bg-secondary hover:text-white transition-all shadow-md active:scale-95">Request Call Back</button>
+                    </div>
                 </div>
 
                 <!-- Messaging -->
                 <div class="lg:col-span-1 bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full card-dynamic-hover">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-8">
                         <h3 class="text-lg sm:text-xl font-serif font-bold text-slate-800 dark:text-white">Secure Messages</h3>
-                        <a href="#" class="text-primary dark:text-secondary font-bold text-xs sm:text-sm whitespace-nowrap">Open Full Chat</a>
+                        <a href="#" class="text-primary dark:text-secondary font-bold text-xs sm:text-sm whitespace-nowrap hover:text-secondary dark:hover:text-white transition-all duration-300 flex items-center gap-2 group">
+                            Open Full Chat <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                        </a>
                     </div>
                     <div class="space-y-6 flex-1">
                        <div class="flex items-start gap-4 p-4 bg-slate-50 dark:bg-black/20 rounded-2xl group cursor-pointer hover:bg-slate-100 transition-colors">
@@ -487,18 +503,44 @@
                 activeLink.classList.add('bg-blue-100', 'text-primary', 'dark:bg-white/10', 'dark:text-white', 'font-bold');
                 activeLink.classList.remove('text-slate-500', 'dark:text-slate-200');
             }
+
+            // Strictly close sidebar on mobile/tablet
+            if (window.innerWidth < 1024) {
+                const sidebar = document.getElementById('sidebar');
+                if (sidebar) {
+                    sidebar.classList.add('-translate-x-full');
+                    sidebar.classList.remove('translate-x-0');
+                }
+            }
         }
 
         // Initialize with Dashboard
         showSection('dashboard');
 
-        // Close sidebar on item click for mobile
+        // Sidebar Toggling & Auto-close
+        const sidebar = document.getElementById('sidebar');
+        
+        function toggleSidebar() {
+            sidebar.classList.toggle('-translate-x-full');
+            sidebar.classList.toggle('translate-x-0');
+        }
+
+        // Close sidebar on item click for mobile/tablet
         document.querySelectorAll('#sidebar .nav-link').forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    document.getElementById('sidebar').classList.add('hidden');
+                if (window.innerWidth < 1024) {
+                    sidebar.classList.add('-translate-x-full');
+                    sidebar.classList.remove('translate-x-0');
                 }
             });
+        });
+
+        // Close sidebar when clicking outside (on overlay)
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth < 1024 && !sidebar.contains(e.target) && !e.target.closest('button[onclick="toggleSidebar()"]')) {
+                sidebar.classList.add('-translate-x-full');
+                sidebar.classList.remove('translate-x-0');
+            }
         });
     </script>
 </body>
