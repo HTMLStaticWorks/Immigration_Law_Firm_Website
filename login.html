@@ -24,7 +24,7 @@
                 extend: {
                     colors: {
                         primary: '#1A237E',
-                        secondary: '#C0A151',
+                        secondary: '#3B82F6',
                         surface: {
                             light: '#FFFFFF',
                             dark: '#111827'
@@ -52,10 +52,10 @@
     </div>
 
     <!-- Login Container -->
-    <main class="w-full max-w-md bg-white dark:bg-surface-dark rounded-3xl overflow-hidden shadow-2xl p-8 lg:p-12 relative">
+    <main class="w-full max-w-xl bg-white dark:bg-surface-dark rounded-3xl overflow-hidden shadow-2xl p-8 lg:p-12 relative">
         <div class="mb-10 text-center">
             <a href="index.html" class="inline-flex items-center gap-3 mb-8">
-                <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg shadow-sm">
+                <img src="logo.png" alt="Logo" class="w-10 h-10">
                 <span class="text-xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</span>
             </a>
             <h2 class="text-3xl font-bold mb-2 text-slate-800 dark:text-white">Secure Login</h2>
@@ -107,10 +107,14 @@
                 <span class="relative px-4 bg-white dark:bg-surface-dark text-xs font-bold text-slate-400 uppercase tracking-widest">Or Continue With</span>
             </div>
             
-            <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="grid grid-cols-3 gap-4 mb-8">
                 <button class="social-auth-btn">
                     <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" class="w-4 h-4" alt="Google">
                     Google
+                </button>
+                <button class="social-auth-btn">
+                    <i class="fab fa-apple text-lg"></i>
+                    Apple
                 </button>
                 <button class="social-auth-btn">
                     <i class="fab fa-linkedin text-[#0A66C2] text-lg"></i>
@@ -120,7 +124,7 @@
         </div>
 
         <div class="mt-8 pt-8 border-t border-slate-50 dark:border-slate-800/50 text-center text-sm text-slate-500">
-            Don't have an account? <a href="signup.html" class="text-secondary font-bold hover:underline">Request Access</a>
+            Don't have an account? <a href="signup.html" class="text-secondary font-bold hover:underline">Sign Up</a>
         </div>
     </main>
 

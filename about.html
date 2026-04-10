@@ -25,7 +25,7 @@
                 extend: {
                     colors: {
                         primary: '#1A237E',
-                        secondary: '#C0A151',
+                        secondary: '#3B82F6',
                         surface: {
                             light: '#FFFFFF',
                             dark: '#111827'
@@ -51,16 +51,17 @@
     <header class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <nav class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between gap-2 md:gap-4 lg:gap-8">
             <a href="index.html" class="flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse flex-shrink-0">
-                <img src="logo.png" alt="Global Link Logo" class="w-10 h-10 rounded-lg shadow-sm">
+                <img src="logo.png" alt="Global Link Logo" class="w-10 h-10">
                 <span class="text-xs sm:text-lg md:text-sm lg:text-xl xl:text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</span>
             </a>
-            <div class="hidden lg:flex items-center md:space-x-1 lg:space-x-4 xl:space-x-8 rtl:space-x-reverse text-[10px] lg:text-base">
-                <a href="index.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Home 1</a>
-                <a href="home2.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Home 2</a>
-                <a href="about.html" class="text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary whitespace-nowrap active:scale-95 transition-transform">About</a>
-                <a href="blog.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Blog</a>
-                <a href="contact.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Contact</a>
-                <a href="dashboard.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Dashboard</a>
+            <div class="hidden lg:flex items-center md:space-x-1 lg:space-x-4 xl:space-x-8 rtl:space-x-reverse text-[10px] lg:text-sm xl:text-base">
+                <a href="index.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Home 1</a>
+                <a href="home2.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Home 2</a>
+                <a href="about.html" class="text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary transition-all whitespace-nowrap active:scale-95">About</a>
+                <a href="services.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Services</a>
+                <a href="blog.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Blog</a>
+                <a href="contact.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Contact</a>
+                <a href="dashboard.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Dashboard</a>
             </div>
             <div class="flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse flex-shrink-0">
                 <button onclick="toggleDirection()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
@@ -76,10 +77,13 @@
                 </button>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-4 px-4 py-6 bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800">
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-4 px-4 py-6 bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800 animate-fade-in">
             <a href="index.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Home 1</a>
             <a href="home2.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Home 2</a>
             <a href="about.html" class="text-primary dark:text-secondary font-semibold active:translate-x-2 transition-transform">About</a>
+            <a href="services.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Services</a>
             <a href="blog.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Blog</a>
             <a href="contact.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Contact</a>
             <a href="dashboard.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Dashboard</a>
@@ -347,7 +351,7 @@
                 <!-- Global Link Branding -->
                 <div>
                     <div class="flex items-center gap-3 mb-6">
-                        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg border border-slate-200 dark:border-white/10 shadow-sm">
+                        <img src="logo.png" alt="Logo" class="w-10 h-10">
                         <h3 class="text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</h3>
                     </div>
                     <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Expert immigration guidance for a global world. Since 2005.</p>

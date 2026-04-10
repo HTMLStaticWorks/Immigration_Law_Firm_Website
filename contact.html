@@ -27,7 +27,7 @@
                 extend: {
                     colors: {
                         primary: '#1A237E',
-                        secondary: '#C0A151',
+                        secondary: '#3B82F6',
                         surface: {
                             light: '#FFFFFF',
                             dark: '#1A1A1A'
@@ -58,18 +58,17 @@
         class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
         <nav class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse shrink-0">
-                <img src="logo.png" alt="Global Link Logo" class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg shadow-sm">
+                <img src="logo.png" alt="Global Link Logo" class="w-10 h-10">
                 <span class="text-xs sm:text-lg md:text-sm lg:text-xl xl:text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</span>
             </a>
             <div class="hidden lg:flex items-center md:space-x-1 lg:space-x-4 xl:space-x-8 rtl:space-x-reverse text-[10px] lg:text-sm xl:text-base">
                 <a href="index.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Home 1</a>
                 <a href="home2.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Home 2</a>
                 <a href="about.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">About</a>
+                <a href="services.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Services</a>
                 <a href="blog.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Blog</a>
-                <a href="contact.html"
-                    class="text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary whitespace-nowrap active:scale-95 transition-transform">Contact</a>
-                <a href="dashboard.html"
-                    class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Dashboard</a>
+                <a href="contact.html" class="text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary whitespace-nowrap active:scale-95 transition-transform">Contact</a>
+                <a href="dashboard.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Dashboard</a>
             </div>
             <div class="flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse flex-shrink-0">
                 <button onclick="toggleDirection()"
@@ -90,20 +89,17 @@
                 </button>
             </div>
         </nav>
-        <div id="mobile-menu"
-            class="hidden lg:hidden flex-col space-y-4 px-4 py-6 bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800">
+        <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-4 px-4 py-6 bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800 animate-fade-in">
             <a href="index.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Home 1</a>
             <a href="home2.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Home 2</a>
             <a href="about.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">About</a>
+            <a href="services.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Services</a>
             <a href="blog.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Blog</a>
             <a href="contact.html" class="text-primary dark:text-secondary font-semibold active:translate-x-2 transition-transform">Contact</a>
             <a href="dashboard.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Dashboard</a>
             <div class="flex flex-col gap-2 pt-4">
-                <a href="login.html"
-                    class="w-full py-3 text-center border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-xl font-bold hover:bg-primary/5 transition-colors">Login</a>
-                <a href="signup.html"
-                    class="w-full py-3 text-center bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20">Sign
-                    Up</a>
+                <a href="login.html" class="w-full py-3 text-center border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-xl font-bold hover:bg-primary/5 transition-colors">Login</a>
+                <a href="signup.html" class="w-full py-3 text-center bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20">Sign Up</a>
             </div>
         </div>
     </header>
@@ -224,23 +220,58 @@
                 <h2 class="text-4xl font-serif font-bold mb-6 text-slate-900 dark:text-white">Common Questions</h2>
                 <p class="text-slate-600 dark:text-slate-400">Everything you need to know about starting your consultation with our legal experts.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div class="p-8 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                    <h4 class="text-lg font-bold mb-3 text-slate-900 dark:text-white">Is the first consultation free?</h4>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Yes, we provide a 15-minute initial assessment to understand your case and determine the basic eligibility pathways.</p>
-                </div>
-                <div class="p-8 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                    <h4 class="text-lg font-bold mb-3 text-slate-900 dark:text-white">What documents should I prepare?</h4>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Please have your current passport, any previous visa rejection letters, and recent educational/employment certificates ready.</p>
-                </div>
-                <div class="p-8 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                    <h4 class="text-lg font-bold mb-3 text-slate-900 dark:text-white">How long does the process take?</h4>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Processing times vary by country and visa type, but typically range from 3 to 18 months depending on local authority efficiency.</p>
-                </div>
-                <div class="p-8 bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
-                    <h4 class="text-lg font-bold mb-3 text-slate-900 dark:text-white">Can you help with emergency appeals?</h4>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Absolutely. Our emergency litigation team can file immediate stay-of-removal requests or appeal urgent visa rejections.</p>
-                </div>
+            <div class="max-w-4xl mx-auto space-y-4 font-sans">
+                <!-- FAQ Item 1 -->
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                        Is the first consultation free?
+                        <span class="text-secondary transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-[15px] leading-relaxed border-t border-slate-50 dark:border-slate-800/50 pt-4">
+                        Yes, we provide a 15-minute initial assessment to understand your case and determine the basic eligibility pathways. There is no obligation to continue.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                        What documents should I prepare?
+                        <span class="text-secondary transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-[15px] leading-relaxed border-t border-slate-50 dark:border-slate-800/50 pt-4">
+                        Please have your current passport, any previous visa rejection letters, and recent educational or employment certificates ready. Digal copies are preferred for faster review.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                        How long does the process take?
+                        <span class="text-secondary transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-[15px] leading-relaxed border-t border-slate-50 dark:border-slate-800/50 pt-4">
+                        Processing times vary significantly by country and visa type. Typically, it ranges from 3 to 18 months. We provide real-time tracking through our client portal to keep you updated.
+                    </div>
+                </details>
+
+                <!-- FAQ Item 4 -->
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-300">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-lg text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                        Can you help with emergency appeals?
+                        <span class="text-secondary transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-600 dark:text-slate-400 text-[15px] leading-relaxed border-t border-slate-50 dark:border-slate-800/50 pt-4">
+                        Absolutely. Our emergency litigation team can file immediate stay-of-removal requests or appeal urgent visa rejections within 24 to 48 hours of instruction.
+                    </div>
+                </details>
             </div>
         </div>
     </section>
@@ -306,7 +337,7 @@
                 <!-- Global Link Branding -->
                 <div>
                     <div class="flex items-center gap-3 mb-6">
-                        <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-lg border border-slate-200 dark:border-white/10 shadow-sm">
+                        <img src="logo.png" alt="Logo" class="w-10 h-10">
                         <h3 class="text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</h3>
                     </div>
                     <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Available 24/7 for emergency legal assistance. Trusted worldwide.</p>

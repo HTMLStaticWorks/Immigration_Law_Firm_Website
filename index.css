@@ -5,8 +5,8 @@
 :root {
     --primary: 26 35 126;
     /* Navy #1a237e */
-    --secondary: 192 161 81;
-    /* Gold #c0a151 */
+    --secondary: 59 130 246;
+    /* Indigo Blue #3b82f6 */
     --bg-light: 248 249 250;
     /* #f8f9fa */
     --bg-dark: 10 10 10;
@@ -148,7 +148,7 @@ body {
 }
 
 .custom-marker {
-    background: #C0A151;
+    background: #3B82F6;
     border: 2px solid white;
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(192, 161, 81, 0.5);
@@ -249,7 +249,7 @@ body {
 
 .team-social-link:hover,
 .team-social-link:active {
-    color: #c0a151; /* secondary */
+    color: #3b82f6; /* secondary */
     transform: scale(1.25);
 }
 
@@ -406,7 +406,7 @@ body {
 
 /* Logo Text Styling (Standardized with Dashboard) */
 .logo-text {
-    background: linear-gradient(to right, #1a237e, #c0a151);
+    background: linear-gradient(to right, #1a237e, #3b82f6);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -414,7 +414,7 @@ body {
 }
 
 [data-theme='dark'] .logo-text {
-    background: linear-gradient(to right, #ffffff, #ffffff, #c0a151);
+    background: linear-gradient(to right, #ffffff, #93c5fd, #3b82f6);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -434,7 +434,7 @@ body {
 }
 
 .footer-link:hover {
-    color: #c0a151; /* secondary */
+    color: #3b82f6; /* secondary */
     transform: translateX(0.5rem);
 }
 
@@ -445,7 +445,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #c0a151;
+    background-color: #3b82f6;
     transition: all 0.3s ease;
     border-radius: 9999px;
 }
