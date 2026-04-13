@@ -87,20 +87,22 @@
             <div>
                 <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-wider">Secure Password</label>
                 <div class="relative mb-4">
-                    <input type="password" id="password" required placeholder="••••••••" class="w-full pl-11 pr-4 py-3 bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-xl focus:border-secondary outline-none transition-all placeholder:text-slate-400">
+                    <input type="password" id="password" required placeholder="••••••••" class="w-full pl-11 pr-12 py-3 bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-xl focus:border-secondary outline-none transition-all placeholder:text-slate-400">
                     <i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                    <button type="button" onclick="togglePasswordVisibility('password', 'eye-icon-1')" class="password-toggle">
+                        <i id="eye-icon-1" class="fas fa-eye"></i>
+                    </button>
                 </div>
                 
                 <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-wider">Confirm Password</label>
                 <div class="relative mb-2">
-                    <input type="password" id="confirm-password" required placeholder="••••••••" class="w-full pl-11 pr-4 py-3 bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-xl focus:border-secondary outline-none transition-all placeholder:text-slate-400">
+                    <input type="password" id="confirm-password" required placeholder="••••••••" class="w-full pl-11 pr-12 py-3 bg-slate-50 dark:bg-black/20 border border-slate-200 dark:border-slate-800 rounded-xl focus:border-secondary outline-none transition-all placeholder:text-slate-400">
                     <i class="fas fa-shield-check absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                    <button type="button" onclick="togglePasswordVisibility('confirm-password', 'eye-icon-2')" class="password-toggle">
+                        <i id="eye-icon-2" class="fas fa-eye"></i>
+                    </button>
                 </div>
 
-                <div class="flex items-center gap-2 px-1">
-                    <input type="checkbox" id="show-password" onchange="document.getElementById('password').type = this.checked ? 'text' : 'password'; document.getElementById('confirm-password').type = this.checked ? 'text' : 'password';" class="w-4 h-4 accent-secondary bg-slate-100 rounded">
-                    <label for="show-password" class="text-xs font-bold text-slate-400 uppercase tracking-widest">Show Password</label>
-                </div>
             </div>
             
             <div class="text-[10px] text-slate-500 leading-tight">

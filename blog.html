@@ -60,7 +60,7 @@
                 <img src="logo.png" alt="Global Link Logo" class="w-10 h-10">
                 <span class="text-xs sm:text-lg md:text-sm lg:text-xl xl:text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</span>
             </a>
-            <div class="hidden lg:flex items-center md:space-x-1 lg:space-x-4 xl:space-x-8 rtl:space-x-reverse text-[10px] lg:text-sm xl:text-base">
+            <div class="hidden xl:flex items-center space-x-1 xl:space-x-8 rtl:space-x-reverse text-base">
                 <a href="index.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Home 1</a>
                 <a href="home2.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Home 2</a>
                 <a href="about.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">About</a>
@@ -79,29 +79,45 @@
                     <i class="fas fa-moon theme-toggle-icon"></i>
                 </button>
                 <a href="login.html"
-                    class="hidden lg:block btn-secondary md:px-3 lg:px-6 py-2 text-[10px] lg:text-sm border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-lg hover:scale-105 active:scale-95 transition-transform font-bold">Login</a>
+                    class="hidden xl:block btn-secondary xl:px-6 py-2 text-sm border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-lg hover:scale-105 active:scale-95 transition-transform font-bold">Login</a>
                 <a href="signup.html"
-                    class="hidden lg:block btn-primary md:px-3 lg:px-6 py-2 text-[10px] lg:text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-transform">Sign
-                    Up</a>
-                <button onclick="toggleMobileMenu()" class="lg:hidden p-2">
-                    <i class="fas fa-bars text-xl"></i>
+                    class="hidden xl:block btn-primary xl:px-6 py-2 text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-transform">Sign Up</a>
+                <button onclick="toggleMobileMenu()" class="xl:hidden p-2 text-primary dark:text-white relative z-50 flex items-center justify-center">
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-4 px-4 py-6 bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800 animate-fade-in">
-            <a href="index.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Home 1</a>
-            <a href="home2.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Home 2</a>
-            <a href="about.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">About</a>
-            <a href="services.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Services</a>
-            <a href="blog.html" class="text-primary dark:text-secondary font-semibold active:translate-x-2 transition-transform">Blog</a>
-            <a href="contact.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Contact</a>
-            <a href="dashboard.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Dashboard</a>
-            <div class="flex flex-col gap-2 pt-4">
-                <a href="login.html" class="w-full py-3 text-center border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-xl font-bold hover:bg-primary/5 transition-colors">Login</a>
-                <a href="signup.html" class="w-full py-3 text-center bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20">Sign Up</a>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-[100] bg-white dark:bg-black xl:hidden flex-col animate-fade-in overflow-y-auto">
+        <div class="p-6 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="w-8 h-8">
+                <span class="text-xl font-bold logo-text">GLOBAL LINK</span>
+            </div>
+            <button onclick="toggleMobileMenu()" class="p-2 text-slate-400 hover:text-primary dark:hover:text-white">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="px-6 py-8 space-y-6">
+            <div class="flex flex-col space-y-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Main Navigation</h4>
+                <a href="index.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Home 1</a>
+                <a href="home2.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Home 2</a>
+                <a href="about.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">About</a>
+                <a href="services.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Services</a>
+                <a href="blog.html" class="text-lg font-bold text-primary dark:text-secondary border-l-4 border-primary dark:border-secondary pl-4">Blog</a>
+                <a href="contact.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Contact</a>
+                <a href="dashboard.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Dashboard</a>
+            </div>
+            <div class="pt-8 border-t border-slate-100 dark:border-slate-800 space-y-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Account Access</h4>
+                <a href="login.html" class="w-full py-4 text-center border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-2xl font-bold hover:bg-primary/5 transition-all block">Login</a>
+                <a href="signup.html" class="w-full py-4 text-center bg-primary text-white rounded-2xl font-bold shadow-lg shadow-primary/20 block">Sign Up</a>
             </div>
         </div>
-    </header>
+    </div>
 
     <!-- Subpage Hero -->
     <section class="relative py-32 flex items-center overflow-hidden">
@@ -144,8 +160,7 @@
                 <div class="lg:w-2/3">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- Post 1 -->
-                        <article
-                            class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group flex flex-col h-full">
+                        <article class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group flex flex-col h-full">
                             <div class="relative h-48 overflow-hidden shrink-0">
                                 <img src="https://images.pexels.com/photos/32227477/pexels-photo-32227477.jpeg"
                                     alt="Blog Post 1"
@@ -156,24 +171,16 @@
                             </div>
                             <div class="p-6 flex flex-col flex-grow">
                                 <div class="text-slate-500 dark:text-slate-400 text-xs mb-3 flex items-center gap-2">
-                                    <i class="fas fa-calendar-alt"></i> March 24, 2026 • <i class="fas fa-clock"></i> 5
-                                    min read
+                                    <i class="fas fa-calendar-alt"></i> March 24, 2026 • <i class="fas fa-clock"></i> 5 min read
                                 </div>
-                                <h3
-                                    class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">
-                                    New Skilled Worker Visa Rules: What You Need to Know</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">The government recently
-                                    announced significant changes to point calculations for skilled workers. Our lead
-                                    counsel breaks it down.</p>
-                                <a href="#"
-                                    class="text-primary dark:text-secondary font-bold text-sm tracking-wide">READ
-                                    ARTICLE →</a>
+                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">New Skilled Worker Visa Rules: What You Need to Know</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">The government recently announced significant changes to point calculations for skilled workers. Our lead counsel breaks it down.</p>
+                                <a href="#" class="text-primary dark:text-secondary font-bold text-sm tracking-wide mt-auto inline-block">READ ARTICLE →</a>
                             </div>
                         </article>
 
                         <!-- Post 2 -->
-                        <article
-                            class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group">
+                        <article class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group flex flex-col h-full">
                             <div class="relative h-48 overflow-hidden">
                                 <img src="https://images.pexels.com/photos/7793999/pexels-photo-7793999.jpeg"
                                     alt="Blog Post 2"
@@ -182,25 +189,18 @@
                                     class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-md text-xs font-bold uppercase">Case
                                     Study</span>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <div class="text-slate-500 dark:text-slate-400 text-xs mb-3 flex items-center gap-2">
-                                    <i class="fas fa-calendar-alt"></i> March 18, 2026 • <i class="fas fa-clock"></i> 8
-                                    min read
+                                    <i class="fas fa-calendar-alt"></i> March 18, 2026 • <i class="fas fa-clock"></i> 8 min read
                                 </div>
-                                <h3
-                                    class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">
-                                    Overcoming Business Visa Rejections: A Success Story</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">How we helped a global tech
-                                    startup obtain 20+ visas after multiple initial rejections by local authorities.</p>
-                                <a href="#"
-                                    class="text-primary dark:text-secondary font-bold text-sm tracking-wide">READ
-                                    ARTICLE →</a>
+                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">Overcoming Business Visa Rejections: A Success Story</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">How we helped a global tech startup obtain 20+ visas after multiple initial rejections by local authorities.</p>
+                                <a href="#" class="text-primary dark:text-secondary font-bold text-sm tracking-wide mt-auto inline-block">READ ARTICLE →</a>
                             </div>
                         </article>
 
                         <!-- Post 3 -->
-                        <article
-                            class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group">
+                        <article class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group flex flex-col h-full">
                             <div class="relative h-48 overflow-hidden">
                                 <img src="https://images.pexels.com/photos/29402986/pexels-photo-29402986.jpeg"
                                     alt="Blog Post 3"
@@ -209,27 +209,20 @@
                                     class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-md text-xs font-bold uppercase">Digital
                                     Nomad</span>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <div class="text-slate-500 dark:text-slate-400 text-xs mb-3 flex items-center gap-2">
-                                    <i class="fas fa-calendar-alt"></i> March 10, 2026 • <i class="fas fa-clock"></i> 4
-                                    min read
+                                    <i class="fas fa-calendar-alt"></i> March 10, 2026 • <i class="fas fa-clock"></i> 4 min read
                                 </div>
-                                <h3
-                                    class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">
-                                    Digital Nomad Visas: The 2026 EU Guide</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Remote workers are the new
-                                    pioneers. Discover which European countries offer the best tax benefits this year.
-                                </p>
-                                <a href="#"
-                                    class="text-primary dark:text-secondary font-bold text-sm tracking-wide">READ
-                                    ARTICLE →</a>
+                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">Digital Nomad Visas: The 2026 EU Guide</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Remote workers are the new pioneers. Discover which European countries offer the best tax benefits this year.</p>
+                                <a href="#" class="text-primary dark:text-secondary font-bold text-sm tracking-wide mt-auto inline-block">READ ARTICLE →</a>
                             </div>
                         </article>
 
                         <!-- Post 4 -->
                         <article
-                            class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group">
-                            <div class="relative h-48 overflow-hidden">
+                            class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group flex flex-col h-full">
+                            <div class="relative h-48 overflow-hidden shrink-0">
                                 <img src="https://images.pexels.com/photos/173666/pexels-photo-173666.jpeg"
                                     alt="Blog Post 4"
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale">
@@ -237,20 +230,13 @@
                                     class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-md text-xs font-bold uppercase">Family
                                     First</span>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <div class="text-slate-500 dark:text-slate-400 text-xs mb-3 flex items-center gap-2">
-                                    <i class="fas fa-calendar-alt"></i> March 05, 2026 • <i class="fas fa-clock"></i> 10
-                                    min read
+                                    <i class="fas fa-calendar-alt"></i> March 05, 2026 • <i class="fas fa-clock"></i> 10 min read
                                 </div>
-                                <h3
-                                    class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">
-                                    Family Reunification: A Step-by-Step Pathway</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Navigating the sponsorship
-                                    complexities to bring your loved ones across borders. A comprehensive legal manual.
-                                </p>
-                                <a href="#"
-                                    class="text-primary dark:text-secondary font-bold text-sm tracking-wide">READ
-                                    ARTICLE →</a>
+                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">Family Reunification: A Step-by-Step Pathway</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Navigating the sponsorship complexities to bring your loved ones across borders. A comprehensive legal manual.</p>
+                                <a href="#" class="text-primary dark:text-secondary font-bold text-sm tracking-wide mt-auto inline-block">READ ARTICLE →</a>
                             </div>
                         </article>
 
@@ -264,9 +250,8 @@
                                 <div class="text-slate-500 dark:text-slate-400 text-xs mb-3 flex items-center gap-2">
                                     <i class="fas fa-calendar-alt"></i> Feb 28, 2026 • <i class="fas fa-clock"></i> 6 min read
                                 </div>
-                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">
-                                    Student Visas to PR: The Golden Bridge</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">How to leverage your international education into a permanent residency status efficiently.</p>
+                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">Student Visas to PR: The Golden Bridge</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">How to leverage your international education into a permanent residency status efficiently.</p>
                                 <a href="#" class="text-primary dark:text-secondary font-bold text-sm tracking-wide mt-auto inline-block">READ ARTICLE →</a>
                             </div>
                         </article>
@@ -281,44 +266,41 @@
                                 <div class="text-slate-500 dark:text-slate-400 text-xs mb-3 flex items-center gap-2">
                                     <i class="fas fa-calendar-alt"></i> Feb 15, 2026 • <i class="fas fa-clock"></i> 12 min read
                                 </div>
-                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">
-                                    5 Mistakes to Avoid in Your PR Application</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Our attorneys reveal the most common clerical errors that lead to automatic rejection at the border.</p>
+                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">5 Mistakes to Avoid in Your PR Application</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Our attorneys reveal the most common clerical errors that lead to automatic rejection at the border.</p>
                                 <a href="#" class="text-primary dark:text-secondary font-bold text-sm tracking-wide mt-auto inline-block">READ ARTICLE →</a>
                             </div>
                         </article>
 
                         <!-- Post 7 -->
-                        <article class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group">
-                            <div class="relative h-48 overflow-hidden">
-                                <img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg" alt="Blog Post 7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <article class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group flex flex-col h-full">
+                            <div class="relative h-48 overflow-hidden shrink-0">
+                                <img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg" alt="Blog Post 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                                 <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-md text-xs font-bold uppercase">Investment</span>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <div class="text-slate-500 dark:text-slate-400 text-xs mb-3 flex items-center gap-2">
                                     <i class="fas fa-calendar-alt"></i> Feb 05, 2026 • <i class="fas fa-clock"></i> 15 min read
                                 </div>
-                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">
-                                    Citizenship by Investment: Global Opportunities</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">A look at the fastest pathways to dual citizenship through strategic financial contributions and real estate acquisitions.</p>
-                                <a href="#" class="text-primary dark:text-secondary font-bold text-sm tracking-wide">READ ARTICLE →</a>
+                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">Citizenship by Investment: Global Opportunities</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">A look at the fastest pathways to dual citizenship through strategic financial contributions and real estate acquisitions.</p>
+                                <a href="#" class="text-primary dark:text-secondary font-bold text-sm tracking-wide mt-auto inline-block">READ ARTICLE →</a>
                             </div>
                         </article>
 
                         <!-- Post 8 -->
-                        <article class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group">
-                            <div class="relative h-48 overflow-hidden">
-                                <img src="https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg" alt="Blog Post 8" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <article class="bg-background-light dark:bg-surface-dark rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow group flex flex-col h-full">
+                            <div class="relative h-48 overflow-hidden shrink-0">
+                                <img src="https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg" alt="Blog Post 8" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                                 <span class="absolute top-4 left-4 bg-secondary text-white px-3 py-1 rounded-md text-xs font-bold uppercase">Compliance</span>
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex flex-col flex-grow">
                                 <div class="text-slate-500 dark:text-slate-400 text-xs mb-3 flex items-center gap-2">
                                     <i class="fas fa-calendar-alt"></i> Jan 25, 2026 • <i class="fas fa-clock"></i> 7 min read
                                 </div>
-                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">
-                                    Mastering Language Tests: IELTS vs PTE Guide</h3>
-                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Which test suits your profile best? We compare scoring systems and difficulty levels for the top immigration-approved exams.</p>
-                                <a href="#" class="text-primary dark:text-secondary font-bold text-sm tracking-wide">READ ARTICLE →</a>
+                                <h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white hover:text-primary transition-colors cursor-pointer leading-tight">Mastering Language Tests: IELTS vs PTE Guide</h3>
+                                <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">Which test suits your profile best? We compare scoring systems and difficulty levels for the top immigration-approved exams.</p>
+                                <a href="#" class="text-primary dark:text-secondary font-bold text-sm tracking-wide mt-auto inline-block">READ ARTICLE →</a>
                             </div>
                         </article>
                     </div>

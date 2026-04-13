@@ -61,7 +61,7 @@
                 <img src="logo.png" alt="Global Link Logo" class="w-10 h-10">
                 <span class="text-xs sm:text-lg md:text-sm lg:text-xl xl:text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</span>
             </a>
-            <div class="hidden lg:flex items-center md:space-x-1 lg:space-x-4 xl:space-x-8 rtl:space-x-reverse text-[10px] lg:text-sm xl:text-base">
+            <div class="hidden xl:flex items-center space-x-1 xl:space-x-8 rtl:space-x-reverse text-base">
                 <a href="index.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Home 1</a>
                 <a href="home2.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Home 2</a>
                 <a href="about.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">About</a>
@@ -80,16 +80,45 @@
                     <i class="fas fa-moon theme-toggle-icon"></i>
                 </button>
                 <a href="login.html"
-                    class="hidden lg:block btn-secondary md:px-3 lg:px-6 py-2 text-[10px] lg:text-sm border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-lg hover:scale-105 active:scale-95 transition-transform font-bold">Login</a>
+                    class="hidden xl:block btn-secondary xl:px-6 py-2 text-sm border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-lg hover:scale-105 active:scale-95 transition-transform font-bold">Login</a>
                 <a href="signup.html"
-                    class="hidden lg:block btn-primary md:px-3 lg:px-6 py-2 text-[10px] lg:text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-transform">Sign
-                    Up</a>
-                <button onclick="toggleMobileMenu()" class="lg:hidden p-2">
-                    <i class="fas fa-bars text-xl"></i>
+                    class="hidden xl:block btn-primary xl:px-6 py-2 text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-transform">Sign Up</a>
+                <button onclick="toggleMobileMenu()" class="xl:hidden p-2 text-primary dark:text-white relative z-50 flex items-center justify-center">
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </nav>
     </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-[100] bg-white dark:bg-black xl:hidden flex-col animate-fade-in overflow-y-auto">
+        <div class="p-6 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="w-8 h-8">
+                <span class="text-xl font-bold logo-text">GLOBAL LINK</span>
+            </div>
+            <button onclick="toggleMobileMenu()" class="p-2 text-slate-400 hover:text-primary dark:hover:text-white">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="px-6 py-8 space-y-6">
+            <div class="flex flex-col space-y-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Main Navigation</h4>
+                <a href="index.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Home 1</a>
+                <a href="home2.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Home 2</a>
+                <a href="about.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">About</a>
+                <a href="services.html" class="text-lg font-bold text-primary dark:text-secondary border-l-4 border-primary dark:border-secondary pl-4">Services</a>
+                <a href="blog.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Blog</a>
+                <a href="contact.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Contact</a>
+                <a href="dashboard.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Dashboard</a>
+            </div>
+            <div class="pt-8 border-t border-slate-100 dark:border-slate-800 space-y-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Account Access</h4>
+                <a href="login.html" class="w-full py-4 text-center border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-2xl font-bold hover:bg-primary/5 transition-all block">Login</a>
+                <a href="signup.html" class="w-full py-4 text-center bg-primary text-white rounded-2xl font-bold shadow-lg shadow-primary/20 block">Sign Up</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Subpage Hero -->
     <section class="relative py-32 lg:py-48 flex items-center overflow-hidden">
@@ -123,7 +152,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <!-- Service 1: Visa -->
-                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col">
                     <div class="relative h-64 overflow-hidden">
                         <img src="service_visa.png" alt="Visa Services" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
@@ -132,19 +161,21 @@
                             <h3 class="text-2xl font-bold">Visa Applications</h3>
                         </div>
                     </div>
-                    <div class="p-8">
-                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Full assistance for Student, Skilled Worker, Visitor, and Temporary Residence visas for major global destinations.</p>
-                        <ul class="space-y-3 mb-8">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Full assistance for Student, Skilled Worker, Visitor, and Temporary Residence visas for major global destinations.</p>
+                        <ul class="space-y-3 mb-8 flex-1">
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Study Permits</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Work Authorizations</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Visitor Extensions</li>
                         </ul>
-                        <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        <div class="mt-auto pt-4">
+                            <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all whitespace-nowrap">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 2: PR -->
-                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col">
                     <div class="relative h-64 overflow-hidden">
                         <img src="service_pr.png" alt="Permanent Residency" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
@@ -153,19 +184,21 @@
                             <h3 class="text-2xl font-bold">Permanent Residency</h3>
                         </div>
                     </div>
-                    <div class="p-8">
-                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Navigate Express Entry, PNP, and tailored PR programs with our senior processing agents and legal strategists.</p>
-                        <ul class="space-y-3 mb-8">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Navigate Express Entry, PNP, and tailored PR programs with our senior processing agents and legal strategists.</p>
+                        <ul class="space-y-3 mb-8 flex-1">
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> EE Score Optimization</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Provincial Nominations</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Skilled Trades PR</li>
                         </ul>
-                        <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        <div class="mt-auto pt-4">
+                            <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all whitespace-nowrap">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 3: Citizenship -->
-                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col">
                     <div class="relative h-64 overflow-hidden">
                         <img src="service_citizenship.png" alt="Citizenship" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
@@ -174,19 +207,21 @@
                             <h3 class="text-2xl font-bold">Citizenship</h3>
                         </div>
                     </div>
-                    <div class="p-8">
-                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Secure your ultimate goal through naturalization, heritage, or investment with our meticulous legal reviews.</p>
-                        <ul class="space-y-3 mb-8">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Secure your ultimate goal through naturalization, heritage, or investment with our meticulous legal reviews.</p>
+                        <ul class="space-y-3 mb-8 flex-1">
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Eligibility Audits</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Test Prep Assistance</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Dual Citizenship Strategy</li>
                         </ul>
-                        <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        <div class="mt-auto pt-4">
+                            <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all whitespace-nowrap">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 4: Business -->
-                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col">
                     <div class="relative h-64 overflow-hidden">
                         <img src="service_business.png" alt="Business Immigration" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
@@ -195,19 +230,21 @@
                             <h3 class="text-2xl font-bold">Business Immigration</h3>
                         </div>
                     </div>
-                    <div class="p-8">
-                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">High-net-worth individual relocation, startup visas, and corporate intra-company transfers for global businesses.</p>
-                        <ul class="space-y-3 mb-8">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">High-net-worth individual relocation, startup visas, and corporate intra-company transfers for global businesses.</p>
+                        <ul class="space-y-3 mb-8 flex-1">
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Investor Visas (EB-5/UK)</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Start-Up Entry</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Corporate Relocation</li>
                         </ul>
-                        <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        <div class="mt-auto pt-4">
+                            <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all whitespace-nowrap">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 5: Family -->
-                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col">
                     <div class="relative h-64 overflow-hidden">
                         <img src="service_family.png" alt="Family Sponsorship" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
@@ -216,19 +253,21 @@
                             <h3 class="text-2xl font-bold">Family Sponsorship</h3>
                         </div>
                     </div>
-                    <div class="p-8">
-                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Reunite with your loved ones through spouse, parent, and dependent sponsorship applications managed with care.</p>
-                        <ul class="space-y-3 mb-8">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Reunite with your loved ones through spouse, parent, and dependent sponsorship applications managed with care.</p>
+                        <ul class="space-y-3 mb-8 flex-1">
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Spousal Sponsorship</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Super Visas</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Dependent Reunification</li>
                         </ul>
-                        <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        <div class="mt-auto pt-4">
+                            <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all whitespace-nowrap">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 6: Legal -->
-                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div class="group bg-slate-50 dark:bg-surface-dark rounded-[2.5rem] border border-slate-100 dark:border-slate-800 overflow-hidden hover:shadow-2xl transition-all duration-500 flex flex-col">
                     <div class="relative h-64 overflow-hidden">
                         <img src="service_legal.png" alt="Legal Representation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
@@ -237,14 +276,16 @@
                             <h3 class="text-2xl font-bold">Appeals & Litigation</h3>
                         </div>
                     </div>
-                    <div class="p-8">
-                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">Critical defense against deportation and appeals for rejected visa/PR applications in specialized legal tribunals.</p>
-                        <ul class="space-y-3 mb-8">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Critical defense against deportation and appeals for rejected visa/PR applications in specialized legal tribunals.</p>
+                        <ul class="space-y-3 mb-8 flex-1">
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Refusal Appeals</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Judicial Reviews</li>
                             <li class="flex items-center gap-3 text-sm font-medium"><i class="fas fa-check text-secondary"></i> Humanitarian Stays</li>
                         </ul>
-                        <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        <div class="mt-auto pt-4">
+                            <a href="contact.html" class="inline-flex items-center gap-2 text-primary dark:text-secondary font-bold hover:gap-4 transition-all whitespace-nowrap">Consult Expert <i class="fas fa-arrow-right text-xs"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>

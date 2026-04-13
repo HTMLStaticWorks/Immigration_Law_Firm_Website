@@ -44,14 +44,14 @@
         }
     </script>
 </head>
-<body class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col lg:flex-row">
+<body class="bg-slate-50 dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col xl:flex-row">
 
     <!-- Sidebar (Desktop) / Header (Mobile) -->
-    <aside id="sidebar" class="fixed lg:sticky top-0 left-0 w-64 sm:w-72 h-screen bg-blue-50 dark:bg-slate-900 border-r border-blue-100 dark:border-slate-800 flex flex-col transition-all duration-300 ease-in-out z-[60] overflow-y-auto shadow-2xl lg:shadow-none -translate-x-full lg:translate-x-0">
+    <aside id="sidebar" class="fixed xl:sticky top-0 left-0 w-64 sm:w-72 h-screen bg-blue-50 dark:bg-slate-900 border-r border-blue-100 dark:border-slate-800 flex flex-col transition-all duration-300 ease-in-out z-[60] overflow-y-auto shadow-2xl xl:shadow-none -translate-x-full xl:translate-x-0">
         <div class="p-8">
-            <a href="index.html" class="hidden lg:flex items-center gap-3 mb-10">
+            <a href="index.html" class="hidden xl:flex items-center gap-3 mb-10">
                 <img src="logo.png" alt="Logo" class="w-10 h-10">
-                <span class="hidden lg:inline text-2xl font-bold bg-gradient-to-r from-primary dark:from-white via-primary/50 dark:via-white to-secondary dark:to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</span>
+                <span class="hidden xl:inline text-2xl font-bold bg-gradient-to-r from-primary dark:from-white via-primary/50 dark:via-white to-secondary dark:to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</span>
             </a>
             <div class="space-y-4">
                 <a href="javascript:void(0)" onclick="showSection('dashboard')" class="nav-link flex items-center gap-4 px-4 py-3 bg-blue-100 dark:bg-white/10 text-primary dark:text-white rounded-xl font-bold transition-all hover:bg-blue-200 dark:hover:bg-white/20 active:scale-95"><i class="fas fa-chart-line"></i> Dashboard</a>
@@ -74,7 +74,7 @@
     </aside>
 
     <!-- Mobile Header -->
-    <header class="lg:hidden flex items-center justify-between p-4 bg-primary text-white sticky top-0 z-50">
+    <header class="xl:hidden flex items-center justify-between p-4 bg-primary text-white sticky top-0 z-50">
         <a href="index.html" class="flex items-center gap-2">
             <img src="logo.png" alt="Logo" class="w-7 h-7 shadow-sm">
             <span class="text-xs sm:text-base font-bold bg-gradient-to-r from-white to-secondary bg-clip-text text-transparent tracking-tight whitespace-nowrap">GLOBAL LINK</span>
@@ -86,7 +86,7 @@
             <button onclick="toggleTheme()" class="p-2 rounded-full transition-all duration-300" title="Toggle Theme">
                 <i class="fas fa-moon theme-toggle-icon"></i>
             </button>
-            <button onclick="toggleSidebar()" class="p-2 rounded-full transition-all duration-300">
+            <button onclick="toggleSidebar()" class="xl:hidden p-2 rounded-full transition-all duration-300">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -95,11 +95,11 @@
     <!-- Main Content Area -->
     <main class="flex-1 overflow-x-hidden">
         <!-- Top Bar (Search + Actions) -->
-        <div class="bg-white dark:bg-surface-dark border-b border-slate-200 dark:border-slate-800 p-4 sm:p-6 flex flex-row items-center justify-between gap-3 sm:gap-6 lg:sticky lg:top-0 z-40">
+        <div class="bg-white dark:bg-surface-dark border-b border-slate-200 dark:border-slate-800 p-4 sm:p-6 flex flex-row items-center justify-between gap-3 sm:gap-6 xl:sticky xl:top-0 z-40">
             <!-- Left Corner: Dashboard Title + Welcome Section -->
-            <div class="flex flex-col gap-1 flex-grow min-w-0">
+            <div class="flex flex-col flex-grow min-w-0">
                 <h1 class="text-lg sm:text-2xl font-serif font-bold text-slate-800 dark:text-white truncate">Client Portal</h1>
-                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium whitespace-nowrap">Welcome back, <span class="text-secondary font-bold">John Doe</span>. Here's your case overview.</p>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Welcome back, <span class="text-secondary font-bold">John Doe</span>. Here's your case overview.</p>
             </div>
             
             <!-- Right Corner: Profile + Actions -->
@@ -118,9 +118,6 @@
 
                 <!-- Action Toggles -->
                 <div class="flex items-center gap-2 sm:gap-3">
-                    <button class="p-2 sm:p-3 bg-slate-50 dark:bg-black/20 rounded-xl hover:bg-secondary/10 transition-all active:scale-95 group" title="Upload Document">
-                        <i class="fas fa-cloud-upload-alt text-slate-600 dark:text-slate-400 group-hover:text-secondary"></i>
-                    </button>
                     <button onclick="toggleTheme()" class="p-2 sm:p-3 bg-slate-50 dark:bg-black/20 rounded-xl hover:bg-secondary/10 transition-all active:scale-95 group" title="Toggle Theme">
                          <i class="fas fa-moon theme-toggle-icon text-slate-600 dark:text-slate-400 group-hover:text-secondary"></i>
                     </button>
@@ -132,13 +129,13 @@
         </div>
 
         <!-- Dynamic Content Sections -->
-        <div id="content-sections" class="p-6 sm:p-8 lg:p-12 space-y-10 sm:space-y-16">
+        <div id="content-sections" class="p-6 sm:p-8 xl:p-12 space-y-10 sm:space-y-16">
             
             <!-- Dashboard View -->
             <div id="section-dashboard" class="space-y-10">
                 <!-- Case Progress Alert (Already added earlier) -->
                 <!-- Quick Stats -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8">
                     <!-- ... existing stats ... -->
                     <!-- Case Status -->
                     <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover cursor-default">
@@ -205,7 +202,7 @@
                     </div>
                 </div>
                 <!-- Extra Widgets Row -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3 gap-8 sm:gap-10">
                     <!-- Legal Team (New) -->
                     <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col items-center text-center card-dynamic-hover h-full">
                         <h3 class="text-xl font-serif font-bold mb-8 text-slate-800 dark:text-white">Assigned Legal Team</h3>
@@ -290,48 +287,48 @@
                     </div>
 
                     <!-- Document Tracking -->
-                    <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full text-left">
-                        <h3 class="text-xl font-serif font-bold mb-8 text-slate-800 dark:text-white">Recent Documents</h3>
+                    <div class="bg-white dark:bg-surface-dark p-5 sm:p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col h-full text-left">
+                        <h3 class="text-lg sm:text-xl font-serif font-bold mb-8 text-slate-800 dark:text-white">Recent Documents</h3>
                         <div class="space-y-4 flex-1">
-                            <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
-                                 <div class="flex items-center gap-4 truncate">
+                            <div class="flex items-center justify-between p-3 sm:p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                                 <div class="flex items-center gap-3 sm:gap-4 min-w-0">
                                      <i class="fas fa-file-pdf text-secondary text-xl flex-shrink-0"></i>
-                                     <div class="truncate">
+                                     <div class="min-w-0">
                                          <div class="font-bold text-sm text-slate-800 dark:text-white truncate">Passport_Scan.pdf</div>
-                                         <div class="text-[10px] text-slate-400">Uploaded Mar 20 • 2.4 MB</div>
+                                         <div class="text-[10px] text-slate-400 truncate">Uploaded Mar 20 • 2.4 MB</div>
                                      </div>
                                  </div>
-                                 <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded flex-shrink-0">Verified</span>
+                                 <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded flex-shrink-0 ml-2">Verified</span>
                             </div>
-                            <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
-                                <div class="flex items-center gap-4">
-                                    <i class="fas fa-file-word text-primary text-xl"></i>
-                                    <div>
-                                        <div class="font-bold text-sm text-slate-800 dark:text-white">Emp_Letter.docx</div>
-                                        <div class="text-[10px] text-slate-400">Uploaded Mar 15 • 1.1 MB</div>
+                            <div class="flex items-center justify-between p-3 sm:p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                                <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+                                    <i class="fas fa-file-word text-primary text-xl flex-shrink-0"></i>
+                                    <div class="min-w-0">
+                                        <div class="font-bold text-sm text-slate-800 dark:text-white truncate">Emp_Letter.docx</div>
+                                        <div class="text-[10px] text-slate-400 truncate">Uploaded Mar 15 • 1.1 MB</div>
                                     </div>
                                 </div>
-                                <span class="px-2 py-0.5 bg-blue-100 text-primary text-[10px] uppercase font-bold rounded">In Review</span>
+                                <span class="px-2 py-0.5 bg-blue-100 text-primary text-[10px] uppercase font-bold rounded flex-shrink-0 ml-2">In Review</span>
                             </div>
-                            <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
-                                <div class="flex items-center gap-4">
-                                    <i class="fas fa-file-image text-secondary text-xl"></i>
-                                    <div>
-                                        <div class="font-bold text-sm text-slate-800 dark:text-white">Digital_Photo_HQ.jpg</div>
-                                        <div class="text-[10px] text-slate-400">Uploaded Mar 10 • 0.8 MB</div>
+                            <div class="flex items-center justify-between p-3 sm:p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                                <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+                                    <i class="fas fa-file-image text-secondary text-xl flex-shrink-0"></i>
+                                    <div class="min-w-0">
+                                        <div class="font-bold text-sm text-slate-800 dark:text-white truncate">Digital_Photo_HQ.jpg</div>
+                                        <div class="text-[10px] text-slate-400 truncate">Uploaded Mar 10 • 0.8 MB</div>
                                     </div>
                                 </div>
-                                <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded">Verified</span>
+                                <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded flex-shrink-0 ml-2">Verified</span>
                             </div>
-                            <div class="flex items-center justify-between p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
-                                <div class="flex items-center gap-4">
-                                    <i class="fas fa-file-contract text-primary text-xl"></i>
-                                    <div>
-                                        <div class="font-bold text-sm text-slate-800 dark:text-white">Retainer_Agre.pdf</div>
-                                        <div class="text-[10px] text-slate-400">Uploaded Mar 05 • 3.2 MB</div>
+                            <div class="flex items-center justify-between p-3 sm:p-4 border border-slate-100 dark:border-slate-800 rounded-xl hover:bg-slate-50 dark:hover:bg-black/20 transition-all">
+                                <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+                                    <i class="fas fa-file-contract text-primary text-xl flex-shrink-0"></i>
+                                    <div class="min-w-0">
+                                        <div class="font-bold text-sm text-slate-800 dark:text-white truncate">Retainer_Agre.pdf</div>
+                                        <div class="text-[10px] text-slate-400 truncate">Uploaded Mar 05 • 3.2 MB</div>
                                     </div>
                                 </div>
-                                <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded">Verified</span>
+                                <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[10px] uppercase font-bold rounded flex-shrink-0 ml-2">Verified</span>
                             </div>
                         </div>
                     </div>
@@ -340,12 +337,12 @@
                 <!-- Additional Content Row (New) -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
                     <!-- Upcoming Appointments -->
-                    <div class="bg-white dark:bg-surface-dark p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
-                        <div class="flex items-center justify-between mb-8">
-                            <h3 class="text-xl font-serif font-bold text-slate-800 dark:text-white flex items-center gap-3">
+                    <div class="bg-white dark:bg-surface-dark p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 card-dynamic-hover">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 text-left">
+                            <h3 class="text-lg sm:text-xl font-serif font-bold text-slate-800 dark:text-white flex items-center gap-3">
                                 <i class="fas fa-calendar-alt text-secondary"></i> Upcoming Appointments
                             </h3>
-                            <button class="text-xs font-bold text-secondary hover:underline">Schedule New</button>
+                            <button class="text-xs font-bold text-secondary hover:underline whitespace-nowrap text-left sm:text-right">Schedule New</button>
                         </div>
                         <div class="space-y-6">
                             <div class="flex items-center gap-4 p-4 rounded-2xl bg-secondary/5 border border-secondary/10">
@@ -381,7 +378,7 @@
                         <div class="space-y-8 relative after:absolute after:left-5 after:top-2 after:h-[70%] after:w-px after:bg-slate-100 dark:after:bg-slate-800">
                             <div class="relative z-10 flex gap-4">
                                 <div class="w-10 h-10 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-file-check text-xs"></i>
+                                    <i class="fas fa-check-circle text-xs"></i>
                                 </div>
                                 <div>
                                     <div class="text-sm font-bold text-slate-800 dark:text-white">Document Verified</div>
@@ -699,7 +696,7 @@
             }
 
             // Strictly close sidebar on mobile/tablet
-            if (window.innerWidth < 1024) {
+            if (window.innerWidth < 1280) {
                 const sidebar = document.getElementById('sidebar');
                 if (sidebar) {
                     sidebar.classList.add('-translate-x-full');
@@ -722,7 +719,7 @@
         // Close sidebar on item click for mobile/tablet
         document.querySelectorAll('#sidebar .nav-link').forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 1024) {
+                if (window.innerWidth < 1280) {
                     sidebar.classList.add('-translate-x-full');
                     sidebar.classList.remove('translate-x-0');
                 }
@@ -731,7 +728,7 @@
 
         // Close sidebar when clicking outside (on overlay)
         document.addEventListener('click', (e) => {
-            if (window.innerWidth < 1024 && !sidebar.contains(e.target) && !e.target.closest('button[onclick="toggleSidebar()"]')) {
+            if (window.innerWidth < 1280 && !sidebar.contains(e.target) && !e.target.closest('button[onclick="toggleSidebar()"]')) {
                 sidebar.classList.add('-translate-x-full');
                 sidebar.classList.remove('translate-x-0');
             }

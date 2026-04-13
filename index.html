@@ -57,7 +57,7 @@
             </a>
 
             <!-- Desktop Nav -->
-            <div class="hidden lg:flex items-center md:space-x-1 lg:space-x-4 xl:space-x-8 rtl:space-x-reverse text-[10px] lg:text-base">
+            <div class="hidden xl:flex items-center space-x-1 xl:space-x-8 rtl:space-x-reverse text-base">
                 <a href="index.html" class="text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary whitespace-nowrap active:scale-95 transition-transform">Home 1</a>
                 <a href="home2.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">Home 2</a>
                 <a href="about.html" class="hover:text-primary dark:hover:text-secondary active:text-primary dark:active:text-secondary transition-all whitespace-nowrap active:scale-95">About</a>
@@ -76,29 +76,44 @@
                 <button id="theme-toggle" onclick="toggleTheme()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Theme">
                     <i class="fas fa-moon theme-toggle-icon"></i>
                 </button>
-                <a href="login.html" class="hidden lg:block btn-secondary md:px-3 lg:px-6 py-2 text-[10px] lg:text-sm border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-lg hover:scale-105 active:scale-95 transition-transform font-bold">Login</a>
-                <a href="signup.html" class="hidden lg:block btn-primary md:px-3 lg:px-6 py-2 text-[10px] lg:text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-transform">Sign Up</a>
-                <button onclick="toggleMobileMenu()" class="lg:hidden p-2">
-                    <i class="fas fa-bars text-xl"></i>
+                <a href="login.html" class="hidden xl:block btn-secondary xl:px-6 py-2 text-sm border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-lg hover:scale-105 active:scale-95 transition-transform font-bold">Login</a>
+                <a href="signup.html" class="hidden xl:block btn-primary xl:px-6 py-2 text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-transform">Sign Up</a>
+                <button onclick="toggleMobileMenu()" class="xl:hidden p-2 text-primary dark:text-white relative z-50 flex items-center justify-center">
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </nav>
+    </header>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-4 px-4 py-6 bg-white dark:bg-black border-t border-slate-200 dark:border-slate-800 animate-fade-in">
-            <a href="index.html" class="text-primary dark:text-secondary font-semibold active:translate-x-2 transition-transform">Home 1</a>
-            <a href="home2.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Home 2</a>
-            <a href="about.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">About</a>
-            <a href="services.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Services</a>
-            <a href="blog.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Blog</a>
-            <a href="contact.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Contact</a>
-            <a href="dashboard.html" class="hover:text-primary active:text-primary active:translate-x-2 transition-transform">Dashboard</a>
-            <div class="flex flex-col gap-2 pt-4">
-                <a href="login.html" class="w-full py-3 text-center border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-xl font-bold hover:bg-primary/5 transition-colors">Login</a>
-                <a href="signup.html" class="w-full py-3 text-center bg-primary text-white rounded-xl font-bold shadow-lg shadow-primary/20">Sign Up</a>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-[100] bg-white dark:bg-black xl:hidden flex-col animate-fade-in overflow-y-auto">
+        <div class="p-6 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="w-8 h-8">
+                <span class="text-xl font-bold logo-text">GLOBAL LINK</span>
+            </div>
+            <button onclick="toggleMobileMenu()" class="p-2 text-slate-400 hover:text-primary dark:hover:text-white">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="px-6 py-8 space-y-6">
+            <div class="flex flex-col space-y-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Main Navigation</h4>
+                <a href="index.html" class="text-lg font-bold text-primary dark:text-secondary border-l-4 border-primary dark:border-secondary pl-4">Home 1</a>
+                <a href="home2.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Home 2</a>
+                <a href="about.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">About</a>
+                <a href="services.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Services</a>
+                <a href="blog.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Blog</a>
+                <a href="contact.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Contact</a>
+                <a href="dashboard.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Dashboard</a>
+            </div>
+            <div class="pt-8 border-t border-slate-100 dark:border-slate-800 space-y-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Account Access</h4>
+                <a href="login.html" class="w-full py-4 text-center border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-2xl font-bold hover:bg-primary/5 transition-all block">Login</a>
+                <a href="signup.html" class="w-full py-4 text-center bg-primary text-white rounded-2xl font-bold shadow-lg shadow-primary/20 block">Sign Up</a>
             </div>
         </div>
-    </header>
+    </div>
 
     <!-- Hero Section -->
     <section class="relative min-h-[90vh] flex items-center overflow-hidden">
@@ -379,45 +394,45 @@
                 <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="h-full flex flex-col p-8 bg-slate-50 dark:bg-surface-dark rounded-3xl relative">
-                    <i class="fas fa-quote-left text-4xl text-secondary/20 absolute top-6 left-6"></i>
+                <div class="h-full flex flex-col p-8 bg-slate-50 dark:bg-surface-dark rounded-3xl relative overflow-hidden">
+                    <i class="fas fa-quote-left text-3xl text-secondary/10 absolute top-6 left-6"></i>
                     <div class="relative z-10 flex flex-col h-full justify-between">
-                        <p class="text-slate-600 dark:text-slate-400 italic mb-8 leading-relaxed">"Global Link made my transition to Toronto seamless. Their legal team was with me at every hearing, providing clarity when I felt lost. Truly life-changing service."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="lawyer1.png" class="w-12 h-12 rounded-full object-cover grayscale">
-                            <div>
-                                <h4 class="font-bold">Aarav Sharma</h4>
-                                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">IT Professional, Canada</span>
+                        <p class="text-slate-600 dark:text-slate-400 italic mb-8 leading-relaxed pl-1">"Global Link made my transition to Toronto seamless. Their legal team was with me at every hearing, providing clarity when I felt lost. Truly life-changing service."</p>
+                        <div class="flex items-center gap-4 min-w-0">
+                            <img src="lawyer1.png" class="w-12 h-12 rounded-full object-cover grayscale flex-shrink-0">
+                            <div class="min-w-0 flex flex-col justify-center">
+                                <h4 class="font-bold text-slate-900 dark:text-white truncate leading-none mb-1">Aarav Sharma</h4>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold truncate leading-none">IT Professional, Canada</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Testimonial 2 -->
-                <div class="h-full flex flex-col p-8 bg-slate-50 dark:bg-surface-dark rounded-3xl relative">
-                    <i class="fas fa-quote-left text-4xl text-secondary/20 absolute top-6 left-6"></i>
+                <div class="h-full flex flex-col p-8 bg-slate-50 dark:bg-surface-dark rounded-3xl relative overflow-hidden">
+                    <i class="fas fa-quote-left text-3xl text-secondary/10 absolute top-6 left-6"></i>
                     <div class="relative z-10 flex flex-col h-full justify-between">
-                        <p class="text-slate-600 dark:text-slate-400 italic mb-8 leading-relaxed">"The level of professionalism stayed consistent from the first call to the final PR approval. They aren't just lawyers; they are partners in your dream."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="lawyer2.png" class="w-12 h-12 rounded-full object-cover grayscale">
-                            <div>
-                                <h4 class="font-bold">Elena Petrov</h4>
-                                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Entrepreneur, UK</span>
+                        <p class="text-slate-600 dark:text-slate-400 italic mb-8 leading-relaxed pl-1">"The level of professionalism stayed consistent from the first call to the final PR approval. They aren't just lawyers; they are partners in your dream."</p>
+                        <div class="flex items-center gap-4 min-w-0">
+                            <img src="lawyer2.png" class="w-12 h-12 rounded-full object-cover grayscale flex-shrink-0">
+                            <div class="min-w-0 flex flex-col justify-center">
+                                <h4 class="font-bold text-slate-900 dark:text-white truncate leading-none mb-1">Elena Petrov</h4>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold truncate leading-none">Entrepreneur, UK</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Testimonial 3 -->
-                <div class="h-full flex flex-col p-8 bg-slate-50 dark:bg-surface-dark rounded-3xl relative">
-                    <i class="fas fa-quote-left text-4xl text-secondary/20 absolute top-6 left-6"></i>
+                <div class="h-full flex flex-col p-8 bg-slate-50 dark:bg-surface-dark rounded-3xl relative overflow-hidden lg:col-span-2 xl:col-span-1 lg:max-w-2xl lg:mx-auto xl:max-w-none xl:mx-0">
+                    <i class="fas fa-quote-left text-3xl text-secondary/10 absolute top-6 left-6"></i>
                     <div class="relative z-10 flex flex-col h-full justify-between">
-                        <p class="text-slate-600 dark:text-slate-400 italic mb-8 leading-relaxed">"Document handling was what worried me most, but their encrypted portal and automated checklists made it foolproof. Highly recommend Global Link."</p>
-                        <div class="flex items-center gap-4">
-                            <img src="lawyer3.png" class="w-12 h-12 rounded-full object-cover grayscale">
-                            <div>
-                                <h4 class="font-bold">James Wilson</h4>
-                                <span class="text-xs text-slate-400 uppercase tracking-widest font-bold">Researcher, Australia</span>
+                        <p class="text-slate-600 dark:text-slate-400 italic mb-8 leading-relaxed pl-1">"Document handling was what worried me most, but their encrypted portal and automated checklists made it foolproof. Highly recommend Global Link."</p>
+                        <div class="flex items-center gap-4 min-w-0">
+                            <img src="lawyer3.png" class="w-12 h-12 rounded-full object-cover grayscale flex-shrink-0">
+                            <div class="min-w-0 flex flex-col justify-center">
+                                <h4 class="font-bold text-slate-900 dark:text-white truncate leading-none mb-1">James Wilson</h4>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold truncate leading-none">Researcher, Australia</p>
                             </div>
                         </div>
                     </div>

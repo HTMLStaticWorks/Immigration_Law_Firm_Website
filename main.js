@@ -42,8 +42,16 @@ const toggleDirection = () => {
 const toggleMobileMenu = () => {
   const menu = document.getElementById('mobile-menu');
   if (menu) {
-    menu.classList.toggle('hidden');
-    menu.classList.toggle('flex');
+    const isHidden = menu.classList.contains('hidden');
+    if (isHidden) {
+      menu.classList.remove('hidden');
+      menu.classList.add('flex');
+      document.body.classList.add('overflow-hidden');
+    } else {
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
+      document.body.classList.remove('overflow-hidden');
+    }
   }
 };
 
@@ -52,11 +60,29 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
+// Password Visibility Toggle
+const togglePasswordVisibility = (inputId, iconId) => {
+    const passwordInput = document.getElementById(inputId);
+    const toggleIcon = document.getElementById(iconId);
+    if (passwordInput && toggleIcon) {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        }
+    }
+};
+
 // Expose functions globally for simple inline handlers
 window.toggleTheme = toggleTheme;
 window.toggleDirection = toggleDirection;
 window.toggleMobileMenu = toggleMobileMenu;
 window.scrollToTop = scrollToTop;
+window.togglePasswordVisibility = togglePasswordVisibility;
 
 // Initial apply
 applySettings();
