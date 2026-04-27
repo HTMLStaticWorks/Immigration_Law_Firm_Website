@@ -28,6 +28,18 @@
     color: white;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: clip !important;
+    overscroll-behavior-x: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: 'Outfit', 'Inter', sans-serif;
