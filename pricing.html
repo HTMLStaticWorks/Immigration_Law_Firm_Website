@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+<head>
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme') || 'light';
+            const dir = localStorage.getItem('dir') || 'ltr';
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.setAttribute('dir', dir);
+            if (theme === 'dark') document.documentElement.classList.add('dark');
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Global Link Immigration | Transparent Legal Fees</title>
+    <meta name="description"
+        content="Clear, upfront pricing for your immigration services. No hidden fees. Choose the legal plan that best fits your needs.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A237E',
+                        secondary: '#3B82F6',
+                        surface: {
+                            light: '#FFFFFF',
+                            dark: '#1A1A1A'
+                        },
+                        background: {
+                            light: '#F8F9FA',
+                            dark: '#0A0A0A'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <nav class="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2 sm:space-x-3 rtl:space-x-reverse shrink-0">
+                <img src="logo.png" alt="Global Link Logo" class="w-10 h-10">
+                <span class="text-xs sm:text-lg md:text-sm lg:text-xl xl:text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</span>
+            </a>
+            <div class="hidden xl:flex items-center space-x-1 xl:space-x-8 rtl:space-x-reverse text-base">
+                <a href="index.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Home 1</a>
+                <a href="home2.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Home 2</a>
+                <a href="about.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">About</a>
+                <a href="services.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Services</a>
+                <a href="pricing.html" class="text-primary dark:text-secondary font-semibold border-b-2 border-primary dark:border-secondary transition-all whitespace-nowrap active:scale-95">Pricing</a>
+                <a href="blog.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Blog</a>
+                <a href="contact.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Contact</a>
+                <a href="dashboard.html" class="hover:text-primary dark:hover:text-secondary transition-all whitespace-nowrap active:scale-95">Dashboard</a>
+            </div>
+            <div class="flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse flex-shrink-0">
+                <button onclick="toggleDirection()"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-right-left"></i>
+                </button>
+                <button id="theme-toggle" onclick="toggleTheme()"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Toggle Theme">
+                    <i class="fas fa-moon theme-toggle-icon"></i>
+                </button>
+                <a href="login.html"
+                    class="hidden xl:block btn-secondary xl:px-6 py-2 text-sm border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-lg hover:scale-105 active:scale-95 transition-transform font-bold">Login</a>
+                <a href="signup.html"
+                    class="hidden xl:block btn-primary xl:px-6 py-2 text-sm bg-primary text-white rounded-lg shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-transform">Sign Up</a>
+                <button onclick="toggleMobileMenu()" class="xl:hidden p-2 text-primary dark:text-white relative z-50 flex items-center justify-center">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-[100] bg-white dark:bg-black xl:hidden flex-col animate-fade-in overflow-y-auto">
+        <div class="p-6 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="Logo" class="w-8 h-8">
+                <span class="text-xl font-bold logo-text">GLOBAL LINK</span>
+            </div>
+            <button onclick="toggleMobileMenu()" class="p-2 text-slate-400 hover:text-primary dark:hover:text-white">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <div class="px-6 py-8 space-y-6">
+            <div class="flex flex-col space-y-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Main Navigation</h4>
+                <a href="index.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Home 1</a>
+                <a href="home2.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Home 2</a>
+                <a href="about.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">About</a>
+                <a href="services.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Services</a>
+                <a href="pricing.html" class="text-lg font-bold text-primary dark:text-secondary border-l-4 border-primary dark:border-secondary pl-4">Pricing</a>
+                <a href="blog.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Blog</a>
+                <a href="contact.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Contact</a>
+                <a href="dashboard.html" class="text-lg font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-white pl-4 transition-all">Dashboard</a>
+            </div>
+            <div class="pt-8 border-t border-slate-100 dark:border-slate-800 space-y-4">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Account Access</h4>
+                <a href="login.html" class="w-full py-4 text-center border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-2xl font-bold hover:bg-primary/5 transition-all block">Login</a>
+                <a href="signup.html" class="w-full py-4 text-center bg-primary text-white rounded-2xl font-bold shadow-lg shadow-primary/20 block">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subpage Hero -->
+    <section class="relative py-32 lg:py-48 flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="hero_pricing.png" alt="Hero background" class="w-full h-full object-cover">
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent dark:from-black/90 dark:via-black/70 rtl:bg-gradient-to-l">
+            </div>
+        </div>
+        <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+            <div class="max-w-3xl mx-auto">
+                <span class="inline-block px-4 py-1 bg-secondary text-white text-xs font-bold rounded-full mb-6 uppercase tracking-wider">Pricing Plans</span>
+                <h1 class="text-5xl lg:text-7xl font-serif font-bold text-white mb-8">Transparent Legal Fees</h1>
+                <p class="text-xl text-slate-200 mb-10 leading-relaxed">No hidden costs. Predictable pricing for your peace of mind. Choose the right level of support for your immigration journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-24 bg-slate-50 dark:bg-black/20">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Plan 1 -->
+                <div class="bg-white dark:bg-surface-dark rounded-3xl border border-slate-100 dark:border-slate-800 shadow-lg p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Initial Consultation</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm h-10">Best for assessing eligibility and finding your path.</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-4xl font-bold text-primary dark:text-white">$150</span>
+                        <span class="text-slate-500 dark:text-slate-400">/ session</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">1-hour video or in-person consultation</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Complete profile assessment</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Eligibility breakdown</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Q&A with a licensed expert</span></li>
+                        <li class="flex items-start gap-3 opacity-50"><i class="fas fa-times text-slate-400 mt-1"></i> <span class="text-sm line-through">Application drafting</span></li>
+                    </ul>
+                    <a href="contact.html" class="w-full py-4 text-center border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-xl font-bold hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:border-secondary transition-colors block">Book Consultation</a>
+                </div>
+
+                <!-- Plan 2 -->
+                <div class="bg-primary text-white rounded-3xl shadow-2xl p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300 relative scale-100 md:scale-105 z-10">
+                    <div class="absolute top-0 right-0 bg-secondary text-xs font-bold px-4 py-1 rounded-bl-xl rounded-tr-3xl uppercase tracking-wider">Most Popular</div>
+                    <div class="mb-6 mt-4">
+                        <h3 class="text-2xl font-bold mb-2">Standard Application</h3>
+                        <p class="text-blue-200 text-sm h-10">Complete handling of your visa or PR application.</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-4xl font-bold text-white">$1,500</span>
+                        <span class="text-blue-200">/ case</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Everything in Initial Consultation</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Dedicated case manager</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Complete document review and preparation</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Form filing and submission representation</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Access to digital client portal</span></li>
+                    </ul>
+                    <a href="contact.html" class="w-full py-4 text-center bg-secondary text-white rounded-xl font-bold hover:bg-white hover:text-primary transition-colors block shadow-lg shadow-secondary/30">Get Started</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="bg-white dark:bg-surface-dark rounded-3xl border border-slate-100 dark:border-slate-800 shadow-lg p-8 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Premium VIP</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm h-10">For complex cases, appeals, or high-priority processing.</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-4xl font-bold text-primary dark:text-white">$3,500</span>
+                        <span class="text-slate-500 dark:text-slate-400">/ case</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Everything in Standard Application</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Priority processing (skip the queue)</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Interview preparation sessions</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Legal response to complex government queries (RFE/AD)</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-secondary mt-1"></i> <span class="text-sm">Direct lawyer hotline</span></li>
+                    </ul>
+                    <a href="contact.html" class="w-full py-4 text-center border-2 border-primary dark:border-secondary text-primary dark:text-secondary rounded-xl font-bold hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:border-secondary transition-colors block">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4">Included With Every Plan</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-6 bg-slate-50 dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 text-center hover:shadow-lg transition-all group">
+                    <i class="fas fa-lock text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-bold mb-2">Secure Client Portal</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">24/7 access to your visa milestones, tracked securely online.</p>
+                </div>
+                <div class="p-6 bg-slate-50 dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 text-center hover:shadow-lg transition-all group">
+                    <i class="fas fa-file-invoice text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-bold mb-2">Transparent Billing</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">All costs are declared upfront. No hidden surcharges ever.</p>
+                </div>
+                <div class="p-6 bg-slate-50 dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 text-center hover:shadow-lg transition-all group">
+                    <i class="fas fa-language text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-bold mb-2">Multilingual Team</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Direct support from lawyers speaking 15+ global languages.</p>
+                </div>
+                <div class="p-6 bg-slate-50 dark:bg-surface-dark rounded-2xl border border-slate-100 dark:border-slate-800 text-center hover:shadow-lg transition-all group">
+                    <i class="fas fa-shield-alt text-3xl text-secondary mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-bold mb-2">Privacy Guarantee</h4>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">Your documents are protected with AES-256 encryption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing FAQs -->
+    <section class="py-16 bg-slate-50 dark:bg-black/50 border-t border-slate-100 dark:border-slate-800">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-4">Billing Questions</h2>
+                <p class="text-slate-500">Everything you need to know about our legal fees and payment structures.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between font-bold group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span>Are government application fees included in your packages?</span>
+                        <i class="fas fa-chevron-down text-slate-400 group-hover:text-secondary transition-colors"></i>
+                    </button>
+                    <div class="px-8 pb-6 text-slate-600 dark:text-slate-400 border-t border-slate-50 dark:border-slate-800/50 pt-4 hidden">
+                        No. Our listed prices cover only professional legal and consultative services. Government filing fees vary by country and visa type, and must be paid separately. We will provide a complete breakdown of these exact fees during your initial consultation.
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between font-bold group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span>Do you offer payment installment plans?</span>
+                        <i class="fas fa-chevron-down text-slate-400 group-hover:text-secondary transition-colors"></i>
+                    </button>
+                    <div class="px-8 pb-6 text-slate-600 dark:text-slate-400 border-t border-slate-50 dark:border-slate-800/50 pt-4 hidden">
+                        Yes, for our Standard Application and Premium VIP packages, we offer flexible 3-month and 6-month installment plans at 0% interest. The Initial Consultation fee, however, is due at the time of booking.
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="bg-white dark:bg-surface-dark border border-slate-100 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                    <button class="w-full px-8 py-6 text-left flex items-center justify-between font-bold group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span>Is the Initial Consultation fee refundable if I decide not to proceed?</span>
+                        <i class="fas fa-chevron-down text-slate-400 group-hover:text-secondary transition-colors"></i>
+                    </button>
+                    <div class="px-8 pb-6 text-slate-600 dark:text-slate-400 border-t border-slate-50 dark:border-slate-800/50 pt-4 hidden">
+                        The consultation fee covers the dedicated time of our licensed experts and detailed profile assessment, and is non-refundable. However, if you choose to purchase the Standard or Premium package post-consultation, the $150 consultation fee will be credited towards your total package price.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info -->
+    <section class="py-16 bg-white dark:bg-background-dark">
+        <div class="container mx-auto px-4 lg:px-8 text-center max-w-4xl">
+            <h3 class="text-2xl font-serif font-bold mb-6">Need a custom enterprise solution?</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-8">We offer specialized corporate mobility packages for businesses moving their teams internationally. Get in touch with our corporate team for an estimate.</p>
+            <a href="contact.html" class="text-secondary font-bold inline-flex items-center gap-2 hover:gap-3 transition-all underline decoration-2 underline-offset-8 decoration-secondary/30">Contact Corporate Sales <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer pt-20 border-t border-slate-100 dark:border-slate-800">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Global Link Branding -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="logo.png" alt="Logo" class="w-10 h-10">
+                        <h3 class="text-2xl font-bold logo-text whitespace-nowrap">GLOBAL LINK</h3>
+                    </div>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">Simplifying the complex world of immigration laws since 2005. Trustworthy, Professional, Passionate.</p>
+                    <div class="flex gap-4 items-center">
+                        <a href="#" class="footer-social-btn"><i class="fab fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="footer-social-btn"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg></a>
+                        <a href="#" class="footer-social-btn"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="footer-social-btn"><i class="fab fa-instagram text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <div class="h-10 flex items-center mb-6"><h4 class="text-lg font-bold">Quick Links</h4></div>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="footer-link">Our Story</a></li>
+                        <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+                        <li><a href="blog.html" class="footer-link">Latest News</a></li>
+                        <li><a href="contact.html" class="footer-link">Free Consultation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <div class="h-10 flex items-center mb-6"><h4 class="text-lg font-bold">Legal Services</h4></div>
+                    <ul class="space-y-4">
+                        <li><a href="services.html" class="footer-link">Student Visas</a></li>
+                        <li><a href="services.html" class="footer-link">Skilled Worker PR</a></li>
+                        <li><a href="services.html" class="footer-link">Family Sponsorship</a></li>
+                        <li><a href="services.html" class="footer-link">Business Immigration</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <div class="h-10 flex items-center mb-6"><h4 class="text-lg font-bold">Newsletter</h4></div>
+                    <p class="text-slate-500 dark:text-slate-400 mb-6 text-sm">Subscribe to receive the latest worldwide immigration policy updates.</p>
+                    <form class="flex flex-col space-y-3">
+                        <input type="email" placeholder="Email Address" class="footer-input">
+                        <button type="submit" class="footer-btn">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom"><div class="container mx-auto px-4 text-center pb-8"><p class="text-slate-500 text-sm">© 2026 Global Link Immigration Law Firm. All rights reserved.</p></div></div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scroll-top" onclick="scrollToTop()" class="fixed bottom-8 right-8 w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all z-40 transform hover:scale-110">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
